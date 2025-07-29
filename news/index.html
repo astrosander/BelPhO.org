@@ -60,10 +60,7 @@
          background: var(--surface-color);
          padding: 16px 0;
          box-shadow: var(--shadow-sm);
-         position: sticky;
-         top: 0;
-         z-index: 100;
-         backdrop-filter: blur(10px);
+         position: static;
       }
 
       .header-content {
@@ -119,6 +116,18 @@
          .mobile-nav {
             display: block;
          }
+
+         .featured-articles-stack {
+            gap: 16px !important;
+         }
+
+         .featured-articles-stack .featured-article div[style*="grid-template-columns"] {
+            display: block !important;
+         }
+
+         .featured-articles-stack img {
+            margin-bottom: 16px !important;
+         }
       }
 
       .nav-links a {
@@ -156,7 +165,7 @@
 
       /* News Grid */
       .news-section {
-         padding: 80px 0;
+         padding: 60px 0;
       }
 
       .section-title {
@@ -168,11 +177,11 @@
       }
 
       .section-subtitle {
-         font-size: 18px;
+         font-size: 16px;
          text-align: center;
          color: var(--text-secondary);
          max-width: 600px;
-         margin: 0 auto 48px;
+         margin: 0 auto 32px;
       }
 
       .featured-article {
@@ -180,7 +189,7 @@
          border-radius: 16px;
          overflow: hidden;
          box-shadow: var(--shadow-lg);
-         margin-bottom: 48px;
+         margin-bottom: 32px;
          transition: transform 0.3s ease;
       }
 
@@ -189,7 +198,7 @@
       }
 
       .featured-content {
-         padding: 40px;
+         padding: 32px;
       }
 
       .featured-meta {
@@ -229,6 +238,11 @@
          background: var(--success-color);
       }
 
+      .tag.interview {
+         background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+         color: white;
+      }
+
       .featured-title {
          font-size: 32px;
          font-weight: 700;
@@ -260,15 +274,15 @@
 
       .news-grid {
          display: grid;
-         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-         gap: 32px;
-         margin-top: 48px;
+         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+         gap: 20px;
+         margin-top: 32px;
       }
 
       .news-card {
          background: var(--surface-color);
-         border-radius: 16px;
-         padding: 32px;
+         border-radius: 12px;
+         padding: 20px;
          box-shadow: var(--shadow-md);
          transition: all 0.3s ease;
          border-left: 4px solid var(--primary-color);
@@ -295,7 +309,7 @@
          display: flex;
          justify-content: space-between;
          align-items: center;
-         margin-bottom: 16px;
+         margin-bottom: 12px;
       }
 
       .news-date {
@@ -307,24 +321,25 @@
       }
 
       .news-title {
-         font-size: 20px;
+         font-size: 18px;
          font-weight: 600;
          color: var(--text-primary);
-         margin-bottom: 12px;
-         line-height: 1.4;
+         margin-bottom: 8px;
+         line-height: 1.3;
       }
 
       .news-excerpt {
          color: var(--text-secondary);
-         margin-bottom: 20px;
-         line-height: 1.6;
+         margin-bottom: 16px;
+         line-height: 1.5;
+         font-size: 14px;
       }
 
       .stats-grid {
          display: grid;
          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-         gap: 24px;
-         margin: 48px 0;
+         gap: 20px;
+         margin: 32px 0;
       }
 
       .stat-card {
@@ -440,39 +455,78 @@
    <!-- Featured Article -->
    <section class="news-section">
       <div class="container">
-         <article class="featured-article">
-            <div class="featured-content">
-               <div class="featured-meta">
-                  <div class="featured-date">
-                     <i class="fas fa-calendar"></i>
-                     25 июля 2025
+         <!-- Featured articles vertical stack -->
+         <div class="featured-articles-stack" style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 32px;">
+            <!-- Andrei Katsevich Interview - First -->
+            <article class="featured-article">
+               <div class="featured-content">
+                  <div class="featured-meta">
+                     <div class="featured-date">
+                        <i class="fas fa-calendar"></i>
+                        28 июля 2025
+                     </div>
+                     <div class="featured-tags">
+                        <span class="tag interview">Интервью</span>
+                        <span class="tag international">Princeton</span>
+                        <span class="tag">Эксклюзив</span>
+                     </div>
                   </div>
-                  <div class="featured-tags">
-                     <span class="tag international">IPhO 2025</span>
-                     <span class="tag results">4 медали</span>
-                     <span class="tag">Триумф</span>
+                  
+                  <h2 class="featured-title">🎓 Эксклюзивное интервью с Андреем Коцевичем: от БелФО до Princeton University</h2>
+                  
+                  <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items: center; margin: 24px 0;">
+                     <div>
+                        <p class="featured-excerpt">
+                           Участник IPhO 2019, выпускник МФТИ и аспирант Princeton University рассказывает о своем пути в науке, подготовке к олимпиадам и поступлении в топовые американские университеты. Уникальный 4,5-часовой разговор о физике, образовании и жизни в США.
+                        </p>
+                     </div>
+                     <div>
+                        <img src="andrei-katsevich-interview/katsevich_header_without_background.png" alt="Андрей Коцевич" style="width: 100%; border-radius: 8px;">
+                     </div>
                   </div>
+                  
+                  <a href="andrei-katsevich-interview" class="read-more">
+                     Читать полное интервью
+                     <i class="fas fa-arrow-right"></i>
+                  </a>
                </div>
-               
-               <h2 class="featured-title">🏆 Триумф в Париже: Белорусская команда завоевала 4 серебряные медали на IPhO 2025</h2>
-               
-               <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items: center; margin: 24px 0;">
-                  <div>
-                     <p class="featured-excerpt">
-                        На 55-й Международной олимпиаде по физике в Париже белорусская команда продемонстрировала выдающиеся результаты, завоевав 4 серебряные медали и 1 похвальный отзыв среди 418 участников из 89 стран мира. Это исторический успех, подтверждающий высокий уровень белорусского физического образования на международной арене.
-                     </p>
+            </article>
+
+            <!-- IPhO 2025 Article - Second -->
+            <article class="featured-article">
+               <div class="featured-content">
+                  <div class="featured-meta">
+                     <div class="featured-date">
+                        <i class="fas fa-calendar"></i>
+                        25 июля 2025
+                     </div>
+                     <div class="featured-tags">
+                        <span class="tag international">IPhO 2025</span>
+                        <span class="tag results">4 медали</span>
+                        <span class="tag">Триумф</span>
+                     </div>
                   </div>
-                  <div>
-                     <img src="ipho-2025/belarus_physics_team_with_leaders_official.jpg" alt="Белорусская команда на IPhO 2025" style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-md);">
+                  
+                  <h2 class="featured-title">🏆 Триумф в Париже: Белорусская команда завоевала 4 серебряные медали на IPhO 2025</h2>
+                  
+                  <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items: center; margin: 24px 0;">
+                     <div>
+                        <p class="featured-excerpt">
+                           На 55-й Международной олимпиаде по физике в Париже белорусская команда продемонстрировала выдающиеся результаты, завоевав 4 серебряные медали и 1 похвальный отзыв среди 418 участников из 89 стран мира. Это исторический успех, подтверждающий высокий уровень белорусского физического образования на международной арене.
+                        </p>
+                     </div>
+                     <div>
+                        <img src="ipho-2025/belarus_physics_team_with_leaders_official.jpg" alt="Белорусская команда на IPhO 2025" style="width: 100%; border-radius: 8px; box-shadow: var(--shadow-md);">
+                     </div>
                   </div>
+                  
+                  <a href="ipho-2025" class="read-more">
+                     Читать полный репортаж
+                     <i class="fas fa-arrow-right"></i>
+                  </a>
                </div>
-               
-               <a href="ipho-2025" class="read-more">
-                  Читать полный репортаж
-                  <i class="fas fa-arrow-right"></i>
-               </a>
-            </div>
-         </article>
+            </article>
+         </div>
       </div>
    </section>
 
