@@ -48,7 +48,7 @@
         }
 
         .container {
-            max-width: 1600px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 10px;
         }
@@ -147,6 +147,16 @@
             line-height: 1.2;
             position: relative;
             z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .hero h1 .ipho-logo {
+            width: 48px;
+            height: 48px;
+            vertical-align: middle;
         }
 
         .hero p {
@@ -402,33 +412,92 @@
         }
 
         .medal-badge {
-            padding: 3px 7px;
+            padding: 0;
             border-radius: 4px;
-            font-size: 11px;
-            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            position: relative;
+        }
+
+        .medal-badge .medal-icon {
+            width: 32px;
+            height: 32px;
+            display: block;
+            cursor: pointer;
+        }
+
+        .medal-badge .medal-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 8px;
+            padding: 6px 10px;
+            background: rgba(0, 0, 0, 0.85);
             color: white;
+            font-size: 12px;
+            white-space: nowrap;
+            border-radius: 4px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+            z-index: 1000;
+        }
+
+        .medal-badge .medal-tooltip.tooltip-left {
+            left: auto;
+            right: 0;
+            transform: translateX(0);
+        }
+
+        .medal-badge .medal-tooltip.tooltip-left::after {
+            left: auto;
+            right: 16px;
+            transform: translateX(0);
+        }
+
+        .medal-badge .medal-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: rgba(0, 0, 0, 0.85);
+        }
+
+        .medal-badge:hover .medal-tooltip,
+        .medal-badge:active .medal-tooltip,
+        .medal-badge:focus .medal-tooltip {
+            opacity: 1;
+        }
+
+        @media (hover: none) {
+            .medal-badge:active .medal-tooltip {
+                opacity: 1;
+            }
         }
 
         .medal-gold {
-            background: var(--gold);
-            color: #333;
+            background: transparent;
         }
 
         .medal-silver {
-            background: var(--silver);
-            color: #333;
+            background: transparent;
         }
 
         .medal-bronze {
-            background: var(--bronze);
+            background: transparent;
         }
 
         .medal-mention {
-            background: var(--secondary-color);
+            background: transparent;
         }
 
         .medal-founder {
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            background: transparent;
             color: white;
             font-weight: bold;
         }
@@ -454,6 +523,15 @@
 
         .detail-label {
             color: var(--text-secondary);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .detail-label .ipho-logo {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
         }
 
         .detail-value {
@@ -715,6 +793,16 @@
             color: var(--text-primary);
             text-align: center;
             margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .section-title .ipho-logo {
+            width: 32px;
+            height: 32px;
+            vertical-align: middle;
         }
 
         .team-photos-slider-wrapper {
@@ -1019,8 +1107,8 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1>Выпускники IPhO</h1>
-            <p>Гордость белорусской физики: участники международных олимпиад и квалификационных сборов с 1995 года. Представители лучших школ и лицеев страны, завоевавшие 102 медали на международной арене, включая триумф на IPhO 2025 в Париже.</p>
+            <h1><img src="img/mini_logos/ipho_logo.svg" alt="IPhO" class="ipho-logo">Выпускники IPhO</h1>
+            <p>Гордость белорусской физики: участники международных олимпиад и квалификационных сборов с 1995 года. Представители лучших школ и лицеев страны, завоевавшие 137 медалей на международной арене, включая триумф на IPhO 2025 в Париже.</p>
         </div>
     </section>
 
@@ -1086,7 +1174,7 @@
     <!-- Team Photos -->
     <section class="team-photos-section">
         <div class="container">
-            <h2 class="section-title">Команды IPhO по годам</h2>
+            <h2 class="section-title"><img src="img/mini_logos/ipho_logo.svg" alt="IPhO" class="ipho-logo">Команды IPhO по годам</h2>
             <div class="team-photos-slider-wrapper">
                 <button class="slider-arrow prev" aria-label="Previous">
                     <i class="fas fa-chevron-left"></i>
@@ -4079,7 +4167,7 @@
                                     
                                     <div class="alumni-details">
                                         <div class="detail-row">
-                                            <span class="detail-label">Олимпиада:</span>
+                                            <span class="detail-label"><img src="img/mini_logos/ipho_logo.svg" alt="IPhO" class="ipho-logo">Олимпиада:</span>
                                             <span class="detail-value">${alumni.ipho}</span>
                                         </div>
                                         ${alumni.rank !== null ? `
@@ -4214,10 +4302,10 @@
         // Helper function to get medal text
         function getMedalText(award) {
             const medals = {
-                'gold': 'Золото',
-                'silver': 'Серебро',
-                'bronze': 'Бронза',
-                'mention': 'Отзыв',
+                'gold': '<img src="img/mini_logos/Gold_medal.svg" alt="Золото" class="medal-icon"><span class="medal-tooltip">Золотая медаль</span>',
+                'silver': '<img src="img/mini_logos/Silver_medal.svg" alt="Серебро" class="medal-icon"><span class="medal-tooltip">Серебряная медаль</span>',
+                'bronze': '<img src="img/mini_logos/Bronze_medal.svg" alt="Бронза" class="medal-icon"><span class="medal-tooltip">Бронзовая медаль</span>',
+                'mention': '<img src="img/mini_logos/Honorable_medal.svg" alt="Похвальный отзыв" class="medal-icon"><span class="medal-tooltip">Похвальный отзыв</span>',
                 'founder': 'Основатель'
             };
             return medals[award] || award;
@@ -4600,12 +4688,61 @@
             startAutoSlide();
         }
 
+        // Adjust tooltip position if near right border
+        function adjustTooltipPosition() {
+            const medalBadges = document.querySelectorAll('.medal-badge');
+            medalBadges.forEach(badge => {
+                const tooltip = badge.querySelector('.medal-tooltip');
+                if (!tooltip) return;
+
+                const handlePosition = () => {
+                    // Temporarily make tooltip visible to measure
+                    const wasVisible = tooltip.style.opacity === '1';
+                    tooltip.style.opacity = '1';
+                    tooltip.style.visibility = 'hidden';
+                    
+                    const badgeRect = badge.getBoundingClientRect();
+                    const tooltipRect = tooltip.getBoundingClientRect();
+                    const windowWidth = window.innerWidth;
+                    const padding = 10; // Minimum distance from edge
+
+                    // Calculate where tooltip center would be
+                    const badgeCenterX = badgeRect.left + (badgeRect.width / 2);
+                    const tooltipHalfWidth = tooltipRect.width / 2;
+                    const tooltipRight = badgeCenterX + tooltipHalfWidth;
+
+                    // Restore original state
+                    tooltip.style.opacity = '';
+                    tooltip.style.visibility = '';
+
+                    // Check if tooltip would overflow right edge
+                    if (tooltipRight > windowWidth - padding) {
+                        tooltip.classList.add('tooltip-left');
+                    } else {
+                        tooltip.classList.remove('tooltip-left');
+                    }
+                };
+
+                // Check on hover
+                badge.addEventListener('mouseenter', handlePosition);
+                badge.addEventListener('touchstart', handlePosition);
+                
+                // Also check on window resize
+                window.addEventListener('resize', handlePosition);
+            });
+        }
+
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             updateStats(alumniData);
             renderAlumni(alumniData);
             setupFilters();
             initTeamPhotosSlider();
+            
+            // Adjust tooltip positions after rendering
+            setTimeout(() => {
+                adjustTooltipPosition();
+            }, 100);
         });
     </script>
 
