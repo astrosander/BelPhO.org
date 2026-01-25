@@ -18,11 +18,11 @@
    
    <style>
       :root {
-         --primary-color: #2563eb;
-         --primary-dark: #1d4ed8;
+         --primary-color: #0ea5e9;
+         --primary-dark: #0284c7;
          --secondary-color: #64748b;
          --accent-color: #f59e0b;
-         --success-color: #10b981;
+         --success-color: #22c55e;
          --warning-color: #f59e0b;
          --error-color: #ef4444;
          --bg-color: #f8fafc;
@@ -34,7 +34,7 @@
          --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
          --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
          --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-         --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+         --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 50%, #8b5cf6 100%);
       }
 
       * {
@@ -47,13 +47,15 @@
          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
          background: var(--bg-color);
          color: var(--text-primary);
-         line-height: 1.6;
+         line-height: 1.7;
+         -webkit-font-smoothing: antialiased;
+         -moz-osx-font-smoothing: grayscale;
       }
 
       .container {
-         max-width: 1440px;
+         max-width: 2000px;
          margin: 0 auto;
-         padding: 0 20px;
+         padding: 0 10px;
       }
 
       /* Header */
@@ -138,35 +140,56 @@
 
       /* Hero Section */
       .hero {
-         background: var(--gradient-primary);
+         background: linear-gradient(135deg, rgba(14, 165, 233, 0.8) 0%, rgba(59, 130, 246, 0.75) 50%, rgba(139, 92, 246, 0.7) 100%);
          color: white;
-         padding: 80px 0;
+         padding: 40px 0;
          text-align: center;
+         position: relative;
+         overflow: hidden;
+      }
+
+      .hero::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: url('../img/flashNewYear2025.png') no-repeat center;
+         background-size: cover;
+         opacity: 0.35;
+         pointer-events: none;
+         z-index: 1;
       }
 
       .hero h1 {
-         font-size: 48px;
+         font-size: 36px;
          font-weight: 700;
-         margin-bottom: 16px;
+         margin-bottom: 8px;
+         line-height: 1.2;
+         position: relative;
+         z-index: 2;
       }
 
       .hero p {
-         font-size: 20px;
+         font-size: 16px;
          opacity: 0.9;
          max-width: 600px;
          margin: 0 auto;
+         position: relative;
+         z-index: 2;
       }
 
       /* Sections */
       .section {
-         padding: 80px 0;
+         padding: 0;
       }
 
       .section-title {
          font-size: 36px;
          font-weight: 700;
          text-align: center;
-         margin-bottom: 16px;
+         margin-bottom: 0px;
          color: var(--text-primary);
       }
 
@@ -182,68 +205,76 @@
       /* Preparation Methods */
       .preparation-info {
          background: var(--surface-color);
-         padding: 40px;
-         border-radius: 16px;
+         padding: 10px 16px;
+         border-radius: 12px;
          box-shadow: var(--shadow-md);
-         margin-bottom: 48px;
+         margin-bottom: 0px;
          border-left: 4px solid var(--primary-color);
       }
 
       .preparation-info h3 {
-         font-size: 24px;
+         font-size: 18px;
          font-weight: 600;
-         margin-bottom: 20px;
+         margin-bottom: 6px;
          color: var(--primary-color);
+         line-height: 1.4;
       }
 
       .preparation-info p {
-         margin-bottom: 16px;
-         line-height: 1.7;
+         margin-bottom: 6px;
+         line-height: 1.65;
+         font-size: 15px;
+         color: rgba(30, 41, 59, 0.95);
       }
 
       /* Resource Grid */
       .resource-grid {
          display: grid;
-         grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-         gap: 40px;
-         margin-top: 48px;
+         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+         gap: 8px;
+         margin-top: 0px;
       }
 
       .resource-card {
          background: var(--surface-color);
-         border-radius: 20px;
-         padding: 40px;
-         box-shadow: var(--shadow-md);
+         border-radius: 8px;
+         padding: 12px 14px;
+         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
          transition: all 0.3s ease;
-         border-left: 4px solid var(--accent-color);
-         min-height: 400px;
+         border-left: 3px solid rgba(14, 165, 233, 0.5);
+         border-top: 1px solid rgba(14, 165, 233, 0.15);
+         min-height: auto;
       }
 
       .resource-card:hover {
-         transform: translateY(-4px);
-         box-shadow: var(--shadow-xl);
+         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+         border-left-color: rgba(14, 165, 233, 0.7);
       }
 
       .resource-card.featured {
-         border-left-color: var(--success-color);
-         background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+         border-left-color: rgba(14, 165, 233, 0.7);
+         background: linear-gradient(135deg, rgba(239, 246, 255, 0.5) 0%, rgba(219, 234, 254, 0.3) 100%);
       }
 
       .resource-card h3 {
-         font-size: 24px;
-         font-weight: 700;
-         margin-bottom: 16px;
-         color: var(--text-primary);
+         font-size: 16px;
+         font-weight: 600;
+         margin-bottom: 6px;
+         color: rgba(14, 165, 233, 1);
          display: flex;
          align-items: center;
-         gap: 12px;
+         gap: 8px;
+         letter-spacing: -0.1px;
+         line-height: 1.35;
       }
 
       .resource-card h4 {
-         font-size: 18px;
+         font-size: 14px;
          font-weight: 600;
-         margin: 20px 0 12px 0;
-         color: var(--primary-color);
+         margin: 10px 0 6px 0;
+         color: rgba(14, 165, 233, 0.9);
+         letter-spacing: -0.05px;
+         line-height: 1.4;
       }
 
       .resource-list {
@@ -253,95 +284,189 @@
       }
 
       .resource-list li {
-         margin-bottom: 12px;
-         padding-left: 20px;
+         margin-bottom: 3px;
+         padding-left: 18px;
          position: relative;
+         font-size: 13px;
+         line-height: 1.5;
+         color: rgba(30, 41, 59, 0.92);
       }
 
       .resource-list li::before {
-         content: '📚';
+         content: '•';
          position: absolute;
-         left: 0;
+         left: 6px;
          top: 0;
+         color: rgba(14, 165, 233, 0.6);
+         font-weight: bold;
       }
 
       .resource-list a {
-         color: var(--primary-color);
+         color: rgba(14, 165, 233, 0.95);
          text-decoration: none;
          font-weight: 500;
-         transition: color 0.3s ease;
+         transition: color 0.2s ease;
+         display: inline-flex;
+         align-items: center;
+         gap: 6px;
       }
 
       .resource-list a:hover {
-         color: var(--primary-dark);
+         color: rgba(14, 165, 233, 1);
          text-decoration: underline;
+      }
+
+      .resource-list a[href$=".pdf"],
+      .resource-list a[href*=".pdf"] {
+         position: relative;
+         padding-left: 28px;
+         padding-right: 6px;
+         padding-top: 2px;
+         padding-bottom: 2px;
+         font-weight: 600;
+         color: rgba(14, 165, 233, 1) !important;
+         background: rgba(14, 165, 233, 0.1);
+         border-radius: 4px;
+         border: 1px solid rgba(14, 165, 233, 0.25);
+         transition: all 0.2s ease;
+      }
+
+      .resource-list a[href$=".pdf"]:hover,
+      .resource-list a[href*=".pdf"]:hover {
+         background: rgba(14, 165, 233, 0.18);
+         border-color: rgba(14, 165, 233, 0.45);
+         color: rgba(14, 165, 233, 1) !important;
+         text-decoration: none;
+      }
+
+      .resource-list a[href$=".pdf"]::before,
+      .resource-list a[href*=".pdf"]::before {
+         content: '';
+         position: absolute;
+         left: 0;
+         top: 50%;
+         transform: translateY(-50%);
+         width: 20px;
+         height: 20px;
+         background: url('../img/PDF_not_active.svg') no-repeat center;
+         background-size: contain;
+         opacity: 1;
+         filter: none;
+         transition: all 0.2s ease;
+      }
+
+      .resource-list a[href$=".pdf"]:hover::before,
+      .resource-list a[href*=".pdf"]:hover::before,
+      .resource-list a[href$=".pdf"]:active::before,
+      .resource-list a[href*=".pdf"]:active::before {
+         background: url('../img/PDF_active.svg') no-repeat center;
+         background-size: contain;
+         opacity: 1;
+         filter: none;
+         transform: translateY(-50%);
+      }
+
+      .pdf-link-recommendations {
+         background: rgba(14, 165, 233, 0.12) !important;
+         border: 2px solid rgba(14, 165, 233, 0.35) !important;
+         border-radius: 6px !important;
+         padding: 8px 12px !important;
+         padding-left: 32px !important;
+         font-weight: 600 !important;
+         transition: all 0.2s ease !important;
+      }
+
+      .pdf-link-recommendations:hover {
+         background: rgba(14, 165, 233, 0.22) !important;
+         border-color: rgba(14, 165, 233, 0.55) !important;
+      }
+
+      .pdf-link-recommendations .pdf-icon-recommendations {
+         background: url('../img/PDF_not_active.svg') no-repeat center !important;
+         background-size: contain !important;
+         width: 22px !important;
+         height: 22px !important;
+         transition: all 0.2s ease !important;
+      }
+
+      .pdf-link-recommendations:hover .pdf-icon-recommendations,
+      .pdf-link-recommendations:active .pdf-icon-recommendations,
+      .pdf-link-recommendations:focus .pdf-icon-recommendations {
+         background: url('../img/PDF_active.svg') no-repeat center !important;
+         background-size: contain !important;
+         transform: translateY(-50%) !important;
       }
 
       /* Special Horizontal Section for Alina */
       .alina-full-section {
          grid-column: 1 / -1;
-         background: linear-gradient(135deg, rgba(254, 252, 232, 0.8) 0%, rgba(254, 249, 195, 0.6) 50%, rgba(252, 211, 77, 0.4) 100%);
-         border: 2px solid rgba(180, 83, 9, 0.6);
-         border-radius: 24px;
-         padding: 48px;
-         margin: 24px 0;
+         background: linear-gradient(135deg, rgba(240, 253, 250, 0.95) 0%, rgba(224, 242, 254, 0.9) 50%, rgba(186, 230, 253, 0.85) 100%);
+         border: 2px solid rgba(14, 165, 233, 0.35);
+         border-radius: 12px;
+         padding: 20px 24px;
+         margin: 2px 0;
          position: relative;
          overflow: hidden;
-         box-shadow: 0 10px 30px rgba(180, 83, 9, 0.12);
+         box-shadow: 0 4px 20px rgba(14, 165, 233, 0.12);
       }
 
       .alina-full-section::before {
          content: '';
          position: absolute;
-         top: 20px;
-         right: 30px;
-         width: 60px;
-         height: 60px;
-         background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23b45309" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>') no-repeat center;
-         background-size: contain;
-         opacity: 0.25;
+         top: 0;
+         right: 0;
+         width: 120px;
+         height: 120px;
+         background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+         pointer-events: none;
       }
 
       .alina-subjects-grid {
          display: grid;
          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-         gap: 32px;
-         margin-top: 32px;
+         gap: 16px;
+         margin-top: 12px;
       }
 
       .alina-subject-card {
-         background: rgba(255, 255, 255, 0.85);
-         border-radius: 16px;
-         padding: 24px;
-         border-left: 4px solid rgba(146, 64, 14, 0.8);
-         box-shadow: 0 4px 12px rgba(146, 64, 14, 0.12);
+         background: rgba(255, 255, 255, 0.95);
+         border-radius: 10px;
+         padding: 14px 18px;
+         border-left: 3px solid rgba(14, 165, 233, 0.7);
+         box-shadow: 0 2px 8px rgba(14, 165, 233, 0.1);
+         border-top: 1px solid rgba(14, 165, 233, 0.15);
       }
 
       .alina-subject-card h4 {
-         color: rgba(120, 53, 15, 0.9);
-         font-size: 20px;
-         margin-bottom: 16px;
+         color: rgba(14, 165, 233, 0.95);
+         font-size: 16px;
+         margin-bottom: 8px;
          display: flex;
          align-items: center;
-         gap: 8px;
+         justify-content: space-between;
+         gap: 12px;
+         font-weight: 600;
       }
 
       .study-time {
-         background: rgba(217, 119, 6, 0.15);
-         color: rgba(146, 64, 14, 0.9);
-         padding: 6px 12px;
-         border-radius: 8px;
-         font-size: 12px;
+         background: rgba(14, 165, 233, 0.12);
+         color: rgba(14, 165, 233, 0.95);
+         padding: 3px 8px;
+         border-radius: 6px;
+         font-size: 11px;
          font-weight: 600;
-         margin-bottom: 12px;
+         margin-left: auto;
          display: inline-block;
-         border: 1px solid rgba(217, 119, 6, 0.3);
+         border: 1px solid rgba(14, 165, 233, 0.25);
+         letter-spacing: 0.3px;
+         white-space: nowrap;
       }
 
       /* Savchenko Featured Section */
       .savchenko-featured {
-         background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-         border: 2px solid #93c5fd;
+         background: linear-gradient(135deg, rgba(240, 253, 250, 0.6) 0%, rgba(224, 242, 254, 0.4) 100%);
+         border: 1px solid rgba(14, 165, 233, 0.25);
+         border-left: 3px solid rgba(14, 165, 233, 0.7);
          position: relative;
          overflow: hidden;
       }
@@ -351,34 +476,40 @@
          position: absolute;
          top: 0;
          right: 0;
-         width: 100px;
-         height: 100px;
+         width: 80px;
+         height: 80px;
          background: url('savchenkosolutions_logo.png') no-repeat center;
-         background-size: 60px;
-         opacity: 0.1;
+         background-size: 50px;
+         opacity: 0.08;
       }
 
       .savchenko-featured h3 {
-         color: #1e40af;
-         font-weight: 800;
+         color: rgba(14, 165, 233, 0.95);
+         font-weight: 600;
+         letter-spacing: -0.2px;
       }
 
       .savchenko-featured p {
-         color: #1e3a8a;
-         font-weight: 500;
-         margin-bottom: 16px;
+         color: rgba(30, 41, 59, 0.85);
+         font-weight: 400;
+         margin-bottom: 10px;
+         font-size: 13px;
+         line-height: 1.6;
       }
 
       .savchenko-featured .platform-benefits {
-         background: rgba(255, 255, 255, 0.7);
-         padding: 20px;
-         border-radius: 12px;
-         margin: 20px 0;
+         background: rgba(255, 255, 255, 0.8);
+         padding: 10px 12px;
+         border-radius: 6px;
+         margin: 8px 0;
+         border: 1px solid rgba(14, 165, 233, 0.15);
       }
 
       .savchenko-featured .platform-benefits h4 {
-         color: #1e40af;
-         margin-bottom: 12px;
+         color: rgba(14, 165, 233, 0.9);
+         margin-bottom: 6px;
+         font-size: 13px;
+         font-weight: 600;
       }
 
       .savchenko-featured .platform-benefits ul {
@@ -387,27 +518,27 @@
       }
 
       .savchenko-featured .platform-benefits li {
-         padding: 6px 0;
-         padding-left: 24px;
+         padding: 4px 0;
+         padding-left: 18px;
          position: relative;
-         color: #1e3a8a;
-         font-weight: 500;
+         color: rgba(30, 41, 59, 0.9);
+         font-weight: 400;
+         font-size: 13px;
+         line-height: 1.5;
       }
 
       .savchenko-featured .platform-benefits li::before {
          content: '✓';
          position: absolute;
          left: 0;
-         color: #10b981;
+         color: rgba(14, 165, 233, 0.8);
          font-weight: bold;
+         font-size: 13px;
       }
 
       /* Book Covers */
       .book-covers {
-         display: grid;
-         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-         gap: 16px;
-         margin: 24px 0;
+         display: none;
       }
 
       .book-cover {
@@ -467,17 +598,17 @@
          background: var(--surface-color);
          padding: 60px 0 40px;
          border-top: 1px solid var(--border-color);
-         margin-top: 80px;
+         /* margin-top: 80px; */
       }
 
       /* Responsive */
       @media (max-width: 768px) {
          .hero h1 {
-            font-size: 36px;
+            font-size: 28px;
          }
          
          .hero p {
-            font-size: 18px;
+            font-size: 14px;
          }
          
          .resource-grid {
@@ -486,12 +617,12 @@
          }
 
          .resource-card {
-            padding: 24px;
+            padding: 12px 14px;
             min-height: auto;
          }
 
          .alina-full-section {
-            padding: 32px 24px;
+            padding: 12px 16px;
          }
 
          .alina-subjects-grid {
@@ -505,6 +636,16 @@
          
          .book-covers {
             grid-template-columns: repeat(3, 1fr);
+         }
+      }
+
+      @media (max-width: 480px) {
+         .hero {
+            padding: 32px 0;
+         }
+         
+         .hero h1 {
+            font-size: 24px;
          }
       }
    </style>
@@ -548,16 +689,22 @@
    <!-- Preparation Methods -->
    <section class="section">
       <div class="container">
-         <div class="preparation-info">
-            <h3><i class="fas fa-graduation-cap"></i> Методы подготовки школьников</h3>
-            <p>В зависимости от школы подготовки и преподавателей, подготовка школьников разнится. Так, например, сборная Лицея БГУ готовится по сборнику задач Савченко О.Я. и переходит к задачам прошлых лет, готовясь централизованно, при этом со сборами по выходным и усиленными за несколько недель до олимпиады.</p>
-            
-            <p>Однако, как показывает практика, большую часть времени необходимо уделять практике решения задач, нежели чтению теории. Обычно предоставленные книжки на английском языке имеют лучшее качество, особенно для подготовки к IPhO.</p>
-            
-            <p>При подготовке к экспериментальному туру на всех уровнях обычно <strong>А.И. Слободянюк "Физическая олимпиада: экспериментальный тур"</strong> является основной и главной.</p>
-         </div>
+            <div class="preparation-info">
+               <h3 style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                  <span><i class="fas fa-graduation-cap"></i> Методы подготовки школьников</span>
+                  <a href="handouts/recommendations.pdf" target="_blank" class="pdf-link-recommendations" style="color: rgba(14, 165, 233, 1) !important; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; position: relative; font-size: 14px;">
+                     <span class="pdf-icon-recommendations" style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); display: inline-block;"></span>
+                     Рекомендации по подготовке (PDF)
+                  </a>
+               </h3>
+               <p>Подготовка школьников к физическим олимпиадам зависит от школы и преподавателей. В частности, сборная Лицея БГУ ведёт централизованную подготовку по сборнику задач О. Я. Савченко с последующим решением задач олимпиад прошлых лет, включая регулярные сборы по выходным и усиленные занятия перед олимпиадой.</p>
+               
+               <p>Практика показывает, что основное внимание следует уделять решению задач, а не изучению теории. При этом англоязычные учебные пособия, как правило, обладают более высоким качеством и особенно полезны при подготовке к IPhO.</p>
+               
+               <p>Для подготовки к экспериментальному туру на всех уровнях основным пособием является книга А. И. Слободянюка «Физическая олимпиада: экспериментальный тур».</p>
+               
 
-         <h2 class="section-title">Учебные пособия</h2>
+           </div>
       </div>
    </section>
 
@@ -568,43 +715,43 @@
             
             <!-- Alina Polonskaya's Complete Study Guides - FULL WIDTH SECTION -->
             <div class="alina-full-section">
-               <h3 style="color: rgba(120, 53, 15, 0.95); font-size: 32px; font-weight: 800; margin-bottom: 16px;">
-                  <i class="fas fa-star" style="color: rgba(146, 64, 14, 0.8);"></i> Полные методики подготовки Алины Полонской
-               </h3>
-               <p style="color: rgba(92, 64, 14, 0.85); font-size: 18px; font-weight: 600; margin-bottom: 24px; line-height: 1.6;">
-                  Комплексные программы подготовки по всем разделам физики от золотой медалистки IPhO 2024 (Беларусь). 
-                  Структурированные планы с точным указанием времени освоения и практическими рекомендациями.
-               </p>
+               <div style="margin-bottom: 12px; position: relative; z-index: 1;">
+                  <h3 style="color: rgba(14, 165, 233, 1); font-size: 20px; font-weight: 700; margin: 0; letter-spacing: -0.3px; display: inline;">
+                     Методики подготовки по физике
+                  </h3>
+                  <span style="color: rgba(30, 41, 59, 0.9); font-size: 14px; font-weight: 500; margin-left: 12px; line-height: 1.6;">
+                     Автор: <strong style="color: rgba(14, 165, 233, 0.95);">Алина Полонская</strong> • Золотая медалистка IPhO 2024 (Беларусь)
+                  </span>
+               </div>
                
                <div class="alina-subjects-grid">
                   <!-- Mechanics -->
                   <div class="alina-subject-card">
-                     <h4><i class="fas fa-cogs"></i> Механика</h4>
-                     <div class="study-time">Общее время: 8 недель</div>
+                     <h4><i class="fas fa-cogs"></i> Механика <span class="study-time">8 недель</span></h4>
                      
-                     <h5 style="color: rgba(146, 64, 14, 0.85); margin: 16px 0 8px 0; font-weight: 600;">Введение (3 недели):</h5>
-                     <ul style="font-size: 13px; margin-bottom: 12px; padding-left: 20px;">
+                     <h5 style="color: rgba(14, 165, 233, 0.95); margin: 10px 0 6px 0; font-weight: 600; font-size: 14px; line-height: 1.4;">Введение (3 недели):</h5>
+                     <ul style="font-size: 13px; margin-bottom: 8px; padding-left: 16px; line-height: 1.6; color: rgba(30, 41, 59, 0.9);">
                         <li>Мякишев Г.Я. — Физика. Механика. 10 класс</li>
                         <li>Бутиков Е.И., Кондратьев А.С. — Физика. Механика</li>
                         <li>Меледин Г.Ф. — Физика в задачах (182 задачи по механике)</li>
                      </ul>
                      
-                     <h5 style="color: rgba(146, 64, 14, 0.85); margin: 16px 0 8px 0; font-weight: 600;">Основная теория (3 недели):</h5>
-                     <ul style="font-size: 13px; margin-bottom: 12px; padding-left: 20px;">
+                     <h5 style="color: rgba(14, 165, 233, 0.95); margin: 10px 0 6px 0; font-weight: 600; font-size: 14px; line-height: 1.4;">Основная теория (3 недели):</h5>
+                     <ul style="font-size: 13px; margin-bottom: 8px; padding-left: 16px; line-height: 1.6; color: rgba(30, 41, 59, 0.9);">
                         <li>Иродов И.Е. — Основные законы механики</li>
                         <li>Сивухин Д.В. — Общий курс физики. Механика. т.I</li>
                         <li>Паршаков — Механика, Колебания, Акустика</li>
                         <li>Бутиков Е.И., Быков А.А., Кондратьев А.С. — Физика в примерах и задачах (Механика)</li>
                      </ul>
                      
-                     <h5 style="color: rgba(146, 64, 14, 0.85); margin: 16px 0 8px 0; font-weight: 600;">Колебания (1 неделя):</h5>
-                     <ul style="font-size: 13px; margin-bottom: 12px; padding-left: 20px;">
+                     <h5 style="color: rgba(14, 165, 233, 0.95); margin: 10px 0 6px 0; font-weight: 600; font-size: 14px; line-height: 1.4;">Колебания (1 неделя):</h5>
+                     <ul style="font-size: 13px; margin-bottom: 8px; padding-left: 16px; line-height: 1.6; color: rgba(30, 41, 59, 0.9);">
                         <li>Перунова М.Н. — Колебания и волны</li>
                         <li>Mathus — Уравнение колебаний. 1, 2</li>
                      </ul>
                      
-                     <h5 style="color: rgba(146, 64, 14, 0.85); margin: 16px 0 8px 0; font-weight: 600;">Практика (4 недели):</h5>
-                     <ul style="font-size: 13px; padding-left: 20px;">
+                     <h5 style="color: rgba(14, 165, 233, 0.95); margin: 10px 0 6px 0; font-weight: 600; font-size: 14px; line-height: 1.4;">Практика (4 недели):</h5>
+                     <ul style="font-size: 12px; padding-left: 16px;">
                         <li>Буздин А.И., Ильин В.А. — Задачи Московских Физических Олимпиад (116 задач)</li>
                         <li>Буздин А.И., Зильберман А.Р. — Раз задача, Два задача... (86 задач)</li>
                         <li>Задачи московских городских олимпиад по физике 1986-2005 (254 задачи)</li>
@@ -616,19 +763,18 @@
                   
                   <!-- Electrodynamics -->
                   <div class="alina-subject-card">
-                     <h4><i class="fas fa-bolt"></i> Электродинамика</h4>
-                     <div class="study-time">Общее время: 8 недель</div>
+                     <h4><i class="fas fa-bolt"></i> Электродинамика <span class="study-time">8 недель</span></h4>
                      
-                                           <h5 style="color: rgba(146, 64, 14, 0.85); margin: 16px 0 8px 0; font-weight: 600;">Введение (2 недели):</h5>
-                      <ul style="font-size: 13px; margin-bottom: 12px; padding-left: 20px;">
+                                           <h5 style="color: rgba(14, 165, 233, 0.95); margin: 10px 0 6px 0; font-weight: 600; font-size: 14px; line-height: 1.4;">Введение (2 недели):</h5>
+                      <ul style="font-size: 13px; margin-bottom: 8px; padding-left: 16px; line-height: 1.6; color: rgba(30, 41, 59, 0.9);">
                          <li>Мякишев Г.Я., Синяков А.З., Слободсков Б.А. — Электродинамика. 10-11 классы</li>
                          <li>Бутиков Е.И., Кондратьев А.С. — Электродинамика. Оптика</li>
                          <li>Меледин Г.Ф. — Физика в задачах (128 задач)</li>
                          <li><em>Практика:</em> Рисование магнитных линий соленоидов, намагниченных предметов</li>
                       </ul>
                       
-                      <h5 style="color: rgba(146, 64, 14, 0.85); margin: 16px 0 8px 0; font-weight: 600;">Основная теория (4 недели):</h5>
-                      <ul style="font-size: 13px; margin-bottom: 12px; padding-left: 20px;">
+                      <h5 style="color: rgba(14, 165, 233, 0.95); margin: 10px 0 6px 0; font-weight: 600; font-size: 14px; line-height: 1.4;">Основная теория (4 недели):</h5>
+                      <ul style="font-size: 13px; margin-bottom: 8px; padding-left: 16px; line-height: 1.6; color: rgba(30, 41, 59, 0.9);">
                          <li>Сивухин Д.В. — Электричество</li>
                          <li>Иродов И.Е. — Основные законы электромагнетизма</li>
                          <li>Паршаков А.Н. — Электромагнетизм в ключевых задачах</li>
@@ -637,8 +783,8 @@
                          <li><em>Важно:</em> Геометрический смысл grad, div, rot, уравнений Максвелла</li>
                       </ul>
                       
-                      <h5 style="color: rgba(146, 64, 14, 0.85); margin: 16px 0 8px 0; font-weight: 600;">Практика (2 недели):</h5>
-                     <ul style="font-size: 13px; padding-left: 20px;">
+                      <h5 style="color: rgba(14, 165, 233, 0.95); margin: 10px 0 6px 0; font-weight: 600; font-size: 14px; line-height: 1.4;">Практика (2 недели):</h5>
+                     <ul style="font-size: 12px; padding-left: 16px;">
                         <li>Буздин А.И., Ильин В.А. — Задачи Московских Физических Олимпиад (62 задачи)</li>
                         <li>Буздин А.И., Зильберман А.Р. — Раз задача, Два задача... (80 задач)</li>
                         <li>Задачи московских городских олимпиад по физике 1986-2005 (96 задач)</li>
@@ -650,26 +796,25 @@
                   
                   <!-- Thermodynamics -->
                   <div class="alina-subject-card">
-                     <h4><i class="fas fa-thermometer-half"></i> Термодинамика</h4>
-                     <div class="study-time">Общее время: 6 недель</div>
+                     <h4><i class="fas fa-thermometer-half"></i> Термодинамика <span class="study-time">6 недель</span></h4>
                      
-                                           <h5 style="color: rgba(146, 64, 14, 0.85); margin: 16px 0 8px 0; font-weight: 600;">Введение (2 недели):</h5>
-                      <ul style="font-size: 13px; margin-bottom: 12px; padding-left: 20px;">
+                                           <h5 style="color: rgba(14, 165, 233, 0.95); margin: 10px 0 6px 0; font-weight: 600; font-size: 14px; line-height: 1.4;">Введение (2 недели):</h5>
+                      <ul style="font-size: 13px; margin-bottom: 8px; padding-left: 16px; line-height: 1.6; color: rgba(30, 41, 59, 0.9);">
                          <li>Мякишев Г.Я. — Молекулярная физика. Термодинамика</li>
                          <li>Бутиков Е.И., Кондратьев А.С. — Строение и свойства вещества</li>
                          <li>Меледин Г.Ф. — Физика в задачах (65 задач по тепловым явлениям)</li>
                       </ul>
                       
-                      <h5 style="color: rgba(146, 64, 14, 0.85); margin: 16px 0 8px 0; font-weight: 600;">Основная теория (3 недели):</h5>
-                      <ul style="font-size: 13px; margin-bottom: 12px; padding-left: 20px;">
+                      <h5 style="color: rgba(14, 165, 233, 0.95); margin: 10px 0 6px 0; font-weight: 600; font-size: 14px; line-height: 1.4;">Основная теория (3 недели):</h5>
+                      <ul style="font-size: 13px; margin-bottom: 8px; padding-left: 16px; line-height: 1.6; color: rgba(30, 41, 59, 0.9);">
                          <li>Сивухин Д.В. — Общий курс физики. Термодинамика и молекулярная физика</li>
                          <li>Бутиков Е.И., Быков А.А., Кондратьев А.С. — Физика в примерах и задачах (Термодинамика)</li>
                          <li>Паршаков — Тепловые явления и молекулярная физика</li>
                          <li>Иродов И.Е. — Физика макросистем. Основные законы</li>
                       </ul>
                       
-                      <h5 style="color: rgba(146, 64, 14, 0.85); margin: 16px 0 8px 0; font-weight: 600;">Практика (2 недели):</h5>
-                     <ul style="font-size: 13px; padding-left: 20px;">
+                      <h5 style="color: rgba(14, 165, 233, 0.95); margin: 10px 0 6px 0; font-weight: 600; font-size: 14px; line-height: 1.4;">Практика (2 недели):</h5>
+                     <ul style="font-size: 12px; padding-left: 16px;">
                         <li>Буздин А.И., Ильин В.А. — Задачи Московских Физических Олимпиад (42 задачи)</li>
                         <li>Буздин А.И., Зильберман А.Р. — Раз задача, Два задача... (55 задач)</li>
                         <li>Задачи московских городских олимпиад по физике 1986-2005 (79 задач)</li>
@@ -681,10 +826,9 @@
                   <!-- Optics & Quantum -->
                   <div class="alina-subject-card">
                      <h4><i class="fas fa-eye"></i> Оптика и квантовая механика</h4>
-                     <div class="study-time">Фокус: визуализация и схемы</div>
                      
-                                           <h5 style="color: rgba(146, 64, 14, 0.85); margin: 16px 0 8px 0; font-weight: 600;">Теоретическая база:</h5>
-                      <ul style="font-size: 13px; margin-bottom: 12px; padding-left: 20px;">
+                                           <h5 style="color: rgba(14, 165, 233, 0.95); margin: 10px 0 6px 0; font-weight: 600; font-size: 14px; line-height: 1.4;">Теоретическая база:</h5>
+                      <ul style="font-size: 13px; margin-bottom: 8px; padding-left: 16px; line-height: 1.6; color: rgba(30, 41, 59, 0.9);">
                          <li>Мякишев Г.Я., Синяков А.З. — Оптика. Квантовая физика. 11 класс</li>
                          <li>Савельев И.В. — Курс общей физики, том III</li>
                          <li>Бутиков Е.И., Кондратьев А.С. — Электродинамика. Оптика</li>
@@ -696,8 +840,8 @@
                          <li><em>Особое внимание:</em> Оптические приборы, векторные способы расчета интерференции</li>
                       </ul>
                       
-                      <h5 style="color: rgba(146, 64, 14, 0.85); margin: 16px 0 8px 0; font-weight: 600;">Практика:</h5>
-                      <ul style="font-size: 13px; padding-left: 20px;">
+                      <h5 style="color: rgba(14, 165, 233, 0.95); margin: 10px 0 6px 0; font-weight: 600; font-size: 14px; line-height: 1.4;">Практика:</h5>
+                      <ul style="font-size: 12px; padding-left: 16px;">
                          <li>Меледин Г.Ф. — Физика в задачах (52 задачи)</li>
                          <li>Буздин А.И., Ильин В.А. — Задачи Московских Физических Олимпиад (20 задач)</li>
                          <li>Буздин А.И., Зильберман А.Р. — Раз задача, Два задача... (26 задач)</li>
@@ -708,17 +852,11 @@
                          <li>Гориковский В. — Польские Физические Олимпиады (9 задач)</li>
                          <li><em>Дополнительно:</em> Kevin Zhou handouts, статьи в "Квантах", math.us и pho.rs</li>
                       </ul>
-                      
-                      <h5 style="color: rgba(146, 64, 14, 0.85); margin: 16px 0 8px 0; font-weight: 600;">Дополнительные темы:</h5>
-                     <ul style="font-size: 13px; padding-left: 20px;">
-                        <li>Инвариант Аббе</li>
-                        <li>Применение уравнения Шрёдингера</li>
-                        <li>Микроскопы, телескопы, разрешающая способность</li>
-                        <li>Поляризаторы, четвертьволновые/полуволновые пластинки</li>
-                        <li>Индикатриса рассеяния</li>
-                     </ul>
                   </div>
                </div>
+                <span style="color: rgba(30, 41, 59, 0.9); margin: 0; font-size: 13px; line-height: 1.6; display: inline;">
+                   <strong style="color: rgba(14, 165, 233, 0.95);">Дополнительные темы:</strong> Инвариант Аббе, Применение уравнения Шрёдингера, Микроскопы, телескопы, разрешающая способность, Поляризаторы, четвертьволновые/полуволновые пластинки, Индикатриса рассеяния
+                </span>
             </div>
 
             <!-- Слободянюк Books -->
@@ -728,7 +866,7 @@
                
                <div class="book-covers">
                   <div class="book-cover">
-                     <img src="mechanics.jpeg" style="background: linear-gradient(45deg, #3b82f6, #1e40af);">
+                     <img src="mechanics.jpeg" style="background: linear-gradient(45deg, #0ea5e9, #0284c7);">
                      <p>Механика</p>
                   </div>
                   <div class="book-cover">
@@ -747,8 +885,11 @@
 
                <ul class="resource-list">
                   <li><a href="Mehanika.pdf" target="_blank">Механика</a></li>
+                  <li><a href="handouts/mechanics.pdf" target="_blank">Механика (дополнительный материал)</a></li>
                   <li><a href="Molekuliarnaja_fizika.pdf" target="_blank">Молекулярная физика и термодинамика</a></li>
+                  <li><a href="handouts/molecular.pdf" target="_blank">Молекулярная физика (дополнительный материал)</a></li>
                   <li><a href="Elektostatika.pdf" target="_blank">Электростатика. Постоянный электрический ток</a></li>
+                  <li><a href="handouts/electricity.pdf" target="_blank">Электричество (дополнительный материал)</a></li>
                   <li><a href="Magnitostatika.pdf" target="_blank">Магнитостатика. Электродинамика. Теория колебаний</a></li>
                   <li><a href="Experements.pdf" target="_blank">Физическая олимпиада: экспериментальный тур</a></li>
                </ul>
@@ -846,6 +987,8 @@
                <h4>Олимпиадные сборники:</h4>
                <ul class="resource-list">
                   <li>Очень длинные физические задачи (<a href="LongProblemsPart1.pdf" target="_blank">Часть 1</a>, <a href="LongProblemsPart2.pdf" target="_blank">Часть 2</a>) — Слободянюк А.И.</li>
+                  <li><a href="handouts/zadachi_raznyh_let_problems.pdf" target="_blank">Задачи разных лет (условия)</a></li>
+                  <li><a href="handouts/zadachi_raznyh_let_solutions.pdf" target="_blank">Задачи разных лет (решения)</a></li>
                   <li>Буздин А.И., Ильин В.А. — Задачи Московских Физических Олимпиад</li>
                   <li>Буздин А.И., Зильберман А.Р. — Раз задача, Два задача...</li>
                   <li>Задачи московских городских олимпиад по физике 1986-2005</li>
@@ -872,7 +1015,7 @@
                </div>
                
                <ul class="resource-list">
-                  <li><a href="https://savchenkosolutions.com/ru/" target="_blank" style="font-weight: 700; color: #1e40af;">Savchenko Solutions — решения задач из сборника Савченко О.Я.</a></li>
+                  <li><a href="https://savchenkosolutions.com/ru/" target="_blank" style="font-weight: 700; color: #0ea5e9;">Savchenko Solutions — решения задач из сборника Савченко О.Я.</a></li>
                   <li><a href="https://mathus.ru/phys/book.pdf" target="_blank">Полный курс физики от mathus</a></li>
                </ul>
             </div>
