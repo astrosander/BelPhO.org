@@ -31,7 +31,7 @@ body {
     color: var(--text-primary);
     background-color: #f8fafc;
     margin: 0;
-    padding-top: 76px; /* Account for fixed navbar */
+    padding-top: 0;
 }
 
 /* Navigation */

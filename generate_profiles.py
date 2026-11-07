@@ -251,7 +251,7 @@ class ProfileGenerator:
                     <!-- Competition Results -->
                     <div class="content-card">
                         <h2 class="section-title">
-                            <i class="fas fa-trophy text-warning"></i>
+                            
                             {"Competition Results" if language == 'en' else "Результаты соревнований"}
                         </h2>
                         
@@ -277,7 +277,7 @@ class ProfileGenerator:
                     {f'''
                     <div class="content-card">
                         <h2 class="section-title">
-                            <i class="fas fa-medal text-success"></i>
+                            
                             {achievement_title}
                         </h2>
                         
@@ -291,7 +291,7 @@ class ProfileGenerator:
                     {f'''
                     <div class="content-card">
                         <h2 class="section-title">
-                            <i class="fas fa-microscope text-info"></i>
+                            
                             {"Research & Publications" if language == 'en' else "Исследования и публикации"}
                         </h2>
                         
@@ -345,7 +345,7 @@ class ProfileGenerator:
                     {f'''
                     <div class="sidebar-card featured-cta">
                         <h3 class="sidebar-title">
-                            <i class="fas fa-graduation-cap"></i>
+                            
                             {"MIT Transfer Candidate" if language == 'en' else "Кандидат на перевод в MIT"}
                         </h3>
                         

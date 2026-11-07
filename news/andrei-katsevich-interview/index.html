@@ -414,23 +414,20 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="../../index.html" class="logo">
-                    <img src="../../img/logo.png" alt="BelPhO" class="logo-img">
-                    BelPhO
-                </a>
-                <nav class="breadcrumb">
-                    <a href="../../index.html">Главная</a>
-                    <span>/</span>
-                    <a href="../index.html">Новости</a>
-                    <span>/</span>
-                    <span>Интервью с Андреем Коцевичем</span>
-                </nav>
-            </div>
-        </div>
-    </header>
+    <header class="site-header">
+  <div class="container header-content">
+    <a href="/" class="logo"><img src="/img/logo.png" alt="BelPhO" class="logo-img" width="38" height="38"><span>BelPhO</span></a>
+    <nav class="site-nav" aria-label="Основная навигация">
+      <ul class="nav-links">
+        <li><a href="/">Главная</a></li>
+        <li><a href="/problems/">Задачи</a></li>
+        <li><a href="/books/">Книги</a></li>
+        <li><a href="/alumni.html">Выпускники</a></li>
+        <li><a href="/news/" class="active">Новости</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
     <!-- Hero Header -->
     <div class="hero-header">
@@ -464,7 +461,7 @@
     <section class="toc-section">
         <div class="container">
             <div class="toc">
-                <h4><i class="fas fa-list"></i> Содержание интервью</h4>
+                <h4>Содержание интервью</h4>
                 <div class="toc-grid">
                     <div>
                         <ul>
@@ -911,36 +908,19 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h4>Контактная информация</h4>
-                    <p><a href="mailto:aliaksandr@melnichenka.com">aliaksandr@melnichenka.com</a></p>
-                    <p>Минск • работает по всей Беларуси</p>
-                </div>
-                <div>
-                    <h4>Навигация</h4>
-                    <div class="footer-nav">
-                        <a href="../../">Главная</a>
-                        <a href="../../problems/">Задачи олимпиад</a>
-                        <a href="../../alumni.html">Выпускники</a>
-                        <a href="../">Новости</a>
-                    </div>
-                </div>
-                <div>
-                    <h4>О проекте</h4>
-                    <p>«BelPhO» — независимая некоммерческая платформа, объединяющая 
-                    школьников, преподавателей и выпускников для подготовки к физическим 
-                    олимпиадам. Её материалами ежедневно пользуются классы всех регионов 
-                    страны. Архив задач пополняется волонтёрской редакцией авторов‑энтузиастов.</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 1990-2025 Белорусские физические олимпиады. Все права защищены.</p>
-            </div>
-        </div>
-    </footer>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 1990-2026 BelPhO, Белорусские физические олимпиады</span>
+    <span class="footer-links">
+      <a href="/problems/">Задачи</a>
+      <a href="/books/">Книги</a>
+      <a href="/alumni.html">Выпускники</a>
+      <a href="/news/">Новости</a>
+      <a href="https://t.me/belpho_by" rel="noopener">Telegram</a>
+    </span>
+  </div>
+  <div class="container footer-note">Коммерческое использование материалов только с письменного разрешения авторов, <a href="mailto:aliaksandr@melnichenka.com">aliaksandr@melnichenka.com</a>. Сайт создан командой выпускников.</div>
+</footer>
     <script>
         // Remove all fade-in classes to eliminate distracting animations
         document.addEventListener('DOMContentLoaded', function() {

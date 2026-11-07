@@ -49,32 +49,20 @@
     
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="../../index.html">
-                <img src="../../img/logo.png" alt="BelPhO" height="32" class="me-2">
-                <span class="fw-bold">BelPhO</span>
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../index.html">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../alumni.html">Выпускники</a>
-                    </li>
-                </ul>
-                
-                <div class="navbar-nav i18n-slot"></div>
-            </div>
-        </div>
+<header class="site-header">
+  <div class="container header-content">
+    <a href="/" class="logo"><img src="/img/logo.png" alt="BelPhO" class="logo-img" width="38" height="38"><span>BelPhO</span></a>
+    <nav class="site-nav" aria-label="Основная навигация">
+      <ul class="nav-links">
+        <li><a href="/">Главная</a></li>
+        <li><a href="/problems/">Задачи</a></li>
+        <li><a href="/books/">Книги</a></li>
+        <li><a href="/alumni.html" class="active">Выпускники</a></li>
+        <li><a href="/news/">Новости</a></li>
+      </ul>
     </nav>
+  </div>
+</header>
 
     <!-- Hero Section -->
     <section class="hero-section ">
@@ -125,7 +113,7 @@
                     <!-- Competition Results -->
                     <div class="content-card">
                         <h2 class="section-title">
-                            <i class="fas fa-trophy text-warning"></i>
+                            
                             Результаты соревнований
                         </h2>
                         
@@ -193,20 +181,19 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>&copy; 2025 BelPhO Alumni Network. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-end">
-                    <a href="mailto:aliaksandr@melnichenka.com" class="footer-link">
-                        Контакт
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 1990-2026 BelPhO, Белорусские физические олимпиады</span>
+    <span class="footer-links">
+      <a href="/problems/">Задачи</a>
+      <a href="/books/">Книги</a>
+      <a href="/alumni.html">Выпускники</a>
+      <a href="/news/">Новости</a>
+      <a href="https://t.me/belpho_by" rel="noopener">Telegram</a>
+    </span>
+  </div>
+  <div class="container footer-note">Коммерческое использование материалов только с письменного разрешения авторов, <a href="mailto:aliaksandr@melnichenka.com">aliaksandr@melnichenka.com</a>. Сайт создан командой выпускников.</div>
+</footer>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

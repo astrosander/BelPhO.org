@@ -442,28 +442,20 @@
 
 <body>
    <!-- Header -->
-   <header class="header">
-      <div class="container">
-         <div class="header-content">
-            <a href="../" class="logo">
-               <img src="../img/logo.png" alt="BelPhO Logo" class="logo-img">
-               <span>BelPhO</span>
-            </a>
-            <nav>
-               <ul class="nav-links">
-                  <li><a href="../">Главная</a></li>
-                  <li><a href="../problems/">Задачи</a></li>
-                  <li><a href="../books/">Книги</a></li>
-                  <li><a href="../alumni.html">Выпускники</a></li>
-                  <li><a href="../news/" class="active">Новости</a></li>
-               </ul>
-            </nav>
-            <div class="mobile-nav">
-               <i class="fas fa-bars"></i>
-            </div>
-         </div>
-      </div>
-   </header>
+   <header class="site-header">
+  <div class="container header-content">
+    <a href="/" class="logo"><img src="/img/logo.png" alt="BelPhO" class="logo-img" width="38" height="38"><span>BelPhO</span></a>
+    <nav class="site-nav" aria-label="Основная навигация">
+      <ul class="nav-links">
+        <li><a href="/">Главная</a></li>
+        <li><a href="/problems/">Задачи</a></li>
+        <li><a href="/books/">Книги</a></li>
+        <li><a href="/alumni.html">Выпускники</a></li>
+        <li><a href="/news/" class="active">Новости</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
    <!-- Hero -->
    <section class="hero">
@@ -483,7 +475,7 @@
                <div class="featured-content">
                   <div class="featured-meta">
                      <div class="featured-date">
-                        <i class="fas fa-calendar"></i>
+                        
                         28 июля 2025
                      </div>
                      <div class="featured-tags">
@@ -521,7 +513,7 @@
                <div class="featured-content">
                   <div class="featured-meta">
                      <div class="featured-date">
-                        <i class="fas fa-calendar"></i>
+                        
                         25 июля 2025
                      </div>
                      <div class="featured-tags">
@@ -560,7 +552,7 @@
             <article class="news-card">
                <div class="news-meta">
                   <div class="news-date">
-                     <i class="fas fa-calendar"></i>
+                     
                      29 июля 2025
                   </div>
                   <span class="tag">Интервью</span>
@@ -582,7 +574,7 @@
             <article class="news-card achievement">
                <div class="news-meta">
                   <div class="news-date">
-                     <i class="fas fa-trophy"></i>
+                     
                      Июль 2025
                   </div>
                   <span class="tag results">Достижения</span>
@@ -604,7 +596,7 @@
             <article class="news-card announcement">
                <div class="news-meta">
                   <div class="news-date">
-                     <i class="fas fa-rocket"></i>
+                     
                      Январь 2025
                   </div>
                   <span class="tag">Инновации</span>
@@ -626,7 +618,7 @@
             <article class="news-card achievement">
                <div class="news-meta">
                   <div class="news-date">
-                     <i class="fas fa-graduation-cap"></i>
+                     
                      Ноябрь 2024
                   </div>
                   <span class="tag">Выпускники</span>
@@ -649,7 +641,7 @@
             <article class="news-card">
                <div class="news-meta">
                   <div class="news-date">
-                     <i class="fas fa-history"></i>
+                     
                      Ноябрь 2022
                   </div>
                   <span class="tag international">История</span>
@@ -678,11 +670,11 @@
             </p>
             <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
                <a href="mailto:aliaksandr@melnichenka.com" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: background-color 0.3s ease;" class="ui-btn ui-btn--solid">
-                  <i class="fas fa-envelope"></i>
+                  
                   Предложить новость
                </a>
                <a href="../" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--primary-color); padding: 12px 24px; border: 2px solid var(--primary-color); border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s ease;">
-                  <i class="fas fa-home"></i>
+                  
                   На главную
                </a>
             </div>
@@ -691,34 +683,18 @@
    </section>
 
    <!-- Footer -->
-   <footer style="background: var(--surface-color); padding: 40px 0; border-top: 1px solid var(--border-color); margin-top: 80px;">
-      <div class="container">
-         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; text-align: center;">
-            <div>
-               <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
-                  © <strong>Белорусские физические олимпиады</strong><br>
-                  1990-2025 • Все права принадлежат авторам
-               </p>
-            </div>
-            <div>
-               <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
-                  Коммерческое использование материалов —<br>
-                  с письменного разрешения авторов<br>
-                  <a href="mailto:aliaksandr@melnichenka.com" style="color: var(--primary-color);">aliaksandr@melnichenka.com</a>
-               </p>
-            </div>
-            <div>
-               <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
-                  <em>E = mc<sup>2</sup></em><br>
-                  Знание — сила
-               </p>
-            </div>
-         </div>
-      </div>
-
-      <p style="font-size: 12px;color:var(--text-tertiary); opacity: 0.85;margin-top:16px;text-align: center;">
-         Создано командой выпускников. Координатор проекта — Aliaksandr Melnichenka.
-      </p>
-   </footer>
+   <footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 1990-2026 BelPhO, Белорусские физические олимпиады</span>
+    <span class="footer-links">
+      <a href="/problems/">Задачи</a>
+      <a href="/books/">Книги</a>
+      <a href="/alumni.html">Выпускники</a>
+      <a href="/news/">Новости</a>
+      <a href="https://t.me/belpho_by" rel="noopener">Telegram</a>
+    </span>
+  </div>
+  <div class="container footer-note">Коммерческое использование материалов только с письменного разрешения авторов, <a href="mailto:aliaksandr@melnichenka.com">aliaksandr@melnichenka.com</a>. Сайт создан командой выпускников.</div>
+</footer>
 </body>
 </html> 

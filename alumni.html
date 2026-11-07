@@ -195,6 +195,7 @@
         /* Medal coins on counters and filter buttons */
         .stat-number { display: flex; align-items: center; justify-content: center; gap: 10px; }
         .stat-coin { width: 34px; height: 34px; object-fit: contain; flex: none; }
+        .stat-sigma { width: 28px; height: 30px; }
         .filter-btn { display: inline-flex; align-items: center; gap: 6px; }
         .filter-coin { width: 18px; height: 18px; object-fit: contain; flex: none; }
         /* Stats row: five medal counters plus the stayed/left pie */
@@ -1162,28 +1163,20 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="./" class="logo">
-                    <img src="img/logo.png" alt="BelPhO Logo" class="logo-img">
-                    <span>BelPhO</span>
-                </a>
-                <nav>
-                    <ul class="nav-links">
-                        <li><a href="./">Главная</a></li>
-                        <li><a href="problems/">Задачи</a></li>
-                        <li><a href="books/">Книги</a></li>
-                        <li><a href="alumni.html" class="active">Выпускники</a></li>
-                        <li><a href="news/">Новости</a></li>
-                    </ul>
-                </nav>
-                <div class="mobile-nav">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
-        </div>
-    </header>
+    <header class="site-header">
+  <div class="container header-content">
+    <a href="/" class="logo"><img src="/img/logo.png" alt="BelPhO" class="logo-img" width="38" height="38"><span>BelPhO</span></a>
+    <nav class="site-nav" aria-label="Основная навигация">
+      <ul class="nav-links">
+        <li><a href="/">Главная</a></li>
+        <li><a href="/problems/">Задачи</a></li>
+        <li><a href="/books/">Книги</a></li>
+        <li><a href="/alumni.html" class="active">Выпускники</a></li>
+        <li><a href="/news/">Новости</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
     <!-- Hero -->
     <section class="hero">
@@ -1198,7 +1191,7 @@
         <div class="container stats-layout">
             <div class="stats-grid">
                     <div class="stat-card">
-                        <div class="stat-number" id="total-participants">-</div>
+                        <div class="stat-number"><svg class="stat-coin stat-sigma" viewBox="40 30 320 340" aria-hidden="true" focusable="false"><path fill="currentColor" d="m97.445 39.352h188.44l5.0027 63.182h-7.0406q-1.2972-18.714-6.2997-28.534-5.0025-10.006-13.711-14.452-8.7083-4.4465-27.607-4.4465h-85.787l76.522 98.201-87.084 102.83h95.422q25.94 0 39.651-8.3378 13.711-8.3378 20.567-34.834l7.0406 1.6676-10.746 75.967h-194.36v-6.6702l96.719-114.14-96.719-123.77z"/></svg><span id="total-participants">-</span></div>
                         <div class="stat-label">Участников IPhO</div>
                     </div>
                     <div class="stat-card">
@@ -1214,7 +1207,7 @@
                         <div class="stat-label">Бронзовых медалей</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number" id="mentions">-</div>
+                        <div class="stat-number"><img src="img/mini_logos/Honorable_medal.svg" alt="" class="stat-coin" aria-hidden="true"><span id="mentions">-</span></div>
                         <div class="stat-label">Похвальных отзывов</div>
                     </div>
             </div>
@@ -4778,9 +4771,9 @@
                 'vk': '<i class="fab fa-vk"></i>',
                 'researchgate': '<i class="fab fa-researchgate"></i>',
                 'savchenko': '<div class="savchenko-logo"><svg class="fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Savchenko Solutions</title><g transform="matrix(0.10267875,0,0,0.10222214,16.9286,-6.6555498)" id="g1" style="opacity:0.99; fill:currentColor; stroke:currentColor;"><path class="inverse-fill" d="M -159,108.001 C -159,87.5658 -142.434,71 -121.999,71 H 25.9991 C 46.4341,71 63,87.5658 63,108.001 V 256.999 C 63,277.434 46.4341,294 25.9991,294 H -121.999 C -142.434,294 -159,277.434 -159,256.999 Z"></path></g><g id="g3268" transform="matrix(0.02423146,0,0,-0.01971197,4.6430382,16.968136)"><path id="path3270" d="m 609,722 c 0,-30 -22,-43 -42,-43 -19,0 -41,13 -41,42 0,14 8,37 37,41 -22,19 -53,21 -63,21 -45,0 -79,-25 -93,-209 L 388,325 c -8,-111 -44,-402 -57,-454 -22,-90 -70,-177 -165,-177 -60,0 -110,35 -110,83 0,30 22,43 42,43 19,0 41,-13 41,-42 0,-14 -8,-37 -37,-41 21,-18 51,-21 64,-21 57,0 93,45 106,209 l 19,249 c 9,121 45,403 57,458 17,76 56,173 151,173 60,0 110,-35 110,-83 z" style="fill:gray"></path></g></svg></div>',
-                'other': '<i class="fas fa-link"></i>'
+                'other': ''
             };
-            return icons[type] || '<i class="fas fa-link"></i>';
+            return icons[type] || '';
         }
 
         // Helper function to get social names
@@ -5280,34 +5273,18 @@
     </script>
 
     <!-- Footer -->
-    <footer style="background: var(--surface-color); padding: 16px 0; border-top: 1px solid var(--border-color); margin-top: 20px;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; text-align: center;">
-                <div>
-                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
-                        © <strong>Белорусские физические олимпиады</strong><br>
-                        1990-2025 • Все права принадлежат авторам
-                    </p>
-                </div>
-                <div>
-                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
-                        Коммерческое использование материалов<br>
-                        с письменного разрешения авторов<br>
-                        <a href="mailto:aliaksandr@melnichenka.com" style="color: var(--primary-color);">aliaksandr@melnichenka.com</a>
-                    </p>
-                </div>
-                <div>
-                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
-                        <em>E = mc<sup>2</sup></em><br>
-                        Знание есть сила
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <p style="font-size: 12px;color:var(--text-tertiary); opacity: 0.85;margin-top:16px;text-align: center;">
-            Создано командой выпускников. Координатор проекта Aliaksandr Melnichenka.
-        </p>
-    </footer>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 1990-2026 BelPhO, Белорусские физические олимпиады</span>
+    <span class="footer-links">
+      <a href="/problems/">Задачи</a>
+      <a href="/books/">Книги</a>
+      <a href="/alumni.html">Выпускники</a>
+      <a href="/news/">Новости</a>
+      <a href="https://t.me/belpho_by" rel="noopener">Telegram</a>
+    </span>
+  </div>
+  <div class="container footer-note">Коммерческое использование материалов только с письменного разрешения авторов, <a href="mailto:aliaksandr@melnichenka.com">aliaksandr@melnichenka.com</a>. Сайт создан командой выпускников.</div>
+</footer>
 </body>
 </html> 
