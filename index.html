@@ -1031,6 +1031,67 @@
             font-size: 28px;
          }
       }
+   
+      /* Team photo banner (same on every page).
+         Faces in ipho_2026.jpg (1200x800) sit in the band y=117..262, so the banner
+         uses an 18% vertical anchor. With min-height 17vw the visible slice is at least 204 image px tall, so the slice starts at or above y=107 and always contains the whole face band. */
+      .hero {
+         /* Duotone: the photo is turned grayscale (luminosity over gray), then multiplied by
+            a flat blue layer, so the brightest pixel is #3a6aa6 and white text keeps contrast. */
+         background-color: #8a8a8a !important;
+         background-image: linear-gradient(#3a6aa6, #3a6aa6), url('img/teams/ipho_2026.jpg') !important;
+         background-repeat: no-repeat !important;
+         background-size: 100% 100%, cover !important;
+         background-position: center, center 18% !important;
+         background-blend-mode: multiply, luminosity;
+         min-height: max(280px, 17vw);
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         position: relative;
+         overflow: hidden;
+         text-align: center;
+      }
+      .hero::before {
+         content: '' !important;
+         position: absolute !important;
+         top: 0; left: 0; right: 0; bottom: 0;
+         width: auto; height: auto;
+         background: rgba(10, 24, 48, 0.18) !important;
+         opacity: 1 !important;
+         pointer-events: none;
+         z-index: 1;
+      }
+      .hero > * { position: relative; z-index: 2; width: 100%; }
+      .hero h1, .hero p { text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5); }
+      /* Home banner: BelSO link as a small pill above the title so no face is covered */
+      .hero-content-wrapper { flex-direction: column; align-items: center; gap: 14px; }
+      .belso-section { width: auto; padding: 6px 16px; gap: 0; border-radius: 999px; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.35); box-shadow: none; }
+      .belso-section a.belso-link { flex-direction: row; align-items: center; gap: 10px; width: auto; }
+      .belso-logo { max-height: 28px; width: auto; }
+      .belso-text { font-size: 13px; text-align: left; padding-right: 0; flex: none; }
+      @media (max-width: 640px) {
+         .belso-section { max-width: calc(100% - 24px); padding: 5px 12px; }
+         .belso-text { font-size: 11px; flex: 1 1 auto; }
+         .belso-logo { max-height: 22px; }
+      }
+      /* Banner buttons: dark glass so white labels stay readable over light shirts */
+      .hero .btn-secondary { background: rgba(10, 24, 48, 0.55); border-color: rgba(255, 255, 255, 0.85); backdrop-filter: none; -webkit-backdrop-filter: none; }
+      .hero .btn-secondary:hover { background: rgba(10, 24, 48, 0.75); border-color: #fff; }
+      .hero .btn-primary { background: rgba(10, 24, 48, 0.72); border: 2px solid #fff; backdrop-filter: none; -webkit-backdrop-filter: none; }
+      .hero .btn-primary:hover { background: rgba(10, 24, 48, 0.85); }
+      /* Phones and tablets: the photo becomes a full-width strip above the text,
+         so no face is ever cropped or covered by text. */
+      @media (max-width: 640px) {
+         .hero {
+            background-color: #1f3d68 !important;
+            background-size: 100% 100%, 100% auto !important;
+            background-position: center, center top !important;
+            padding-top: calc(66.667vw + 20px) !important;
+            min-height: 0;
+         }
+         .hero::before { top: 66.667vw; }
+      }
    </style>
 </head>
 
@@ -1077,7 +1138,7 @@
             <!-- BelSO Section -->
             <div class="belso-section">
                <a href="https://belso.org/" target="_blank" rel="noopener noreferrer" class="belso-link">
-                  <span class="belso-text">BelSO — Инфраструктура Белорусских Научных Олимпиады</span>
+                  <span class="belso-text">BelSO объединяет белорусские научные олимпиады</span>
                   <img src="https://belso.org/img/logo.svg" alt="BelSO" class="belso-logo">
                </a>
             </div>
@@ -1085,7 +1146,7 @@
             <!-- Main Hero Content -->
             <div class="hero-main">
                <h1>Белорусские физические олимпиады</h1>
-               <p style="max-width: 100%;">BelPhO — национальная платформа физических олимпиад Беларуси</p>
+               <p style="max-width: 100%;">BelPhO является национальной платформой физических олимпиад Беларуси</p>
                
                <!-- Countdown Timer -->
                <!-- <div class="countdown-container" id="countdown-container">
@@ -1483,8 +1544,8 @@
                         Опубликованы официальные задания и решения теоретического и экспериментального туров III этапа Республиканской олимпиады по физике 2026 года. Материалы доступны для всех классов.
                      </p>
                      <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5; font-style: italic; opacity: 0.8; border-left: 2px solid rgba(124, 58, 237, 0.3); padding-left: 12px;">
-                        «Первый принцип — не обманывать себя, а себя обмануть легче всего.»<br>
-                        <span style="font-size: 11px; opacity: 0.7;">— Ричард Фейнман</span>
+                        «Первый принцип в том, чтобы не обманывать себя, а себя обмануть легче всего.»<br>
+                        <span style="font-size: 11px; opacity: 0.7;">Ричард Фейнман</span>
                      </p>
                      <div style="display: flex; flex-direction: column; gap: 16px;">
                         <!-- Grade Selector Tabs -->
@@ -3084,7 +3145,7 @@
             <div class="modern-year-card">
                <div class="year-header">
                   <div class="year-number">2008</div>
-                  <!-- <div class="year-city">—</div> -->
+                  <!-- <div class="year-city">-</div> -->
                </div>
                
                <div class="year-links">
@@ -3224,7 +3285,7 @@
             <div class="modern-year-card">
                <div class="year-header">
                   <div class="year-number">2004</div>
-                  <!-- <div class="year-city">—</div> -->
+                  <!-- <div class="year-city">-</div> -->
                </div>
                
                <div class="year-links">
@@ -3860,11 +3921,11 @@
                   <h4><i class="fas fa-trophy"></i> Достижения белорусской команды</h4>
                   <p>Команда Республики Беларусь показала выдающиеся результаты, завоевав <strong>4 серебряные медали</strong> и <strong>1 похвальный отзыв</strong>:</p>
                   <ul>
-                     <li>🥈 <strong>Вячеслав Клеукин</strong> — Гимназия №1 им. академика Е.Ф. Карского (Гродно)</li>
-                     <li>🥈 <strong>Адриан Ревковский</strong> — Гимназия №1 им. академика Е.Ф. Карского (Гродно)</li>
-                     <li>🥈 <strong>Арсений Кузнецов</strong> — Гимназия №1 (Жодино)</li>
-                     <li>🥈 <strong>Илья Пластинин</strong> — Лицей БГУ (Минск)</li>
-                     <li>📜 <strong>Константин Шмерко</strong> — Лицей БГУ (Минск) — похвальный отзыв</li>
+                     <li>🥈 <strong>Вячеслав Клеукин</strong>, Гимназия №1 им. академика Е.Ф. Карского (Гродно)</li>
+                     <li>🥈 <strong>Адриан Ревковский</strong>, Гимназия №1 им. академика Е.Ф. Карского (Гродно)</li>
+                     <li>🥈 <strong>Арсений Кузнецов</strong>, Гимназия №1 (Жодино)</li>
+                     <li>🥈 <strong>Илья Пластинин</strong>, Лицей БГУ (Минск)</li>
+                     <li>📜 <strong>Константин Шмерко</strong>, Лицей БГУ (Минск), похвальный отзыв</li>
                   </ul>
                   
                   <h4><i class="fas fa-globe"></i> О соревновании</h4>
@@ -3872,8 +3933,8 @@
                   
                   <h4><i class="fas fa-users"></i> Руководители команды</h4>
                   <ul>
-                     <li><strong>Анатолий Слободянюк</strong> — заведующий кафедрой общей физики БГУ</li>
-                     <li><strong>Леонид Маркович</strong> — заведующий кафедрой физики Лицея БГУ</li>
+                     <li><strong>Анатолий Слободянюк</strong>, заведующий кафедрой общей физики БГУ</li>
+                     <li><strong>Леонид Маркович</strong>, заведующий кафедрой физики Лицея БГУ</li>
                   </ul>
                   
                   <p>Это выдающийся результат, подтверждающий высокий уровень белорусского физического образования и традиции успешного участия в международных олимпиадах.</p>
@@ -3901,7 +3962,7 @@
                <h3 class="news-title">🎓 Интервью с Андреем Коцевичем: путь от БелФО до Princeton University</h3>
                
                <div class="news-content">
-                  <p><strong>Андрей Коцевич (Andrei Katsevich)</strong> — выпускник Лицея № 1 имени А.С. Пушкина г. Бреста, бронзовый призер международной физической олимпиады IPhO-2019 (Тель-Авив, Израиль), выпускник ЛФИ МФТИ и PhD-студент Princeton University.</p>
+                  <p><strong>Андрей Коцевич (Andrei Katsevich)</strong>, выпускник Лицея № 1 имени А.С. Пушкина г. Бреста, бронзовый призер международной физической олимпиады IPhO-2019 (Тель-Авив, Израиль), выпускник ЛФИ МФТИ и PhD-студент Princeton University.</p>
                   
                   <h4><i class="fas fa-graduation-cap"></i> О чем интервью</h4>
                   <ul>
@@ -3993,7 +4054,7 @@
             </div>
             <div>
                <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
-                  Коммерческое использование материалов —<br>
+                  Коммерческое использование материалов<br>
                   с письменного разрешения авторов<br>
                   <a href="mailto:aliaksandr@melnichenka.com" style="color: var(--primary-color);">aliaksandr@melnichenka.com</a>
                </p>
@@ -4001,14 +4062,14 @@
             <div>
                <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
                   <em>E = mc<sup>2</sup></em><br>
-                  Знание — сила
+                  Знание есть сила
                </p>
             </div>
          </div>
       </div>
 
       <p style="font-size:12px;color:var(--text-tertiary); opacity: 0.85;margin-top:16px;text-align: center;">
-         Создано командой выпускников. Координатор проекта — Aliaksandr Melnichenka.
+         Создано командой выпускников. Координатор проекта Aliaksandr Melnichenka.
        </p>
    </footer>
 

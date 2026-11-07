@@ -244,17 +244,18 @@
             gap: 8px;
         }
 
-        @media (min-width: 1200px) {
+        @media (min-width: 900px) {
             .alumni-grid {
-                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+                grid-template-columns: repeat(3, minmax(0, 1fr));
                 gap: 10px;
             }
         }
 
-        @media (min-width: 1600px) {
+        /* One team (up to 5 people) per row */
+        @media (min-width: 1240px) {
             .alumni-grid {
-                grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-                gap: 12px;
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+                gap: 10px;
             }
         }
 
@@ -915,8 +916,13 @@
 
         .team-photo {
             width: 100%;
-            height: 220px;
+            height: auto;
+            aspect-ratio: 3 / 2;
             object-fit: cover;
+            /* Anchor to the top so the tallest heads are never cut, and zoom from the top on hover */
+            object-position: center top;
+            transform-origin: 50% 0;
+            display: block;
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -987,8 +993,11 @@
 
         .training-photo {
             width: 100%;
-            height: 120px;
+            height: auto;
+            aspect-ratio: 16 / 9;
             object-fit: cover;
+            object-position: center 20%;
+            display: block;
         }
 
         .training-photo-caption {
@@ -1087,7 +1096,52 @@
                 font-size: 18px;
             }
         }
-    </style>
+    
+      /* Team photo banner (same on every page).
+         Faces in ipho_2026.jpg (1200x800) sit in the band y=117..262, so the banner
+         uses an 18% vertical anchor. With min-height 17vw the visible slice is at least 204 image px tall, so the slice starts at or above y=107 and always contains the whole face band. */
+      .hero {
+         /* Duotone: the photo is turned grayscale (luminosity over gray), then multiplied by
+            a flat blue layer, so the brightest pixel is #3a6aa6 and white text keeps contrast. */
+         background-color: #8a8a8a !important;
+         background-image: linear-gradient(#3a6aa6, #3a6aa6), url('img/teams/ipho_2026.jpg') !important;
+         background-repeat: no-repeat !important;
+         background-size: 100% 100%, cover !important;
+         background-position: center, center 18% !important;
+         background-blend-mode: multiply, luminosity;
+         min-height: max(280px, 17vw);
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         position: relative;
+         overflow: hidden;
+         text-align: center;
+      }
+      .hero::before {
+         content: '' !important;
+         position: absolute !important;
+         top: 0; left: 0; right: 0; bottom: 0;
+         width: auto; height: auto;
+         background: rgba(10, 24, 48, 0.18) !important;
+         opacity: 1 !important;
+         pointer-events: none;
+         z-index: 1;
+      }
+      .hero > * { position: relative; z-index: 2; width: 100%; }
+      .hero h1, .hero p { text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5); }
+      /* Phones and tablets: the photo becomes a full-width strip above the text,
+         so no face is ever cropped or covered by text. */
+      @media (max-width: 640px) {
+         .hero {
+            background-color: #1f3d68 !important;
+            background-size: 100% 100%, 100% auto !important;
+            background-position: center, center top !important;
+            padding-top: calc(66.667vw + 20px) !important;
+            min-height: 0;
+         }
+         .hero::before { top: 66.667vw; }
+      }
+   </style>
 </head>
 <body>
     <!-- Header -->
@@ -1119,7 +1173,7 @@
     <section class="hero">
         <div class="container">
             <h1><img src="img/mini_logos/ipho_logo.svg" alt="IPhO" class="ipho-logo">Выпускники IPhO</h1>
-            <p>Гордость белорусской физики: участники международных олимпиад и квалификационных сборов с 1995 года. Представители лучших школ и лицеев страны, завоевавшие 137 медалей на международной арене, включая триумф на IPhO 2025 в Париже.</p>
+            <p>Гордость белорусской физики. Участники международных олимпиад и квалификационных сборов с 1995 года, представители лучших школ и лицеев страны, завоевавшие 115 медалей и 27 похвальных отзывов на международной арене. На IPhO 2026 в Колумбии награды получили все пятеро участников команды.</p>
         </div>
     </section>
 
@@ -1152,12 +1206,12 @@
                     <div class="stat-label">Учебных заведений</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number" id="abroad-alumni">-</div>
-                    <div class="stat-label">Работают за границей</div>
+                    <div class="stat-number" id="studied-abroad">-</div>
+                    <div class="stat-label">Учились за рубежом</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number" id="professors">-</div>
-                    <div class="stat-label">Профессоров</div>
+                    <div class="stat-number" id="remained-belarus">-</div>
+                    <div class="stat-label">Остались в Беларуси</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number" id="it-specialists">-</div>
@@ -1191,6 +1245,13 @@
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 <div class="team-photos-slider" id="team-photos-slider">
+                <div class="team-photo-card">
+                    <img src="img/teams/ipho_2026.jpg" alt="Команда IPhO 2026" class="team-photo">
+                    <div class="team-photo-caption">
+                        <h3>IPhO 2026 - Букараманга, Колумбия</h3>
+                        <p>Эдгар Анципорович, Ростислав Гузеев, София Пшеничная (серебро), Андрей Другаков, Димитрий Гнедько (бронза)</p>
+                    </div>
+                </div>
                 <div class="team-photo-card">
                     <img src="news/ipho-2025/belarus_physics_team_with_leaders_official.jpg" alt="Команда IPhO 2025" class="team-photo">
                     <div class="team-photo-caption">
@@ -1255,6 +1316,13 @@
                     </div>
                 </div>
                 <!-- Duplicated cards for infinite loop -->
+                <div class="team-photo-card">
+                    <img src="img/teams/ipho_2026.jpg" alt="Команда IPhO 2026" class="team-photo">
+                    <div class="team-photo-caption">
+                        <h3>IPhO 2026 - Букараманга, Колумбия</h3>
+                        <p>Эдгар Анципорович, Ростислав Гузеев, София Пшеничная (серебро), Андрей Другаков, Димитрий Гнедько (бронза)</p>
+                    </div>
+                </div>
                 <div class="team-photo-card">
                     <img src="news/ipho-2025/belarus_physics_team_with_leaders_official.jpg" alt="Команда IPhO 2025" class="team-photo">
                     <div class="team-photo-caption">
@@ -2484,7 +2552,7 @@
                 totalContestants: 261,
                 achievements: [],
                 currentStatus: "Специалист в области ИТ",
-                university: "—",
+                university: "",
                 country: "Беларусь",
                 profession: "Software Engineer",
                 socialLinks: []
@@ -2503,7 +2571,7 @@
                 totalContestants: 261,
                 achievements: [],
                 currentStatus: "Специалист в области ИТ",
-                university: "—",
+                university: "",
                 country: "Беларусь",
                 profession: "Software Developer",
                 socialLinks: []
@@ -2522,7 +2590,7 @@
                 totalContestants: 261,
                 achievements: [],
                 currentStatus: "Специалист в области ИТ",
-                university: "—",
+                university: "",
                 country: "Беларусь",
                 profession: "Software Engineer",
                 socialLinks: []
@@ -2542,7 +2610,7 @@
                 achievements: [],
                 profileImage: "img/teams/Anastasiya Karpovich.jpg",
                 currentStatus: "Специалист в области ИТ",
-                university: "—",
+                university: "",
                 country: "Беларусь",
                 profession: "Software Developer",
                 socialLinks: []
@@ -2562,7 +2630,7 @@
                 achievements: [],
                 profileImage: "img/teams/Alexei Sytov.jpeg",
                 currentStatus: "Специалист в области ИТ",
-                university: "—",
+                university: "",
                 country: "Беларусь",
                 profession: "Software Engineer",
                 socialLinks: []
@@ -3131,7 +3199,7 @@
                 achievements: [],
                 profileImage: "img/teams/Ilya Perapechka.png",
                 currentStatus: "Специалист в области ИТ",
-                university: "—",
+                university: "",
                 country: "Беларусь",
                 profession: "Software Engineer",
                 socialLinks: []
@@ -3434,7 +3502,7 @@
                 achievements: [],
                 profileImage: "img/teams/Yauheni Sharamed.jpg",
                 currentStatus: "Студент",
-                university: "—",
+                university: "",
                 country: "Беларусь",
                 profession: "Студент",
                 socialLinks: [
@@ -3508,7 +3576,7 @@
                 achievements: [],
                 profileImage: "img/teams/Mikita Stryzhak.jpg",
                 currentStatus: "Software Developer",
-                university: "—",
+                university: "",
                 country: "Беларусь",
                 profession: "Software Developer",
                 socialLinks: [
@@ -3606,7 +3674,7 @@
                 achievements: [],
                 profileImage: "img/teams/ULADZISLAU FIADURKA.png",
                 currentStatus: "Студент университета",
-                university: "—",
+                university: "",
                 country: "Беларусь",
                 profession: "Студент",
                 socialLinks: []
@@ -3778,7 +3846,7 @@
                 totalContestants: 251,
                 achievements: [],
                 currentStatus: "Студент университета",
-                university: "—",
+                university: "",
                 country: "Беларусь",
                 profession: "Студент",
                 socialLinks: [
@@ -3845,7 +3913,7 @@
                     "💼 Working at Bloomberg in London"
                 ],
                 currentStatus: "Финансовый специалист",
-                university: "—",
+                university: "",
                 country: "Великобритания",
                 profession: "Bloomberg Employee (London)",
                 socialLinks: []
@@ -3915,7 +3983,7 @@
                 achievements: ["Участник онлайн-олимпиады COVID-19"],
                 profileImage: "img/teams/Timur Golubovich.jpg",
                 currentStatus: "Студент",
-                university: "—",
+                university: "",
                 country: "Беларусь",
                 profession: "Студент",
                 socialLinks: [],
@@ -3960,7 +4028,7 @@
                 achievements: ["Участник онлайн-олимпиады COVID-19"],
                 profileImage: "img/teams/Volha Turchyna.jpg",
                 currentStatus: "Студентка",
-                university: "—",
+                university: "",
                 country: "Беларусь",
                 profession: "Студентка",
                 socialLinks: []
@@ -3970,7 +4038,7 @@
             {
                 name: "Максим Баринин",
                 englishName: "Maksim Barinin",
-                school: "—",
+                school: "",
                 year: 2022,
                 ipho: "52nd IPhO, Швейцария (онлайн)",
                 award: "silver",
@@ -3981,7 +4049,7 @@
                 totalContestants: 302,
                 achievements: [],
                 currentStatus: "Студент",
-                university: "—",
+                university: "",
                 country: "Беларусь",
                 profession: "Студент",
                 socialLinks: [
@@ -4009,7 +4077,7 @@
                     { type: "vk", url: "https://vk.com/vladbaginsky" }
                 ],
                 mediaLinks: [
-                { type: "article", url: "https://nastgaz.by/zahoplenyya-fizikaj/", name: "Интервью: Захоплены фізікай — увлечённость физикой как путь к победе" }
+                { type: "article", url: "https://nastgaz.by/zahoplenyya-fizikaj/", name: "Интервью: Захоплены фізікай. Увлечённость физикой как путь к победе" }
                 ]
             },
             {
@@ -4037,7 +4105,7 @@
             {
                 name: "Ростислав Климко",
                 englishName: "Rostislav Klimko",
-                school: "—",
+                school: "",
                 year: 2022,
                 ipho: "52nd IPhO, Швейцария (онлайн)",
                 award: "bronze",
@@ -4048,7 +4116,7 @@
                 totalContestants: 302,
                 achievements: [],
                 currentStatus: "Студент",
-                university: "—",
+                university: "",
                 country: "Беларусь",
                 profession: "Студент",
                 socialLinks: [
@@ -4079,7 +4147,7 @@
                 ]
             },
 
-            // 2023 – 53rd IPhO (Tokyo) — Беларусь не участвовала
+            // 2023 – 53rd IPhO (Tokyo), Беларусь не участвовала
 
             // 2024 – 54th IPhO, Isfahan (Iran)
             {
@@ -4098,7 +4166,7 @@
                     "🥇 IPhO Gold Medal 2024",
                     "🥇 ISPhO Gold Medal 2024",
                     "Первая белоруска с золотой медалью IPhO",
-                    "Единственная девушка — золотой призёр IPhO 2024"
+                    "Единственная девушка, золотой призёр IPhO 2024"
                 ],
                 profileImage: "img/teams/alina_polonskay.jpg",
                 currentStatus: "Студентка физического факультета",
@@ -4209,11 +4277,11 @@
             //     year: 2024,
             //     ipho: "Запасной на IPhO 2024",
             //     award: "mention",
-            //     rank: "—",
+            //     rank: "-",
             //     theory: null,
             //     experiment: null,
-            //     total: "—",
-            //     totalContestants: "—",
+            //     total: "-",
+            //     totalContestants: "-",
             //     achievements: [
             //         "Запасной участник IPhO 2024",
             //         "🥇 Трехкратный призер национальной олимпиады (2022-2024)",
@@ -4238,10 +4306,132 @@
             //         { type: "linkedin", url: "https://www.linkedin.com/in/astrosander" }
             //     ],
             //     mediaLinks: [
-            //     { type: "interview", url: "https://tkm.by/2022/04/vospitat-pobeditelej-uchashhiesya-9-shkoly-otlichno-vystupili-na-respublikanskoj-predmetnoj-olimpiade/", name: "Интервью: Воспитать победителей — об успехах учащихся 9-й школы на олимпиаде" },
-            //     { type: "article", url: "https://nastgaz.by/zahoplenyya-fizikaj/", name: "Интервью: Захоплены фізікай — увлечённость физикой как путь к победе" }
+            //     { type: "interview", url: "https://tkm.by/2022/04/vospitat-pobeditelej-uchashhiesya-9-shkoly-otlichno-vystupili-na-respublikanskoj-predmetnoj-olimpiade/", name: "Интервью: Воспитать победителей. Об успехах учащихся 9-й школы на олимпиаде" },
+            //     { type: "article", url: "https://nastgaz.by/zahoplenyya-fizikaj/", name: "Интервью: Захоплены фізікай. Увлечённость физикой как путь к победе" }
             //     ]
             // },
+
+            // 2026 - 56th IPhO, Bucaramanga (Colombia)
+            {
+                name: "Эдгар Анципорович",
+                englishName: "Edhar Antsyparovich",
+                school: "Лицей БГУ (Минск)",
+                year: 2026,
+                ipho: "56th IPhO, Колумбия",
+                award: "silver",
+                rank: "≥52",
+                theory: null,
+                experiment: null,
+                total: null,
+                totalContestants: 381,
+                achievements: [
+                    "🥈 Серебряная медаль IPhO 2026",
+                    "Участник 56-й IPhO в Букараманге (Колумбия)",
+                    "Выпускник Лицея БГУ"
+                ],
+                profileImage: "img/teams/Эдгар Анципорович.jpg",
+                currentStatus: "Студент",
+                university: "Московский физико-технический институт (ФПМИ)",
+                country: "Россия",
+                profession: "Студент",
+                socialLinks: []
+            },
+            {
+                name: "Ростислав Гузеев",
+                englishName: "Rastsislau Huzeyeu",
+                school: "Лицей БГУ (Минск)",
+                year: 2026,
+                ipho: "56th IPhO, Колумбия",
+                award: "silver",
+                rank: "≥52",
+                theory: null,
+                experiment: null,
+                total: null,
+                totalContestants: 381,
+                achievements: [
+                    "🥈 Серебряная медаль IPhO 2026",
+                    "Участник 56-й IPhO в Букараманге (Колумбия)",
+                    "Выпускник Лицея БГУ"
+                ],
+                profileImage: "img/teams/Ростислав Гузеев.jpg",
+                currentStatus: "Студент",
+                university: "Московский физико-технический институт (ЛФИ)",
+                country: "Россия",
+                profession: "Студент",
+                socialLinks: []
+            },
+            {
+                name: "София Пшеничная",
+                englishName: "Sofiya Pshanichnaya",
+                school: "Гимназия № 14 (Гомель)",
+                year: 2026,
+                ipho: "56th IPhO, Колумбия",
+                award: "silver",
+                rank: "≥52",
+                theory: null,
+                experiment: null,
+                total: null,
+                totalContestants: 381,
+                achievements: [
+                    "🥈 Серебряная медаль IPhO 2026",
+                    "Участник 56-й IPhO в Букараманге (Колумбия)",
+                    "Представитель Гомельской области"
+                ],
+                profileImage: "img/teams/София Пшеничная.jpg",
+                currentStatus: "Студентка",
+                university: "Московский физико-технический институт (ФПМИ)",
+                country: "Россия",
+                profession: "Студентка",
+                socialLinks: []
+            },
+            {
+                name: "Андрей Другаков",
+                englishName: "Andrei Drougakov",
+                school: "Гимназия № 32 (Минск)",
+                year: 2026,
+                ipho: "56th IPhO, Колумбия",
+                award: "bronze",
+                rank: "≥132",
+                theory: null,
+                experiment: null,
+                total: null,
+                totalContestants: 381,
+                achievements: [
+                    "🥉 Бронзовая медаль IPhO 2026",
+                    "Участник 56-й IPhO в Букараманге (Колумбия)",
+                    "Представитель Минска"
+                ],
+                profileImage: "img/teams/Андрей Другаков.jpg",
+                currentStatus: "Студент",
+                university: "Варшавский университет",
+                country: "Польша",
+                profession: "Студент",
+                socialLinks: []
+            },
+            {
+                name: "Димитрий Гнедько",
+                englishName: "Dzimitry Hniadzko",
+                school: "Средняя школа № 92 (Минск)",
+                year: 2026,
+                ipho: "56th IPhO, Колумбия",
+                award: "bronze",
+                rank: "≥132",
+                theory: null,
+                experiment: null,
+                total: null,
+                totalContestants: 381,
+                achievements: [
+                    "🥉 Бронзовая медаль IPhO 2026",
+                    "Участник 56-й IPhO в Букараманге (Колумбия)",
+                    "Представитель Минска"
+                ],
+                profileImage: "img/teams/Димитрий Гнедько.jpg",
+                currentStatus: "Студент",
+                university: "Московский физико-технический институт (ЛФИ)",
+                country: "Россия",
+                profession: "Студент",
+                socialLinks: []
+            },
 
             // 2025 – 55th IPhO, Paris (France)
             {
@@ -4344,7 +4534,7 @@
                 ],
                 profileImage: "img/teams/Арсений Кузнецов.jpg",
                 currentStatus: "Выпускник гимназии",
-                university: "—",
+                university: "",
                 country: "Беларусь",
                 profession: "Выпускник гимназии 2025",
                 socialLinks: [
@@ -4804,13 +4994,17 @@
             const mentions = data.filter(alumni => alumni.award === 'mention').length;
             
             // Count unique schools
-            const uniqueSchools = new Set(data.map(alumni => alumni.school)).size;
+            const uniqueSchools = new Set(data.map(alumni => alumni.school).filter(Boolean)).size;
             
-            // Count career statistics
-            const knownCountryAlumni = data.filter(alumni => alumni.country).length;
-            const abroadAlumni = data.filter(alumni => alumni.country && alumni.country !== 'Беларусь').length;
-            const abroadPercentage = knownCountryAlumni > 0 ? Math.round((abroadAlumni / knownCountryAlumni) * 100) : 0;
-            const professors = data.filter(alumni => alumni.profession && alumni.profession.toLowerCase().includes('professor')).length;
+            // Career statistics. "Studied abroad" counts alumni with a known university
+            // where at least one listed institution is outside Belarus.
+            const belarusInstitution = /БГУ|Белорус|Беларус|Минск|Гомельск|Гродненск|Брестск|Витебск|Могил|БГУИР|БНТУ/i;
+            const universityParts = u => (u || '').split(/,|\/|\+/).map(x => x.trim()).filter(Boolean);
+            const studiedAbroad = a => universityParts(a.university).some(x => !belarusInstitution.test(x));
+            const knownUniversity = data.filter(a => universityParts(a.university).length > 0);
+            const studiedAbroadCount = knownUniversity.filter(studiedAbroad).length;
+            const studiedAbroadPercentage = knownUniversity.length > 0 ? Math.round((studiedAbroadCount / knownUniversity.length) * 100) : 0;
+            const remainedInBelarus = data.filter(a => a.country === 'Беларусь' && !studiedAbroad(a)).length;
             const itSpecialists = data.filter(alumni => alumni.profession && 
                 (alumni.profession.toLowerCase().includes('software') || 
                  alumni.profession.toLowerCase().includes('developer') || 
@@ -4823,8 +5017,8 @@
             document.getElementById('bronze-medals').textContent = bronzeMedals;
             document.getElementById('mentions').textContent = mentions;
             document.getElementById('unique-schools').textContent = uniqueSchools;
-            document.getElementById('abroad-alumni').textContent = knownCountryAlumni > 0 ? `${abroadPercentage}%` : '-';
-            document.getElementById('professors').textContent = professors;
+            document.getElementById('studied-abroad').textContent = knownUniversity.length > 0 ? `${studiedAbroadPercentage}%` : '-';
+            document.getElementById('remained-belarus').textContent = remainedInBelarus;
             document.getElementById('it-specialists').textContent = itSpecialists;
         }
 
@@ -5033,7 +5227,7 @@
                 </div>
                 <div>
                     <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
-                        Коммерческое использование материалов —<br>
+                        Коммерческое использование материалов<br>
                         с письменного разрешения авторов<br>
                         <a href="mailto:aliaksandr@melnichenka.com" style="color: var(--primary-color);">aliaksandr@melnichenka.com</a>
                     </p>
@@ -5041,14 +5235,14 @@
                 <div>
                     <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
                         <em>E = mc<sup>2</sup></em><br>
-                        Знание — сила
+                        Знание есть сила
                     </p>
                 </div>
             </div>
         </div>
 
         <p style="font-size:12px;color:var(--text-tertiary); opacity: 0.85;margin-top:16px;text-align: center;">
-            Создано командой выпускников. Координатор проекта — Aliaksandr Melnichenka.
+            Создано командой выпускников. Координатор проекта Aliaksandr Melnichenka.
         </p>
     </footer>
 </body>
