@@ -1998,7 +1998,13 @@
     "currentStatus": "Студент",
     "university": "Московский физико-технический институт (ФПМИ)",
     "country": "Россия",
-    "profession": "Студент"
+    "profession": "Студент",
+    "socialLinks": [
+      {
+        "type": "telegram",
+        "url": "https://t.me/Edgar_A_A"
+      }
+    ]
   },
   {
     "name": "Ростислав Гузеев",
@@ -2021,7 +2027,18 @@
     "currentStatus": "Студент",
     "university": "Московский физико-технический институт (ЛФИ)",
     "country": "Россия",
-    "profession": "Студент"
+    "profession": "Студент",
+    "socialLinks": [
+      {
+        "type": "telegram",
+        "url": "https://t.me/i_am_rastislau"
+      },
+      {
+        "type": "savchenko",
+        "url": "https://savchenkosolutions.com/user/huz0",
+        "name": "Savchenko Solutions Profile"
+      }
+    ]
   },
   {
     "name": "София Пшеничная",
@@ -2090,7 +2107,13 @@
     "currentStatus": "Студент",
     "university": "Московский физико-технический институт (ЛФИ)",
     "country": "Россия",
-    "profession": "Студент"
+    "profession": "Студент",
+    "socialLinks": [
+      {
+        "type": "telegram",
+        "url": "https://t.me/hommiegrief"
+      }
+    ]
   },
   {
     "name": "Интервью: Захоплены фізікай — увлечённость физикой как путь к победе",
