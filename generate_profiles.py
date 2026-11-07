@@ -191,7 +191,7 @@ class ProfileGenerator:
                         <a class="nav-link" href="../../index.html">{"Home" if language == 'en' else "Главная"}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../alumni.html">{"Alumni" if language == 'en' else "Выпускники"}</a>
+                        <a class="nav-link" href="/alumni">{"Alumni" if language == 'en' else "Выпускники"}</a>
                     </li>
                 </ul>
                 

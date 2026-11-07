@@ -80,8 +80,8 @@ RewriteRule ^([^\.]+)$ $1.html [NC,L]
         
         htaccess_content += """
 # Alumni index routes
-RewriteRule ^ipho/?$ /alumni.html [L,R=301]
-RewriteRule ^alumni/?$ /alumni.html [L,R=301]
+RewriteRule ^ipho/?$ /alumni [L,R=301]
+RewriteRule ^alumni/?$ /alumni [L,R=301]
 
 # Error pages
 ErrorDocument 404 /404.html
@@ -178,12 +178,9 @@ server {
         
         nginx_content += """    # Alumni index routes
     location /ipho {
-        return 301 /alumni.html;
+        return 301 /alumni;
     }
     
-    location /alumni {
-        return 301 /alumni.html;
-    }
     
     # Static file caching
     location ~* \.(css|js|png|jpg|jpeg|gif|svg|ico)$ {

@@ -408,8 +408,8 @@ RewriteRule ^ipho/kanstantsin-shmiarko/en/?$ /profiles/ipho/kanstantsin-shmiarko
 RewriteRule ^ipho/kanstantsin-shmiarko/ru/?$ /profiles/ipho/kanstantsin-shmiarko-ru.html [L,R=301]
 
 # Alumni index routes
-RewriteRule ^ipho/?$ /alumni.html [L,R=301]
-RewriteRule ^alumni/?$ /alumni.html [L,R=301]
+RewriteRule ^ipho/?$ /alumni [L,R=301]
+RewriteRule ^alumni/?$ /alumni.html [L]
 
 # Error pages
 ErrorDocument 404 /404.html
