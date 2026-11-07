@@ -410,7 +410,21 @@
                 padding: 0 16px;
             }
         }
-    </style>
+          /* Contents sidebar */
+      .interview-layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 44px; align-items: start; max-width: 1240px; }
+      .interview-layout .article-content { max-width: none; margin: 0; min-width: 0; }
+      .interview-toc { position: sticky; top: 24px; max-height: calc(100vh - 48px); overflow: auto; padding: 4px 16px 4px 0; border-right: 1px solid var(--c-line); }
+      .interview-toc .toc-label { margin: 0 0 12px; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--c-ink); }
+      .interview-toc ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+      .interview-toc a { display: block; padding: 7px 12px; border-left: 3px solid transparent; border-radius: 0 6px 6px 0; font-size: 15px; line-height: 1.4; color: var(--c-brand); text-decoration: none; }
+      .interview-toc a:hover { text-decoration: underline; }
+      .interview-toc a.active { background: var(--c-brand-tint); border-left-color: var(--c-ink); color: var(--c-ink); font-weight: 600; text-decoration: none; }
+      .article-content section[id] { scroll-margin-top: 16px; }
+      @media (max-width: 900px) {
+         .interview-layout { grid-template-columns: 1fr; gap: 20px; }
+         .interview-toc { position: static; max-height: none; border-right: 0; border-bottom: 1px solid var(--c-line); padding: 0 0 14px; }
+      }
+   </style>
 </head>
 <body>
     <!-- Header -->
@@ -457,50 +471,30 @@
         </div>
     </section>
 
-    <!-- Table of Contents -->
-    <section class="toc-section">
-        <div class="container">
-            <div class="toc">
-                <h4>Содержание интервью</h4>
-                <div class="toc-grid">
-                    <div>
-                        <ul>
-                            <li><a href="#school-years">Школьные годы и первые шаги в олимпиадной физике</a></li>
-                            <li><a href="#republic-olympiad">Республиканская олимпиада</a></li>
-                            <li><a href="#sbory">Сборы</a></li>
-                            <li><a href="#ipho">Выступление на Международной олимпиаде</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li><a href="#mipt">Поступление и учеба в МФТИ</a></li>
-                            <li><a href="#princeton">Поступление в Princeton University</a></li>
-                            <li><a href="#application-advice">Советы по поступлению в зарубежные университеты</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li><a href="#usa-life">Жизнь в США</a></li>
-                            <li><a href="#research">Научная работа</a></li>
-                            <li><a href="#education-systems">Сравнение образовательных систем США и постсоветских стран</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li><a href="#belarus-state">Олимпиадное движение в Беларуси</a></li>
-                            <li><a href="#materials">Материалы для подготовки</a></li>
-                            <li><a href="#teaching">Преподавательский опыт</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
         <!-- Main Content -->
     <section class="content-section">
-        <div class="container">
-            <div class="article-content">
+      <div class="container interview-layout">
+         <aside class="interview-toc" aria-label="Содержание">
+                  <p class="toc-label">Содержание</p>
+                  <nav>
+                     <ul>
+                     <li><a href="#school-years">Школьные годы и первые шаги в олимпиадной физике</a></li>
+                     <li><a href="#republic-olympiad">Республиканская олимпиада</a></li>
+                     <li><a href="#sbory">Сборы</a></li>
+                     <li><a href="#ipho">Выступление на Международной олимпиаде</a></li>
+                     <li><a href="#mipt">Поступление и учеба в МФТИ</a></li>
+                     <li><a href="#princeton">Поступление в Princeton University</a></li>
+                     <li><a href="#application-advice">Советы по поступлению в зарубежные университеты</a></li>
+                     <li><a href="#usa-life">Жизнь в США</a></li>
+                     <li><a href="#research">Научная работа</a></li>
+                     <li><a href="#education-systems">Сравнение образовательных систем США и постсоветских стран</a></li>
+                     <li><a href="#belarus-state">Олимпиадное движение в Беларуси</a></li>
+                     <li><a href="#materials">Материалы для подготовки</a></li>
+                     <li><a href="#teaching">Преподавательский опыт</a></li>
+                     </ul>
+                  </nav>
+               </aside>
+               <div class="article-content">
                 <section id="school-years">
                     <h3 class="section-title">Школьные годы и первые шаги в олимпиадной физике</h3>
                     
@@ -930,5 +924,25 @@
             });
         });
     </script>
+
+   <script>
+      // Highlight the section being read in the contents sidebar
+      (function () {
+         var links = [].slice.call(document.querySelectorAll('.interview-toc a'));
+         var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+         function update() {
+            var current = 0;
+            for (var i = 0; i < sections.length; i++) {
+               if (sections[i] && sections[i].getBoundingClientRect().top <= 120) current = i;
+            }
+            links.forEach(function (a, i) { a.classList.toggle('active', i === current); });
+         }
+         var queued = false;
+         window.addEventListener('scroll', function () {
+            if (!queued) { queued = true; requestAnimationFrame(function () { queued = false; update(); }); }
+         }, { passive: true });
+         update();
+      })();
+   </script>
 </body>
 </html>
