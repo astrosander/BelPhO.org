@@ -1010,6 +1010,15 @@
    
       /* Bigger menu: 18px on wide screens, 16px on laptops so labels stay on one line */
       @media (max-width: 1279.98px) { .nav-links a { font-size: 16px; } }
+      /* One card style and one section background on the home page */
+      .section, .features { background: var(--c-surface) !important; padding-top: 24px !important; padding-bottom: 24px !important; }
+      .featured-article { background: var(--c-surface) !important; border: 1px solid var(--c-line) !important; border-radius: 12px !important; box-shadow: none !important; margin-bottom: 0 !important; }
+      .featured-article .featured-content { padding: 24px !important; max-width: none !important; }
+      .section > div[style*="position: absolute"], .featured-article > div[style*="position: absolute"], .section .container > div[style*="radial-gradient"] { display: none !important; }
+      .modern-year-card { border: 1px solid var(--c-line) !important; box-shadow: none !important; }
+      .announce-section { padding-bottom: 0 !important; }
+      .announce-card .featured-content { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; padding: 18px 24px !important; }
+      .announce-title { margin: 0; font-size: 22px; font-weight: 700; color: var(--c-ink); }
       /* Team photo banner (same on every page).
          Faces in ipho_2026.jpg (1200x800) sit in the band y=117..262, so the banner
          uses an 18% vertical anchor. With min-height 17vw the visible slice is at least 204 image px tall, so the slice starts at or above y=107 and always contains the whole face band. */
@@ -1151,6 +1160,16 @@
          </div>
       </div>
    </section>
+   <section class="section announce-section">
+      <div class="container">
+         <article class="featured-article announce-card">
+            <div class="featured-content">
+               <span class="ui-tag">Анонс</span>
+               <h2 class="announce-title">BelPhO 2026 пройдёт на весенних каникулах в Мозыре</h2>
+            </div>
+         </article>
+      </div>
+   </section>
 
   <!-- 2026 Final Materials Announcement -->
    <section class="section" style="background: white; padding: 20px 0;">
@@ -1164,9 +1183,9 @@
                      25 марта 2026
                   </div>
                </div>
-               <div style="display: grid; grid-template-columns: 2.4fr 0.6fr; gap: 24px; align-items: start; flex: 1; margin: 8px 0; position: relative;">
+               <div style="display: grid; grid-template-columns: 1fr; gap: 24px; align-items: start; flex: 1; margin: 8px 0; position: relative;">
                   <div style="display: flex; flex-direction: column; grid-column: 1; grid-row: 1;">
-                     <div style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 6px 12px; border-radius: 999px; background: linear-gradient(135deg, rgba(47, 93, 147, 0.12), rgba(47, 93, 147, 0.12)); border: 1px solid rgba(47, 93, 147, 0.25); color: #2f5d93; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">
+                     <div class="ui-tag" style="align-self: flex-start; margin-bottom: 10px;">
                         
                         Официальные материалы
                      </div>
@@ -1180,11 +1199,6 @@
                         <div style="width: 100%; display: flex; align-items: center; gap: 8px; font-weight: 900; font-size: 14px; color: #0f172a; margin-top: 8px;">
                            
                            Теоретический тур
-                        </div>
-                        <div style="display: flex; gap: 8px; border-bottom: 2px solid var(--border-color); padding-bottom: 0;">
-                           <button onclick="showFinalGrade(9)" class="final-grade-tab" data-final-grade="9" style="flex: 1; padding: 12px 16px; border: none; background: var(--bg-color); border-radius: 8px 8px 0 0; font-weight: 600; font-size: 14px; color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; border-bottom: 4px solid transparent; opacity: 0.7;">9 класс</button>
-                           <button onclick="showFinalGrade(10)" class="final-grade-tab" data-final-grade="10" style="flex: 1; padding: 12px 16px; border: none; background: var(--bg-color); border-radius: 8px 8px 0 0; font-weight: 600; font-size: 14px; color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; border-bottom: 4px solid transparent; opacity: 0.7;">10 класс</button>
-                           <button onclick="showFinalGrade(11)" class="final-grade-tab" data-final-grade="11" style="flex: 1; padding: 12px 16px; border: none; background: var(--bg-color); border-radius: 8px 8px 0 0; font-weight: 600; font-size: 14px; color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; border-bottom: 4px solid transparent; opacity: 0.7;">11 класс</button>
                         </div>
 
                         <div id="final-grade-9" class="final-grade-content" style="display: none; gap: 10px; flex-wrap: wrap;">
@@ -1207,20 +1221,14 @@
                         </div>
                      </div>
                      <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 0px; order: 1;">
+                        <div style="display: flex; gap: 8px; border-bottom: 2px solid var(--border-color); padding-bottom: 0; margin-bottom: 4px;" role="tablist" aria-label="Класс">
+                           <button onclick="showFinalGrade(9)" class="final-grade-tab" data-final-grade="9" style="flex: 1; padding: 12px 16px; border: none; background: var(--bg-color); border-radius: 8px 8px 0 0; font-weight: 600; font-size: 14px; color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; border-bottom: 4px solid transparent; opacity: 0.7;">9 класс</button>
+                           <button onclick="showFinalGrade(10)" class="final-grade-tab" data-final-grade="10" style="flex: 1; padding: 12px 16px; border: none; background: var(--bg-color); border-radius: 8px 8px 0 0; font-weight: 600; font-size: 14px; color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; border-bottom: 4px solid transparent; opacity: 0.7;">10 класс</button>
+                           <button onclick="showFinalGrade(11)" class="final-grade-tab" data-final-grade="11" style="flex: 1; padding: 12px 16px; border: none; background: var(--bg-color); border-radius: 8px 8px 0 0; font-weight: 600; font-size: 14px; color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; border-bottom: 4px solid transparent; opacity: 0.7;">11 класс</button>
+                        </div>
                         <div style="width: 100%; display: flex; align-items: center; gap: 8px; font-weight: 900; font-size: 14px; color: #0f172a;">
                            
                            Экспериментальный тур
-                        </div>
-                        <div style="display: flex; gap: 8px; border-bottom: 2px solid var(--border-color); padding-bottom: 0;">
-                           <button onclick="showFinalExpGrade(9)" class="final-exp-grade-tab" data-final-exp-grade="9" style="flex: 1; padding: 12px 16px; border: none; background: var(--bg-color); border-radius: 8px 8px 0 0; font-weight: 600; font-size: 14px; color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; border-bottom: 4px solid transparent; opacity: 0.7;">
-                              9 класс
-                           </button>
-                           <button onclick="showFinalExpGrade(10)" class="final-exp-grade-tab" data-final-exp-grade="10" style="flex: 1; padding: 12px 16px; border: none; background: var(--bg-color); border-radius: 8px 8px 0 0; font-weight: 600; font-size: 14px; color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; border-bottom: 4px solid transparent; opacity: 0.7;">
-                              10 класс
-                           </button>
-                           <button onclick="showFinalExpGrade(11)" class="final-exp-grade-tab" data-final-exp-grade="11" style="flex: 1; padding: 12px 16px; border: none; background: var(--bg-color); border-radius: 8px 8px 0 0; font-weight: 600; font-size: 14px; color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; border-bottom: 4px solid transparent; opacity: 0.7;">
-                              11 класс
-                           </button>
                         </div>
                         <div id="final-exp-grade-9" class="final-exp-grade-content" style="display: none; gap: 10px; flex-wrap: wrap;">
                            <a href="problems/final/2026/Эксперимент/9 класс/РФО2026 ЭкспТур 9 класс условия.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--solid">
@@ -1361,14 +1369,11 @@
                         </div>
                      </div>
                   </div>
-                  <div id="final-materials-logo" style="text-align: center; display: flex; align-items: center; justify-content: center; position: absolute; right: 6%; top: 50%; transform: translateY(-50%); height: fit-content; z-index: 2;">
-                     <div class="logo-background-circle" style="position: absolute; width: 150px; height: 150px; background: linear-gradient(135deg, rgba(47, 93, 147, 0.15), rgba(47, 93, 147, 0.12)); border-radius: 50%; animation: gentlePulse 4s ease-in-out infinite;"></div>
-                     <img src="img/logo.svg" alt="BelPhO Logo" style="width: 100%; max-width: 150px; border-radius: 8px; height: auto; object-fit: contain; position: relative; z-index: 1; filter: drop-shadow(0 6px 16px rgba(47, 93, 147, 0.3));">
-                  </div>
                </div>
             </div>
             <script>
                function showFinalGrade(grade) {
+                  if (typeof showFinalExpGrade === 'function') showFinalExpGrade(grade);
                   document.querySelectorAll('.final-grade-content').forEach(content => {
                      content.style.display = 'none';
                   });
@@ -1442,14 +1447,6 @@
                   localStorage.setItem('selectedFinalExpGrade2026', grade);
                }
 
-               document.addEventListener('DOMContentLoaded', function() {
-                  const savedFinalExpGrade = parseInt(localStorage.getItem('selectedFinalExpGrade2026') || '9');
-                  if (savedFinalExpGrade === 9 || savedFinalExpGrade === 10 || savedFinalExpGrade === 11) {
-                     showFinalExpGrade(savedFinalExpGrade);
-                  } else {
-                     showFinalExpGrade(9);
-                  }
-               });
             </script>
             <style>
                @media (max-width: 768px) {
@@ -3695,289 +3692,6 @@
    </section>
 
    <!-- News Section -->
-   <section id="news-section" class="section" style="background: var(--bg-color);">
-      <div class="container">
-         <h2 class="section-title">Новости физического движения</h2>
-         <p class="section-subtitle">Актуальные события, достижения и анонсы в мире олимпиадной физики</p>
-         
-         <style>
-            .news-grid {
-               display: grid;
-               grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-               gap: 32px;
-               margin-top: 24px;
-            }
-            
-            .news-card {
-               background: var(--surface-color);
-               border-radius: 16px;
-               padding: 32px;
-               box-shadow: var(--shadow-md);
-               border-left: 4px solid var(--accent-color);
-               transition: all 0.3s ease;
-            }
-            
-            .news-date {
-               color: var(--text-secondary);
-               font-size: 14px;
-               font-weight: 500;
-               margin-bottom: 12px;
-               display: flex;
-               align-items: center;
-               gap: 8px;
-            }
-            
-            .news-title {
-               font-size: 22px;
-               font-weight: 700;
-               color: var(--text-primary);
-               margin-bottom: 16px;
-               line-height: 1.3;
-            }
-            
-            .news-content {
-               color: var(--text-secondary);
-               line-height: 1.6;
-               margin-bottom: 24px;
-            }
-            
-            .news-content h4 {
-               color: var(--text-primary);
-               font-size: 18px;
-               font-weight: 600;
-               margin: 20px 0 12px 0;
-               display: flex;
-               align-items: center;
-               gap: 8px;
-            }
-            
-            .news-content ul {
-               margin: 12px 0 12px 20px;
-               padding: 0;
-            }
-            
-            .news-content li {
-               margin-bottom: 8px;
-               color: var(--text-secondary);
-            }
-            
-            .medal-list {
-               display: grid;
-               grid-template-columns: 1fr 1fr;
-               gap: 16px;
-               margin: 16px 0;
-            }
-            
-            .medal-category {
-               background: var(--bg-color);
-               padding: 16px;
-               border-radius: 12px;
-               border: 1px solid var(--border-color);
-            }
-            
-            .medal-category h5 {
-               font-size: 16px;
-               font-weight: 600;
-               color: var(--primary-color);
-               margin-bottom: 12px;
-               text-align: center;
-            }
-            
-            .medal-category ul {
-               margin: 0;
-               padding: 0;
-               list-style: none;
-            }
-            
-            .medal-category li {
-               display: flex;
-               align-items: center;
-               gap: 8px;
-               margin-bottom: 8px;
-               font-size: 14px;
-               color: var(--text-primary);
-            }
-            
-            .news-tags {
-               display: flex;
-               flex-wrap: wrap;
-               gap: 8px;
-               margin-bottom: 20px;
-            }
-            
-            .news-tag {
-               background: var(--primary-color);
-               color: white;
-               padding: 4px 12px;
-               border-radius: 16px;
-               font-size: 12px;
-               font-weight: 500;
-            }
-            
-            .news-link {
-               display: inline-flex;
-               align-items: center;
-               gap: 8px;
-               color: var(--primary-color);
-               text-decoration: none;
-               font-weight: 500;
-               transition: color 0.3s ease;
-            }
-            
-            .news-link:hover {
-               color: var(--primary-dark);
-               text-decoration: none;
-            }
-            
-            @media (max-width: 768px) {
-               .news-grid {
-                  grid-template-columns: 1fr;
-               }
-               
-               .medal-list {
-                  grid-template-columns: 1fr;
-               }
-            }
-         </style>
-         
-         <div class="news-grid">
-            <!-- IPhO-2025 Featured News Article -->
-            <div class="news-card">
-               <div class="news-date">
-                  
-                  25 июля 2025
-               </div>
-               
-               <div class="news-tags">
-                  <span class="news-tag">IPhO 2025</span>
-                  <span class="news-tag">Международные соревнования</span>
-                  <span class="news-tag">Результаты</span>
-               </div>
-               
-               <h3 class="news-title"><a href="news/ipho-2025/" class="title-link">Триумф в Париже: Белорусская команда завоевала 4 серебряные медали на IPhO 2025</a></h3>
-               
-               <div class="news-content">
-                  <p><strong>18-24 июля 2025 года</strong> в Париже прошла <strong>55-я Международная олимпиада по физике (IPhO 2025)</strong> с участием 418 школьников из 89 стран мира.</p>
-                  
-                  <h4>Достижения белорусской команды</h4>
-                  <p>Команда Республики Беларусь показала выдающиеся результаты, завоевав <strong>4 серебряные медали</strong> и <strong>1 похвальный отзыв</strong>:</p>
-                  <ul>
-                     <li><strong>Вячеслав Клеукин</strong>, Гимназия №1 им. академика Е.Ф. Карского (Гродно)</li>
-                     <li><strong>Адриан Ревковский</strong>, Гимназия №1 им. академика Е.Ф. Карского (Гродно)</li>
-                     <li><strong>Арсений Кузнецов</strong>, Гимназия №1 (Жодино)</li>
-                     <li><strong>Илья Пластинин</strong>, Лицей БГУ (Минск)</li>
-                     <li><strong>Константин Шмерко</strong>, Лицей БГУ (Минск), похвальный отзыв</li>
-                  </ul>
-                  
-                  <h4>О соревновании</h4>
-                  <p>IPhO 2025 проходила под девизом <em>"Physics Beyond Frontiers"</em> в знаменитых парижских учебных заведениях École Polytechnique и École Normale Supérieure. Соревнования включали теоретический тур с задачами по 21-см спектроскопии, барометрическим часам и аттосекундной физике, а также экспериментальный тур с исследованиями метеоритных кратеров и магнитной восприимчивости.</p>
-                  
-                  <h4>Руководители команды</h4>
-                  <ul>
-                     <li><strong>Анатолий Слободянюк</strong>, заведующий кафедрой общей физики БГУ</li>
-                     <li><strong>Леонид Маркович</strong>, заведующий кафедрой физики Лицея БГУ</li>
-                  </ul>
-                  
-                  <p>Это выдающийся результат, подтверждающий высокий уровень белорусского физического образования и традиции успешного участия в международных олимпиадах.</p>
-               </div>
-               
-            </div>
-            
-            <!-- Andrei Katsevich Interview -->
-            <div class="news-card" style="border-left-color: var(--success-color);">
-               <div class="news-date">
-                  
-                  Июль 2025
-               </div>
-               
-               <div class="news-tags">
-                  <span class="news-tag" style="background: var(--success-color);">Интервью</span>
-                  <span class="news-tag">Выпускники</span>
-                  <span class="news-tag">Princeton University</span>
-               </div>
-               
-               <h3 class="news-title">Интервью с Андреем Коцевичем: путь от БелФО до Princeton University</h3>
-               
-               <div class="news-content">
-                  <p><strong>Андрей Коцевич (Andrei Katsevich)</strong>, выпускник Лицея № 1 имени А.С. Пушкина г. Бреста, бронзовый призер международной физической олимпиады IPhO-2019 (Тель-Авив, Израиль), выпускник ЛФИ МФТИ и PhD-студент Princeton University.</p>
-                  
-                  <h4>О чем интервью</h4>
-                  <ul>
-                     <li>Школьные годы и первые шаги в олимпиадной физике</li>
-                     <li>Республиканская олимпиада и сборы</li>
-                     <li>Выступление на Международной олимпиаде IPhO 2019</li>
-                     <li>Поступление и учеба в МФТИ</li>
-                     <li>Поступление в Princeton University</li>
-                     <li>Жизнь в США и научная работа</li>
-                     <li>Сравнение образовательных систем</li>
-                     <li>Советы будущим олимпиадникам</li>
-                  </ul>
-                  
-                  <h4>Ценные советы</h4>
-                  <p>Андрей делится уникальным опытом подготовки к олимпиадам, учебы в ведущих вузах мира и дает практические рекомендации по поступлению в зарубежные университеты. Интервью раскрывает не только технические аспекты подготовки, но и личную историю становления ученого.</p>
-                  
-                  <p><strong>Особенно интересно:</strong> рассказ о теорминимуме Ландау, работе с Игорем Клебановым в Princeton, сравнение систем образования США и постсоветских стран, а также размышления о будущем олимпиадного движения в Беларуси.</p>
-               </div>
-               
-               <a href="news/andrei-katsevich-interview/" class="news-link">
-                  
-                  Читать полное интервью
-               </a>
-            </div>
-            
-            <!-- News Categories Info Card -->
-            <div class="news-card" style="border-left-color: var(--primary-color);">
-               <div class="news-date">
-                  
-                  Постоянно обновляется
-               </div>
-               
-               <h3 class="news-title">Что вы найдете в разделе новостей</h3>
-               
-               <div class="news-content">
-                  <h4>Предстоящие события и дедлайны</h4>
-                  <ul>
-                     <li>Даты школьных, региональных и республиканских олимпиад</li>
-                     <li>Тренировочные сборы (региональные и национальные)</li>
-                     <li>Отборочные тесты в сборную команду</li>
-                     <li>IPhO, IESO, APhO и другие международные события</li>
-                  </ul>
-                  
-                  <h4>Результаты соревнований</h4>
-                  <ul>
-                     <li>Итоги региональных и республиканских олимпиад</li>
-                     <li>Результаты отборочных туров</li>
-                     <li>Достижения на международных олимпиадах</li>
-                     <li>Информация о призерах и их учебных заведениях</li>
-                  </ul>
-                  
-                  <h4>Объявления команд</h4>
-                  <ul>
-                     <li>Состав участников национальных сборов</li>
-                     <li>Белорусская команда на IPhO/APhO</li>
-                     <li>Краткие биографии или интервью с участниками</li>
-                  </ul>
-                  
-                  <h4>Возможности для учащихся</h4>
-                  <ul>
-                     <li>Открытые онлайн-олимпиады</li>
-                     <li>Вебинары, мастер-классы и семинары</li>
-                     <li>Университетские физические конкурсы</li>
-                     <li>Летние и зимние физические школы</li>
-                  </ul>
-                  
-                  <h4>Отчеты о мероприятиях</h4>
-                  <ul>
-                     <li>Обзоры тренировочных сборов и олимпиад</li>
-                     <li>Фото, видео и цитаты участников</li>
-                     <li>Блоги от учащихся и организаторов</li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-         
-      </div>
-   </section>
    
    <!-- Footer -->
    <footer class="site-footer">

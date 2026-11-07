@@ -102,3 +102,9 @@ body:has(> .site-header) { margin-top: 0 !important; margin-left: 0 !important; 
 .site-header .site-nav, .site-header .nav-links { visibility: visible; }
 .site-header .site-nav { display: block !important; }
 .site-footer, .site-footer * { line-height: 1.5; }
+
+/* Button colors win over older per-page link rules (.read-more, .news-link ...) */
+a.ui-btn.ui-btn--solid, button.ui-btn.ui-btn--solid { color: #fff !important; background: var(--c-brand) !important; border-color: var(--c-brand) !important; }
+a.ui-btn.ui-btn--solid:hover, button.ui-btn.ui-btn--solid:hover { background: var(--c-brand-dark) !important; border-color: var(--c-brand-dark) !important; }
+a.ui-btn.ui-btn--outline, button.ui-btn.ui-btn--outline { color: var(--c-brand) !important; background: var(--c-surface) !important; border-color: var(--c-brand) !important; }
+a.ui-btn.ui-btn--outline:hover, button.ui-btn.ui-btn--outline:hover { background: var(--c-brand-tint) !important; }
