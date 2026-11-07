@@ -1070,6 +1070,9 @@
          }
          .hero::before { top: 66.667vw; }
       }
+         /* Titles that are links: same look as the title, underline on hover only */
+      .title-link { color: inherit; text-decoration: none; }
+      .title-link:hover, .title-link:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
    </style>
 </head>
 
@@ -1771,7 +1774,7 @@
                   <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 16px; align-items: center; flex: 1; margin: 6px 0;">
                      <div>
                         <h2 class="featured-title" style="font-size: 22px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; line-height: 1.2;">
-                           ❗ Эксклюзивные задания IZhO 2026
+                           Эксклюзивные задания IZhO 2026
                         </h2>
                         <p class="featured-excerpt" style="font-size: 14px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5;">
                            Официальные задания и решения теоретического тура XXII Международной Жаутыковской Олимпиады по физике.
@@ -3874,7 +3877,7 @@
                   <span class="news-tag">Результаты</span>
                </div>
                
-               <h3 class="news-title">🏆 Триумф в Париже: Белорусская команда завоевала 4 серебряные медали на IPhO 2025</h3>
+               <h3 class="news-title"><a href="news/ipho-2025/" class="title-link">Триумф в Париже: Белорусская команда завоевала 4 серебряные медали на IPhO 2025</a></h3>
                
                <div class="news-content">
                   <p><strong>18-24 июля 2025 года</strong> в Париже прошла <strong>55-я Международная олимпиада по физике (IPhO 2025)</strong> с участием 418 школьников из 89 стран мира.</p>
@@ -3882,11 +3885,11 @@
                   <h4><i class="fas fa-trophy"></i> Достижения белорусской команды</h4>
                   <p>Команда Республики Беларусь показала выдающиеся результаты, завоевав <strong>4 серебряные медали</strong> и <strong>1 похвальный отзыв</strong>:</p>
                   <ul>
-                     <li>🥈 <strong>Вячеслав Клеукин</strong>, Гимназия №1 им. академика Е.Ф. Карского (Гродно)</li>
-                     <li>🥈 <strong>Адриан Ревковский</strong>, Гимназия №1 им. академика Е.Ф. Карского (Гродно)</li>
-                     <li>🥈 <strong>Арсений Кузнецов</strong>, Гимназия №1 (Жодино)</li>
-                     <li>🥈 <strong>Илья Пластинин</strong>, Лицей БГУ (Минск)</li>
-                     <li>📜 <strong>Константин Шмерко</strong>, Лицей БГУ (Минск), похвальный отзыв</li>
+                     <li><strong>Вячеслав Клеукин</strong>, Гимназия №1 им. академика Е.Ф. Карского (Гродно)</li>
+                     <li><strong>Адриан Ревковский</strong>, Гимназия №1 им. академика Е.Ф. Карского (Гродно)</li>
+                     <li><strong>Арсений Кузнецов</strong>, Гимназия №1 (Жодино)</li>
+                     <li><strong>Илья Пластинин</strong>, Лицей БГУ (Минск)</li>
+                     <li><strong>Константин Шмерко</strong>, Лицей БГУ (Минск), похвальный отзыв</li>
                   </ul>
                   
                   <h4><i class="fas fa-globe"></i> О соревновании</h4>
@@ -3901,10 +3904,6 @@
                   <p>Это выдающийся результат, подтверждающий высокий уровень белорусского физического образования и традиции успешного участия в международных олимпиадах.</p>
                </div>
                
-               <a href="news/ipho-2025/" class="news-link">
-                  <i class="fas fa-newspaper"></i>
-                  Читать полный репортаж из Парижа
-               </a>
             </div>
             
             <!-- Andrei Katsevich Interview -->
@@ -3920,7 +3919,7 @@
                   <span class="news-tag">Princeton University</span>
                </div>
                
-               <h3 class="news-title">🎓 Интервью с Андреем Коцевичем: путь от БелФО до Princeton University</h3>
+               <h3 class="news-title">Интервью с Андреем Коцевичем: путь от БелФО до Princeton University</h3>
                
                <div class="news-content">
                   <p><strong>Андрей Коцевич (Andrei Katsevich)</strong>, выпускник Лицея № 1 имени А.С. Пушкина г. Бреста, бронзовый призер международной физической олимпиады IPhO-2019 (Тель-Авив, Израиль), выпускник ЛФИ МФТИ и PhD-студент Princeton University.</p>
@@ -3956,7 +3955,7 @@
                   Постоянно обновляется
                </div>
                
-               <h3 class="news-title">📰 Что вы найдете в разделе новостей</h3>
+               <h3 class="news-title">Что вы найдете в разделе новостей</h3>
                
                <div class="news-content">
                   <h4><i class="fas fa-calendar-alt"></i> Предстоящие события и дедлайны</h4>
@@ -4051,7 +4050,7 @@
          
          if (timeLeft <= 0) {
             document.getElementById('countdown-container').innerHTML = 
-               '<div class="countdown-title">🎉 Олимпиада началась!</div>';
+               '<div class="countdown-title">Олимпиада началась!</div>';
             return;
          }
          
@@ -4075,7 +4074,7 @@
       function createSnowflake() {
          const snowflake = document.createElement('div');
          snowflake.className = 'snowflake';
-         snowflake.innerHTML = '❄';
+         snowflake.innerHTML = '';
          snowflake.style.left = Math.random() * 100 + '%';
          snowflake.style.animationDuration = (Math.random() * 6 + 5) + 's';
          snowflake.style.opacity = Math.random();

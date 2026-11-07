@@ -1,20 +1,21 @@
+@import url('/css/theme.css');
 /* Profile Page Styles - Modern & Credible Design */
 
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
-    --success-color: #27ae60;
-    --warning-color: #f39c12;
-    --info-color: #17a2b8;
-    --light-color: #f8f9fa;
-    --dark-color: #343a40;
-    --text-primary: #2c3e50;
-    --text-secondary: #6c757d;
-    --text-muted: #adb5bd;
-    --border-color: #dee2e6;
-    --shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    --primary-color: #1f3f66;
+    --secondary-color: #2f5d93;
+    --accent-color: #2f5d93;
+    --success-color: #2f5d93;
+    --warning-color: #2f5d93;
+    --info-color: #2f5d93;
+    --light-color: #f8fafc;
+    --dark-color: #0f172a;
+    --text-primary: #1f3f66;
+    --text-secondary: #475569;
+    --text-muted: #e2e8f0;
+    --border-color: #e2e8f0;
+    --shadow: 0 0.125rem 0.25rem rgba(15, 23, 42, 0.075);
+    --shadow-lg: 0 1rem 3rem rgba(15, 23, 42, 0.175);
     --border-radius: 0.5rem;
     --transition: all 0.3s ease;
 }
@@ -25,10 +26,10 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--font);
     line-height: 1.6;
     color: var(--text-primary);
-    background-color: #f8f9fa;
+    background-color: #f8fafc;
     margin: 0;
     padding-top: 76px; /* Account for fixed navbar */
 }
@@ -37,17 +38,17 @@ body {
 .navbar {
     box-shadow: var(--shadow);
     backdrop-filter: blur(10px);
-    background-color: rgba(44, 62, 80, 0.95) !important;
+    background-color: rgba(31, 63, 102, 0.95) !important;
 }
 
 .navbar-brand {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 22px;
 }
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #2f5d93;
     color: white;
     padding: 4rem 0 3rem;
     position: relative;
@@ -61,7 +62,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
     opacity: 0.3;
 }
 
@@ -71,10 +72,10 @@ body {
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: 40px;
     font-weight: 700;
     margin-bottom: 1rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 4px rgba(15, 23, 42, 0.3);
 }
 
 .hero-subtitle {
@@ -99,33 +100,33 @@ body {
 }
 
 .award-badge.gold {
-    background: linear-gradient(45deg, #ffd700, #ffed4e);
-    color: #8b5a00;
+    background: #2f5d93;
+    color: #1f3f66;
 }
 
 .award-badge.silver {
-    background: linear-gradient(45deg, #c0c0c0, #e5e5e5);
-    color: #4a4a4a;
+    background: #e2e8f0;
+    color: #475569;
 }
 
 .award-badge.bronze {
-    background: linear-gradient(45deg, #cd7f32, #daa520);
-    color: #5d4e37;
+    background: #2f5d93;
+    color: #1f3f66;
 }
 
 .award-badge.mention {
-    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+    background: #2f5d93;
     color: white;
 }
 
 .hero-description {
-    font-size: 1.2rem;
+    font-size: 18px;
     opacity: 0.9;
     margin-bottom: 1rem;
 }
 
 .current-status, .university {
-    font-size: 1.1rem;
+    font-size: 18px;
     opacity: 0.95;
     margin-bottom: 0.5rem;
 }
@@ -143,13 +144,13 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.3);
     transition: var(--transition);
 }
 
 .profile-image:hover {
     transform: scale(1.05);
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 12px 48px rgba(15, 23, 42, 0.4);
 }
 
 .profile-placeholder {
@@ -165,7 +166,7 @@ body {
 }
 
 .profile-placeholder i {
-    font-size: 4rem;
+    font-size: 40px;
     color: rgba(255, 255, 255, 0.7);
 }
 
@@ -180,11 +181,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
 }
 
 .medal {
-    font-size: 1.5rem;
+    font-size: 22px;
 }
 
 /* Main Content */
@@ -208,7 +209,7 @@ body {
 }
 
 .section-title {
-    font-size: 1.5rem;
+    font-size: 22px;
     font-weight: 600;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
@@ -243,7 +244,7 @@ body {
 
 .stat-value {
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 18px;
 }
 
 .stat-value.rank-gold {
@@ -251,16 +252,16 @@ body {
 }
 
 .stat-value.rank-silver {
-    color: #6c757d;
+    color: #475569;
 }
 
 .stat-value.rank-bronze {
-    color: #cd7f32;
+    color: #2f5d93;
 }
 
 .stat-value.total-score {
     color: var(--success-color);
-    font-size: 1.2rem;
+    font-size: 18px;
 }
 
 /* Achievements */
@@ -281,7 +282,7 @@ body {
 }
 
 .achievement-item:hover {
-    background: #e8f5e8;
+    background: #f8fafc;
     transform: translateX(5px);
 }
 
@@ -302,7 +303,7 @@ body {
 }
 
 .sidebar-title {
-    font-size: 1.2rem;
+    font-size: 18px;
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--text-primary);
@@ -340,11 +341,11 @@ body {
 }
 
 .fact-value.award-silver {
-    color: #6c757d;
+    color: #475569;
 }
 
 .fact-value.award-bronze {
-    color: #cd7f32;
+    color: #2f5d93;
 }
 
 .fact-value.award-mention {
@@ -400,7 +401,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 28px;
     }
     
     .profile-image,
@@ -439,6 +440,6 @@ body {
     .content-card,
     .sidebar-card {
         box-shadow: none;
-        border: 1px solid #ccc;
+        border: 1px solid #e2e8f0;
     }
 }
