@@ -192,6 +192,11 @@
             box-shadow: var(--shadow-sm);
         }
 
+        /* Medal coins on counters and filter buttons */
+        .stat-number { display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .stat-coin { width: 34px; height: 34px; object-fit: contain; flex: none; }
+        .filter-btn { display: inline-flex; align-items: center; gap: 6px; }
+        .filter-coin { width: 18px; height: 18px; object-fit: contain; flex: none; }
         /* Stats row: five medal counters plus the stayed/left pie */
         .stats-layout { display: grid; grid-template-columns: 1fr; gap: 12px; align-items: center; }
         /* Two rows: three counters on top, two below */
@@ -1197,15 +1202,15 @@
                         <div class="stat-label">Участников IPhO</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number" id="gold-medals">-</div>
+                        <div class="stat-number"><img src="img/mini_logos/Gold_medal.svg" alt="" class="stat-coin" aria-hidden="true"><span id="gold-medals">-</span></div>
                         <div class="stat-label">Золотых медалей</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number" id="silver-medals">-</div>
+                        <div class="stat-number"><img src="img/mini_logos/Silver_medal.svg" alt="" class="stat-coin" aria-hidden="true"><span id="silver-medals">-</span></div>
                         <div class="stat-label">Серебряных медалей</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number" id="bronze-medals">-</div>
+                        <div class="stat-number"><img src="img/mini_logos/Bronze_medal.svg" alt="" class="stat-coin" aria-hidden="true"><span id="bronze-medals">-</span></div>
                         <div class="stat-label">Бронзовых медалей</div>
                     </div>
                     <div class="stat-card">
@@ -1417,11 +1422,11 @@
     <section class="filter-section">
         <div class="container">
             <div class="filter-controls">
-                <button class="filter-btn active" data-filter="all">Все участники</button>
-                <button class="filter-btn" data-filter="gold">Золотые медали</button>
-                <button class="filter-btn" data-filter="silver">Серебряные медали</button>
-                <button class="filter-btn" data-filter="bronze">Бронзовые медали</button>
-                <button class="filter-btn" data-filter="mention">Похвальные отзывы</button>
+                <button class="filter-btn active" data-filter="all"><img src="img/mini_logos/ipho_logo.svg" alt="" class="filter-coin" aria-hidden="true"><span>Все участники</span></button>
+                <button class="filter-btn" data-filter="gold"><img src="img/mini_logos/Gold_medal.svg" alt="" class="filter-coin" aria-hidden="true"><span>Золотые медали</span></button>
+                <button class="filter-btn" data-filter="silver"><img src="img/mini_logos/Silver_medal.svg" alt="" class="filter-coin" aria-hidden="true"><span>Серебряные медали</span></button>
+                <button class="filter-btn" data-filter="bronze"><img src="img/mini_logos/Bronze_medal.svg" alt="" class="filter-coin" aria-hidden="true"><span>Бронзовые медали</span></button>
+                <button class="filter-btn" data-filter="mention"><img src="img/mini_logos/Honorable_medal.svg" alt="" class="filter-coin" aria-hidden="true"><span>Похвальные отзывы</span></button>
                 <button class="filter-btn" data-filter="bsu-lyceum">Лицей БГУ</button>
                 <button class="filter-btn" data-filter="gymnasium-29">Гимназия №29</button>
             </div>
