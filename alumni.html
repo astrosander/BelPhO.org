@@ -91,6 +91,8 @@
         }
 
         .nav-links a {
+            font-size: 18px;
+            white-space: nowrap;
             color: var(--text-secondary);
             text-decoration: none;
             font-weight: 500;
@@ -187,6 +189,39 @@
             border-radius: 8px;
             background: var(--bg-color);
             box-shadow: var(--shadow-sm);
+        }
+
+        /* Stats row: five medal counters plus the stayed/left pie */
+        .stats-layout { display: grid; grid-template-columns: 1fr; gap: 12px; align-items: center; }
+        .stats-layout .stats-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+        .stats-layout .stat-card { padding: 14px 6px; }
+        .stats-layout .stat-number { font-size: 30px; }
+        .stats-layout .stat-label { font-size: 13px; }
+        .where-panel { --where-left: #eb6834; --where-stayed: #2a78d6; margin: 0 auto; width: 100%; max-width: 620px; position: relative; background: var(--bg-color); border-radius: 12px; box-shadow: var(--shadow-sm); padding: 14px 18px; }
+        .where-title { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; text-align: center; }
+        .where-body { display: flex; align-items: center; justify-content: center; gap: 22px; }
+        .where-pie { width: 150px; height: 150px; flex: none; overflow: visible; }
+        .where-pie path { stroke: var(--bg-color); stroke-width: 2; stroke-linejoin: round; cursor: default; transition: opacity 0.15s ease; }
+        .where-pie.hovering path:not(.active) { opacity: 0.45; }
+        .where-legend { display: flex; flex-direction: column; gap: 6px; }
+        .where-item { display: flex; align-items: baseline; gap: 10px; }
+        .where-swatch { width: 14px; height: 14px; border-radius: 4px; flex: none; align-self: center; }
+        .where-swatch.where-left { background: var(--where-left); }
+        .where-swatch.where-stayed { background: var(--where-stayed); }
+        .where-pct { font-size: 40px; font-weight: 800; line-height: 1; color: var(--text-primary); min-width: 2.6em; font-variant-numeric: tabular-nums; }
+        .where-label { font-size: 15px; color: var(--text-secondary); }
+        .where-note { font-size: 12px; color: var(--text-secondary); margin-top: 4px; max-width: 300px; }
+        .where-tip { position: absolute; pointer-events: none; background: var(--text-primary); color: #fff; font-size: 13px; padding: 6px 10px; border-radius: 6px; white-space: nowrap; opacity: 0; transform: translate(-50%, -120%); transition: opacity 0.1s ease; }
+        .where-tip.show { opacity: 1; }
+        @media (min-width: 1100px) {
+            .stats-layout { grid-template-columns: minmax(0, 1fr) auto; }
+            .where-panel { max-width: none; }
+        }
+        @media (max-width: 700px) {
+            .stats-layout .stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .stats-layout .stat-number { font-size: 24px; }
+            .where-body { flex-direction: column; gap: 12px; }
+            .where-pct { font-size: 34px; }
         }
 
         .stat-number {
@@ -861,10 +896,6 @@
             }
         }
 
-        .team-photo-card:hover {
-            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
-            transform: scale(1.02);
-        }
 
         .slider-arrow {
             position: absolute;
@@ -919,16 +950,11 @@
             height: auto;
             aspect-ratio: 3 / 2;
             object-fit: cover;
-            /* Anchor to the top so the tallest heads are never cut, and zoom from the top on hover */
+            /* Anchor to the top so the tallest heads are never cut */
             object-position: center top;
-            transform-origin: 50% 0;
             display: block;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .team-photo-card:hover .team-photo {
-            transform: scale(1.05);
-        }
 
         .team-photo-caption {
             padding: 12px;
@@ -936,9 +962,6 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .team-photo-card:hover .team-photo-caption {
-            background: linear-gradient(to top, rgba(37, 99, 235, 0.03), transparent);
-        }
 
         .team-photo-caption h3 {
             font-size: 14px;
@@ -949,9 +972,6 @@
             transition: color 0.3s ease;
         }
 
-        .team-photo-card:hover .team-photo-caption h3 {
-            color: rgba(37, 99, 235, 0.9);
-        }
 
         .team-photo-caption p {
             color: var(--text-secondary);
@@ -987,9 +1007,6 @@
             transition: all 0.3s ease;
         }
 
-        .training-photo-card:hover {
-            box-shadow: var(--shadow-md);
-        }
 
         .training-photo {
             width: 100%;
@@ -1097,18 +1114,20 @@
             }
         }
     
+      /* Bigger menu: 18px on wide screens, 16px on laptops so labels stay on one line */
+      @media (max-width: 1279.98px) { .nav-links a { font-size: 16px; } }
       /* Team photo banner (same on every page).
          Faces in ipho_2026.jpg (1200x800) sit in the band y=117..262, so the banner
          uses an 18% vertical anchor. With min-height 17vw the visible slice is at least 204 image px tall, so the slice starts at or above y=107 and always contains the whole face band. */
       .hero {
-         /* Duotone: the photo is turned grayscale (luminosity over gray), then multiplied by
-            a flat blue layer, so the brightest pixel is #3a6aa6 and white text keeps contrast. */
+         /* Steel-blue duotone in the style of the AAPT U.S. Physics Team banner: the photo is
+            turned grayscale (luminosity over gray), then covered by a 70% steel-blue layer. */
          background-color: #8a8a8a !important;
-         background-image: linear-gradient(#3a6aa6, #3a6aa6), url('img/teams/ipho_2026.jpg') !important;
+         background-image: linear-gradient(rgba(70, 108, 156, 0.7), rgba(70, 108, 156, 0.7)), url('img/teams/ipho_2026.jpg') !important;
          background-repeat: no-repeat !important;
          background-size: 100% 100%, cover !important;
          background-position: center, center 18% !important;
-         background-blend-mode: multiply, luminosity;
+         background-blend-mode: normal, luminosity;
          min-height: max(280px, 17vw);
          display: flex;
          flex-direction: column;
@@ -1122,18 +1141,18 @@
          position: absolute !important;
          top: 0; left: 0; right: 0; bottom: 0;
          width: auto; height: auto;
-         background: rgba(10, 24, 48, 0.18) !important;
+         background: transparent !important;
          opacity: 1 !important;
          pointer-events: none;
          z-index: 1;
       }
       .hero > * { position: relative; z-index: 2; width: 100%; }
-      .hero h1, .hero p { text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5); }
+      .hero h1, .hero p { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55), 0 2px 14px rgba(0, 0, 0, 0.35); }
       /* Phones and tablets: the photo becomes a full-width strip above the text,
          so no face is ever cropped or covered by text. */
       @media (max-width: 640px) {
          .hero {
-            background-color: #1f3d68 !important;
+            background-color: #3a3a3a !important;
             background-size: 100% 100%, 100% auto !important;
             background-position: center, center top !important;
             padding-top: calc(66.667vw + 20px) !important;
@@ -1179,45 +1198,41 @@
 
     <!-- Stats -->
     <section class="stats-section">
-        <div class="container">
+        <div class="container stats-layout">
             <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number" id="total-participants">-</div>
-                    <div class="stat-label">Участников IPhO</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="gold-medals">-</div>
-                    <div class="stat-label">Золотых медалей</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="silver-medals">-</div>
-                    <div class="stat-label">Серебряных медалей</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="bronze-medals">-</div>
-                    <div class="stat-label">Бронзовых медалей</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="mentions">-</div>
-                    <div class="stat-label">Похвальных отзывов</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="unique-schools">-</div>
-                    <div class="stat-label">Учебных заведений</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="studied-abroad">-</div>
-                    <div class="stat-label">Учились за рубежом</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="remained-belarus">-</div>
-                    <div class="stat-label">Остались в Беларуси</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="it-specialists">-</div>
-                    <div class="stat-label">IT-специалистов</div>
-                </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-participants">-</div>
+                        <div class="stat-label">Участников IPhO</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="gold-medals">-</div>
+                        <div class="stat-label">Золотых медалей</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="silver-medals">-</div>
+                        <div class="stat-label">Серебряных медалей</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="bronze-medals">-</div>
+                        <div class="stat-label">Бронзовых медалей</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="mentions">-</div>
+                        <div class="stat-label">Похвальных отзывов</div>
+                    </div>
             </div>
+            <figure class="where-panel" id="where-panel" aria-labelledby="where-title">
+                <figcaption class="where-title" id="where-title">Где выпускники сейчас</figcaption>
+                <div class="where-body">
+                    <svg class="where-pie" id="where-pie" viewBox="0 0 120 120" role="img" aria-label="Доля выпускников, которые уехали из Беларуси и остались в Беларуси"></svg>
+                    <div class="where-legend">
+                        <div class="where-item"><span class="where-swatch where-left"></span><span class="where-pct" id="where-left-pct">-</span><span class="where-label">уехали из Беларуси</span></div>
+                        <div class="where-item"><span class="where-swatch where-stayed"></span><span class="where-pct" id="where-stayed-pct">-</span><span class="where-label">остались в Беларуси</span></div>
+                        <p class="where-note">Среди <span id="where-known">-</span> выпускников, о которых известно, где они учились или живут</p>
+                    </div>
+                </div>
+                <div class="where-tip" id="where-tip" role="status"></div>
+            </figure>
         </div>
     </section>
 
@@ -4880,6 +4895,11 @@
                 'ягелонский университет': 'img/mini_logos/universities/Herb_Uniwersytetu_Jagiellońskiego.svg',
                 'ягелонский': 'img/mini_logos/universities/Herb_Uniwersytetu_Jagiellońskiego.svg',
                 
+                // University of Warsaw / Варшавский университет
+                'university of warsaw': 'img/mini_logos/universities/University_of_Warsaw_logo.svg',
+                'uniwersytet warszawski': 'img/mini_logos/universities/University_of_Warsaw_logo.svg',
+                'варшавский университет': 'img/mini_logos/universities/University_of_Warsaw_logo.svg',
+                
                 // École Polytechnique
                 'école polytechnique': 'img/mini_logos/universities/École_polytechnique_signature.svg',
                 'ecole polytechnique': 'img/mini_logos/universities/École_polytechnique_signature.svg',
@@ -4993,33 +5013,73 @@
             const bronzeMedals = data.filter(alumni => alumni.award === 'bronze').length;
             const mentions = data.filter(alumni => alumni.award === 'mention').length;
             
-            // Count unique schools
-            const uniqueSchools = new Set(data.map(alumni => alumni.school).filter(Boolean)).size;
-            
-            // Career statistics. "Studied abroad" counts alumni with a known university
-            // where at least one listed institution is outside Belarus.
+            // Where alumni are now. "Left" means a known university outside Belarus or a
+            // known country other than Belarus. Alumni with neither known are not counted.
             const belarusInstitution = /БГУ|Белорус|Беларус|Минск|Гомельск|Гродненск|Брестск|Витебск|Могил|БГУИР|БНТУ/i;
             const universityParts = u => (u || '').split(/,|\/|\+/).map(x => x.trim()).filter(Boolean);
-            const studiedAbroad = a => universityParts(a.university).some(x => !belarusInstitution.test(x));
-            const knownUniversity = data.filter(a => universityParts(a.university).length > 0);
-            const studiedAbroadCount = knownUniversity.filter(studiedAbroad).length;
-            const studiedAbroadPercentage = knownUniversity.length > 0 ? Math.round((studiedAbroadCount / knownUniversity.length) * 100) : 0;
-            const remainedInBelarus = data.filter(a => a.country === 'Беларусь' && !studiedAbroad(a)).length;
-            const itSpecialists = data.filter(alumni => alumni.profession && 
-                (alumni.profession.toLowerCase().includes('software') || 
-                 alumni.profession.toLowerCase().includes('developer') || 
-                 alumni.profession.toLowerCase().includes('engineer'))).length;
-            
+            const knownPlace = data.filter(a => universityParts(a.university).length > 0 || a.country);
+            const leftCount = knownPlace.filter(a => universityParts(a.university).some(x => !belarusInstitution.test(x)) || (a.country && a.country !== 'Беларусь')).length;
+            renderWherePie(leftCount, knownPlace.length - leftCount);
+
             // Update DOM
             document.getElementById('total-participants').textContent = totalParticipants;
             document.getElementById('gold-medals').textContent = goldMedals;
             document.getElementById('silver-medals').textContent = silverMedals;
             document.getElementById('bronze-medals').textContent = bronzeMedals;
             document.getElementById('mentions').textContent = mentions;
-            document.getElementById('unique-schools').textContent = uniqueSchools;
-            document.getElementById('studied-abroad').textContent = knownUniversity.length > 0 ? `${studiedAbroadPercentage}%` : '-';
-            document.getElementById('remained-belarus').textContent = remainedInBelarus;
-            document.getElementById('it-specialists').textContent = itSpecialists;
+        }
+
+        // Two-slice pie: share of alumni who left Belarus vs stayed
+        function renderWherePie(left, stayed) {
+            const panel = document.getElementById('where-panel');
+            const svg = document.getElementById('where-pie');
+            if (!panel || !svg) return;
+            const total = left + stayed;
+            panel.style.display = total > 0 ? '' : 'none';
+            if (!total) return;
+            const pctLeft = Math.round(left / total * 100);
+            document.getElementById('where-left-pct').textContent = pctLeft + '%';
+            document.getElementById('where-stayed-pct').textContent = (100 - pctLeft) + '%';
+            document.getElementById('where-known').textContent = total;
+            const ru = (document.documentElement.lang || 'ru').indexOf('en') !== 0;
+            const slices = [
+                { n: left, color: 'var(--where-left)', label: ru ? `${left} из ${total} уехали из Беларуси` : `${left} of ${total} left Belarus` },
+                { n: stayed, color: 'var(--where-stayed)', label: ru ? `${stayed} из ${total} остались в Беларуси` : `${stayed} of ${total} stayed in Belarus` }
+            ];
+            const cx = 60, cy = 60, r = 58;
+            let angle = -Math.PI / 2;
+            svg.innerHTML = '';
+            slices.forEach(sl => {
+                if (!sl.n) return;
+                const sweep = sl.n / total * Math.PI * 2;
+                let d;
+                if (sl.n === total) {
+                    d = `M ${cx} ${cy - r} A ${r} ${r} 0 1 1 ${cx - 0.01} ${cy - r} Z`;
+                } else {
+                    const x1 = cx + r * Math.cos(angle), y1 = cy + r * Math.sin(angle);
+                    const x2 = cx + r * Math.cos(angle + sweep), y2 = cy + r * Math.sin(angle + sweep);
+                    d = `M ${cx} ${cy} L ${x1.toFixed(2)} ${y1.toFixed(2)} A ${r} ${r} 0 ${sweep > Math.PI ? 1 : 0} 1 ${x2.toFixed(2)} ${y2.toFixed(2)} Z`;
+                }
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                path.setAttribute('d', d);
+                path.setAttribute('fill', sl.color);
+                path.setAttribute('tabindex', '0');
+                path.setAttribute('aria-label', sl.label);
+                const show = (ev) => {
+                    const tip = document.getElementById('where-tip');
+                    const pr = panel.getBoundingClientRect();
+                    let x, y;
+                    if (ev && ev.clientX) { x = ev.clientX - pr.left; y = ev.clientY - pr.top; }
+                    else { const br = path.getBoundingClientRect(); x = br.left + br.width / 2 - pr.left; y = br.top + br.height / 2 - pr.top; }
+                    tip.textContent = sl.label; tip.style.left = x + 'px'; tip.style.top = y + 'px'; tip.classList.add('show');
+                    svg.classList.add('hovering'); path.classList.add('active');
+                };
+                const hide = () => { document.getElementById('where-tip').classList.remove('show'); svg.classList.remove('hovering'); path.classList.remove('active'); };
+                path.addEventListener('mousemove', show); path.addEventListener('mouseleave', hide);
+                path.addEventListener('focus', show); path.addEventListener('blur', hide);
+                svg.appendChild(path);
+                angle += sweep;
+            });
         }
 
         // Team Photos Slider

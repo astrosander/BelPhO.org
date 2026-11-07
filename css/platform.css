@@ -164,7 +164,7 @@ a { color: var(--primary-color); }
   color: var(--text-secondary);
   text-decoration: none;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 17px;
   white-space: nowrap;
   transition: color 0.2s ease;
 }
@@ -188,7 +188,7 @@ a { color: var(--primary-color); }
     mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
   }
   .nav-links { gap: 18px; padding: 6px 0 8px; }
-  .nav-links a { font-size: 14.5px; }
+  .nav-links a { font-size: 16px; }
 }
 
 /* ---------------------------------------------------------------- footer */

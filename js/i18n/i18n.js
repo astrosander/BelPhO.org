@@ -54,8 +54,8 @@
   var style = document.createElement('style');
   style.textContent =
     'html.i18n-wait body{visibility:hidden}' +
-    '.i18n-switch{display:inline-flex;border:1px solid rgba(127,127,127,.45);border-radius:999px;overflow:hidden;vertical-align:middle;font:600 13px/1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}' +
-    '.i18n-switch button{border:0;margin:0;background:transparent;color:inherit;padding:6px 10px;cursor:pointer;font:inherit;opacity:.75}' +
+    '.i18n-switch{display:inline-flex;border:1px solid rgba(127,127,127,.45);border-radius:999px;overflow:hidden;vertical-align:middle;font:600 15px/1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}' +
+    '.i18n-switch button{border:0;margin:0;background:transparent;color:inherit;padding:8px 13px;cursor:pointer;font:inherit;opacity:.75}' +
     '.i18n-switch button[aria-pressed="true"]{background:#1f2937;color:#fff;opacity:1}' +
     'li.i18n-li{display:flex;align-items:center;list-style:none}' +
     '.i18n-float{position:fixed;top:10px;right:10px;z-index:9999;background:#fff;color:#111;box-shadow:0 2px 8px rgba(0,0,0,.15)}';
