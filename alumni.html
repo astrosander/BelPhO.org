@@ -8,28 +8,29 @@
     <meta name="description" content="Директория выпускников белорусских физических олимпиад - участники международных олимпиад и сборов">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="/css/theme.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="img/logo.png" type="image/png" />
     <script src="js/jquery-1.10.1.min.js"></script>
     
     <style>
         :root {
-            --primary-color: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary-color: #64748b;
-            --accent-color: #f59e0b;
-            --success-color: #10b981;
-            --warning-color: #f59e0b;
-            --error-color: #ef4444;
+            --primary-color: #2f5d93;
+            --primary-dark: #2f5d93;
+            --secondary-color: #475569;
+            --accent-color: #2f5d93;
+            --success-color: #2f5d93;
+            --warning-color: #2f5d93;
+            --error-color: #2f5d93;
             --bg-color: #f8fafc;
             --surface-color: #ffffff;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --border-color: #e2e8f0;
+            --text-primary: #1f3f66;
+            --text-secondary: #475569;
+            --border-color: #f8fafc;
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
             --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-primary: #2f5d93;
             --gold: #ffd700;
             --silver: #c0c0c0;
             --bronze: #cd7f32;
@@ -42,7 +43,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: var(--font);
             background: var(--bg-color);
             color: var(--text-primary);
             line-height: 1.6;
@@ -72,7 +73,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
@@ -121,7 +122,7 @@
 
         /* Hero */
         .hero {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.88) 0%, rgba(59, 130, 246, 0.85) 50%, rgba(96, 165, 250, 0.82) 100%);
+            background: linear-gradient(135deg, rgba(47, 93, 147, 0.88) 0%, rgba(47, 93, 147, 0.85) 50%, rgba(47, 93, 147, 0.82) 100%);
             color: white;
             padding: 40px 0;
             text-align: center;
@@ -144,7 +145,7 @@
         }
 
         .hero h1 {
-            font-size: 36px;
+            font-size: 40px;
             font-weight: 700;
             margin-bottom: 8px;
             line-height: 1.2;
@@ -195,10 +196,10 @@
         .stats-layout { display: grid; grid-template-columns: 1fr; gap: 12px; align-items: center; }
         .stats-layout .stats-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
         .stats-layout .stat-card { padding: 14px 6px; }
-        .stats-layout .stat-number { font-size: 30px; }
-        .stats-layout .stat-label { font-size: 13px; }
-        .where-panel { --where-left: #eb6834; --where-stayed: #2a78d6; margin: 0 auto; width: 100%; max-width: 620px; position: relative; background: var(--bg-color); border-radius: 12px; box-shadow: var(--shadow-sm); padding: 14px 18px; }
-        .where-title { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; text-align: center; }
+        .stats-layout .stat-number { font-size: 28px; }
+        .stats-layout .stat-label { font-size: 14px; }
+        .where-panel { --where-left: #2f5d93; --where-stayed: #5f8fcc; margin: 0 auto; width: 100%; max-width: 620px; position: relative; background: var(--bg-color); border-radius: 12px; box-shadow: var(--shadow-sm); padding: 14px 18px; }
+        .where-title { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; text-align: center; }
         .where-body { display: flex; align-items: center; justify-content: center; gap: 22px; }
         .where-pie { width: 150px; height: 150px; flex: none; overflow: visible; }
         .where-pie path { stroke: var(--bg-color); stroke-width: 2; stroke-linejoin: round; cursor: default; transition: opacity 0.15s ease; }
@@ -209,9 +210,9 @@
         .where-swatch.where-left { background: var(--where-left); }
         .where-swatch.where-stayed { background: var(--where-stayed); }
         .where-pct { font-size: 40px; font-weight: 800; line-height: 1; color: var(--text-primary); min-width: 2.6em; font-variant-numeric: tabular-nums; }
-        .where-label { font-size: 15px; color: var(--text-secondary); }
+        .where-label { font-size: 16px; color: var(--text-secondary); }
         .where-note { font-size: 12px; color: var(--text-secondary); margin-top: 4px; max-width: 300px; }
-        .where-tip { position: absolute; pointer-events: none; background: var(--text-primary); color: #fff; font-size: 13px; padding: 6px 10px; border-radius: 6px; white-space: nowrap; opacity: 0; transform: translate(-50%, -120%); transition: opacity 0.1s ease; }
+        .where-tip { position: absolute; pointer-events: none; background: var(--text-primary); color: #ffffff; font-size: 14px; padding: 6px 10px; border-radius: 6px; white-space: nowrap; opacity: 0; transform: translate(-50%, -120%); transition: opacity 0.1s ease; }
         .where-tip.show { opacity: 1; }
         @media (min-width: 1100px) {
             .stats-layout { grid-template-columns: minmax(0, 1fr) auto; }
@@ -219,13 +220,13 @@
         }
         @media (max-width: 700px) {
             .stats-layout .stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-            .stats-layout .stat-number { font-size: 24px; }
+            .stats-layout .stat-number { font-size: 22px; }
             .where-body { flex-direction: column; gap: 12px; }
-            .where-pct { font-size: 34px; }
+            .where-pct { font-size: 40px; }
         }
 
         .stat-number {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 1px;
@@ -234,7 +235,7 @@
 
         .stat-label {
             color: var(--text-secondary);
-            font-size: 11px;
+            font-size: 12px;
             line-height: 1.3;
         }
 
@@ -379,7 +380,7 @@
         }
 
         .alumni-name {
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 600;
             color: var(--text-primary);
             margin-bottom: 2px;
@@ -396,7 +397,7 @@
         }
 
         .current-status {
-            font-size: 11px;
+            font-size: 12px;
             color: var(--primary-color);
             font-weight: 500;
             background: var(--bg-color);
@@ -406,7 +407,7 @@
         }
 
         .teacher-info {
-            font-size: 11px;
+            font-size: 12px;
             color: var(--text-secondary);
             margin-bottom: 2px;
             font-style: italic;
@@ -429,23 +430,23 @@
         }
 
         .forbes-candidate {
-            border-left-color: #ff6b35 !important;
+            border-left-color: #2f5d93 !important;
         }
 
         .forbes-candidate .medal-badge {
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            background: #2f5d93;
             color: white;
         }
 
         .platform-founder {
-            border-left-color: #ff6b35 !important;
-            background: linear-gradient(135deg, rgba(247, 147, 30, 0.05), rgba(255, 107, 53, 0.05));
+            border-left-color: #2f5d93 !important;
+            background: linear-gradient(135deg, rgba(47, 93, 147, 0.05), rgba(47, 93, 147, 0.05));
         }
 
         .platform-founder .medal-badge {
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            background: #2f5d93;
             color: white;
-            box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 2px 8px rgba(47, 93, 147, 0.3);
         }
 
         .medal-badge {
@@ -472,7 +473,7 @@
             transform: translateX(-50%);
             margin-bottom: 8px;
             padding: 6px 10px;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(15, 23, 42, 0.85);
             color: white;
             font-size: 12px;
             white-space: nowrap;
@@ -502,7 +503,7 @@
             left: 50%;
             transform: translateX(-50%);
             border: 5px solid transparent;
-            border-top-color: rgba(0, 0, 0, 0.85);
+            border-top-color: rgba(15, 23, 42, 0.85);
         }
 
         .medal-badge:hover .medal-tooltip,
@@ -591,12 +592,12 @@
         }
 
         .score-theory {
-            color: #3b82f6;
+            color: #2f5d93;
             font-weight: 600;
         }
 
         .score-experiment {
-            color: #10b981;
+            color: #2f5d93;
             font-weight: 600;
         }
 
@@ -623,7 +624,7 @@
             padding: 2px 5px;
             background: var(--bg-color);
             border-radius: 3px;
-            font-size: 10px;
+            font-size: 12px;
             color: var(--text-secondary);
             line-height: 1.4;
         }
@@ -656,7 +657,7 @@
             background: var(--bg-color);
             border-radius: 4px;
             text-decoration: none;
-            font-size: 11px;
+            font-size: 12px;
             color: var(--text-secondary);
             transition: all 0.3s ease;
             border: 1px solid var(--border-color);
@@ -668,23 +669,23 @@
         }
 
         .social-link i {
-            font-size: 11px;
+            font-size: 12px;
         }
 
-        .social-link.linkedin:hover { background: #0077b5; }
-        .social-link.telegram:hover { background: #0088cc; }
-        .social-link.instagram:hover { background: #e4405f; }
-        .social-link.github:hover { background: #333; }
-        .social-link.vk:hover { background: #4c75a3; }
-        .social-link.researchgate:hover { background: #00d0af; }
+        .social-link.linkedin:hover { background: #2f5d93; }
+        .social-link.telegram:hover { background: #2f5d93; }
+        .social-link.instagram:hover { background: #2f5d93; }
+        .social-link.github:hover { background: #0f172a; }
+        .social-link.vk:hover { background: #2f5d93; }
+        .social-link.researchgate:hover { background: #2f5d93; }
 
         /* Savchenko Solutions highlighting */
         .social-link.savchenko {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            background: #2f5d93;
             color: white;
             font-weight: 600;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 4px 20px rgba(47, 93, 147, 0.3);
             position: relative;
             overflow: hidden;
             display: flex;
@@ -698,7 +699,7 @@
             width: 18px;
             height: 18px;
             flex-shrink: 0;
-            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+            filter: drop-shadow(0 1px 2px rgba(15, 23, 42, 0.1));
         }
 
         .social-link.savchenko .savchenko-logo svg {
@@ -725,7 +726,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             transition: left 0.6s ease;
         }
 
@@ -738,8 +739,8 @@
         }
 
         .social-link.savchenko:hover {
-            background: linear-gradient(135deg, #7c3aed, #a855f7);
-            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            background: #2f5d93;
+            box-shadow: 0 8px 25px rgba(47, 93, 147, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
         }
 
         .social-link.savchenko:active {
@@ -771,8 +772,8 @@
 
         /* Forbes-worthy profile enhancements */
         .forbes-candidate {
-            border: 3px solid #ffd700;
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            border: 3px solid #2f5d93;
+            box-shadow: 0 8px 25px rgba(47, 93, 147, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -782,22 +783,22 @@
             position: absolute;
             top: -2px;
             right: -50px;
-            background: linear-gradient(45deg, #ffd700, #ffed4e);
-            color: #333;
+            background: #2f5d93;
+            color: #0f172a;
             padding: 4px 60px;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 700;
             transform: rotate(45deg);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 5px rgba(15, 23, 42, 0.2);
         }
 
         .forbes-candidate:hover {
-            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 12px 35px rgba(47, 93, 147, 0.4);
         }
 
         /* Research highlight */
         .research-highlight {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: #2f5d93;
             color: white;
             padding: 6px;
             border-radius: 6px;
@@ -811,7 +812,7 @@
         }
 
         .research-highlight p {
-            font-size: 11px;
+            font-size: 12px;
             line-height: 1.4;
         }
 
@@ -821,7 +822,7 @@
             color: white;
             padding: 2px 8px;
             border-radius: 12px;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 600;
             display: inline-block;
             margin-left: 8px;
@@ -835,7 +836,7 @@
         }
 
         .section-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--text-primary);
             text-align: center;
@@ -872,7 +873,7 @@
             background: var(--bg-color);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08), 0 2px 4px rgba(15, 23, 42, 0.04);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             flex: 0 0 calc(33.333% - 8px);
             min-width: 280px;
@@ -904,8 +905,8 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            color: rgba(37, 99, 235, 0.9);
-            border: 1px solid rgba(37, 99, 235, 0.2);
+            color: rgba(47, 93, 147, 0.9);
+            border: 1px solid rgba(47, 93, 147, 0.2);
             width: 48px;
             height: 48px;
             border-radius: 50%;
@@ -913,17 +914,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 22px;
             z-index: 10;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.12), 0 2px 4px rgba(15, 23, 42, 0.08);
         }
 
         .slider-arrow:hover {
-            background: rgba(37, 99, 235, 0.95);
+            background: rgba(47, 93, 147, 0.95);
             color: white;
-            border-color: rgba(37, 99, 235, 0.95);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3), 0 2px 8px rgba(0, 0, 0, 0.15);
+            border-color: rgba(47, 93, 147, 0.95);
+            box-shadow: 0 6px 20px rgba(47, 93, 147, 0.3), 0 2px 8px rgba(15, 23, 42, 0.15);
             transform: translateY(-50%) scale(1.1);
         }
 
@@ -958,7 +959,7 @@
 
         .team-photo-caption {
             padding: 12px;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.02), transparent);
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.02), transparent);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -975,7 +976,7 @@
 
         .team-photo-caption p {
             color: var(--text-secondary);
-            font-size: 11px;
+            font-size: 12px;
             line-height: 1.5;
             transition: color 0.3s ease;
         }
@@ -1031,7 +1032,7 @@
 
         .training-photo-caption p {
             color: var(--text-secondary);
-            font-size: 10px;
+            font-size: 12px;
             line-height: 1.3;
         }
 
@@ -1041,7 +1042,7 @@
         }
 
         .year-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 8px;
@@ -1056,7 +1057,7 @@
             }
             
             .hero h1 {
-                font-size: 36px;
+                font-size: 40px;
             }
             
             .alumni-grid {
@@ -1106,7 +1107,7 @@
             }
             
             .section-title {
-                font-size: 24px;
+                font-size: 22px;
             }
             
             .team-photo-caption h3 {
@@ -1152,7 +1153,7 @@
          so no face is ever cropped or covered by text. */
       @media (max-width: 640px) {
          .hero {
-            background-color: #3a3a3a !important;
+            background-color: #0f172a !important;
             background-size: 100% 100%, 100% auto !important;
             background-position: center, center top !important;
             padding-top: calc(66.667vw + 20px) !important;
@@ -4739,7 +4740,7 @@
                                             <div class="achievements-title">📰 Медиа:</div>
                                             <div class="achievement-list">
                                                 ${alumni.mediaLinks.map(media => 
-                                                    `<a href="${media.url}" target="_blank" class="achievement-tag" style="text-decoration: none; cursor: pointer; background: var(--success-color); color: white;">📰 ${media.name}</a>`
+                                                    `<a href="${media.url}" target="_blank" class="achievement-tag ui-btn ui-btn--outline" style="text-decoration: none; cursor: pointer;">📰 ${media.name}</a>`
                                                 ).join('')}
                                             </div>
                                         </div>
@@ -5301,7 +5302,7 @@
             </div>
         </div>
 
-        <p style="font-size:12px;color:var(--text-tertiary); opacity: 0.85;margin-top:16px;text-align: center;">
+        <p style="font-size: 12px;color:var(--text-tertiary); opacity: 0.85;margin-top:16px;text-align: center;">
             Создано командой выпускников. Координатор проекта Aliaksandr Melnichenka.
         </p>
     </footer>

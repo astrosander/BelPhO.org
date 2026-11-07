@@ -14,6 +14,7 @@
    <meta name="yandex-verification" content="6cfda41f76038368" />
    
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="/css/theme.css">
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
    <link rel="icon" href="img/logo.png" type="image/png" />
    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
@@ -21,32 +22,32 @@
    
    <style>
       :root {
-         --primary-color: #2563eb;
-         --primary-dark: #1d4ed8;
-         --secondary-color: #64748b;
-         --accent-color: #f59e0b;
-         --success-color: #10b981;
-         --warning-color: #f59e0b;
-         --error-color: #ef4444;
+         --primary-color: #2f5d93;
+         --primary-dark: #2f5d93;
+         --secondary-color: #475569;
+         --accent-color: #2f5d93;
+         --success-color: #2f5d93;
+         --warning-color: #2f5d93;
+         --error-color: #2f5d93;
          --bg-color: #f8fafc;
          --surface-color: #ffffff;
-         --text-primary: #1e293b;
-         --text-secondary: #64748b;
-         --border-color: #e2e8f0;
+         --text-primary: #1f3f66;
+         --text-secondary: #475569;
+         --border-color: #f8fafc;
          --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
          --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
          --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
          --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-         --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #06b6d4 100%);
-         --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-         --gradient-accent: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+         --gradient-primary: #2f5d93;
+         --gradient-secondary: #eaf0f7;
+         --gradient-accent: #eaf0f7;
          /* BelSO Brand Colors */
-         --belso-primary: #0E7490;
-         --belso-primary-hover: #155E75;
-         --belso-tint-soft: #ECFEFF;
-         --belso-tint-strong: #CFFAFE;
-         --belso-support: #0369A1;
-         --belso-support-tint: #E0F2FE;
+         --belso-primary: #1f3f66;
+         --belso-primary-hover: #1f3f66;
+         --belso-tint-soft: #f8fafc;
+         --belso-tint-strong: #eaf0f7;
+         --belso-support: #2f5d93;
+         --belso-support-tint: #eaf0f7;
       }
 
       * {
@@ -56,7 +57,7 @@
       }
 
       body {
-         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+         font-family: var(--font);
          background: var(--bg-color);
          color: var(--text-primary);
          line-height: 1.6;
@@ -71,8 +72,8 @@
          width: 100%;
          height: 100%;
          background: 
-            radial-gradient(circle at 25% 25%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 75% 75%, rgba(245, 158, 11, 0.03) 0%, transparent 50%);
+            radial-gradient(circle at 25% 25%, rgba(47, 93, 147, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(47, 93, 147, 0.03) 0%, transparent 50%);
          pointer-events: none;
          z-index: -1;
       }
@@ -135,7 +136,7 @@
 
       /* Hero Section */
       .hero {
-         background: linear-gradient(135deg, rgba(99, 102, 241, 0.75) 0%, rgba(59, 130, 246, 0.75) 50%, rgba(251, 191, 36, 0.75) 100%);
+         background: linear-gradient(135deg, rgba(47, 93, 147, 0.75) 0%, rgba(47, 93, 147, 0.75) 50%, rgba(47, 93, 147, 0.75) 100%);
          color: white;
          padding: 40px 0;
          position: relative;
@@ -178,7 +179,7 @@
          position: absolute;
          color: rgba(255, 255, 255, 0.8);
          font-size: 1.5em;
-         font-family: Arial, sans-serif;
+         font-family: var(--font);
          text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
          animation: snowfall linear infinite;
          pointer-events: none;
@@ -201,7 +202,7 @@
          max-width: 600px;
          padding: 12px 20px;
          background: 
-            linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(59, 130, 246, 0.25) 50%, rgba(251, 191, 36, 0.2) 100%),
+            linear-gradient(135deg, rgba(47, 93, 147, 0.25) 0%, rgba(47, 93, 147, 0.25) 50%, rgba(47, 93, 147, 0.2) 100%),
             repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.05) 2px, rgba(255, 255, 255, 0.05) 4px),
             repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 255, 255, 0.05) 2px, rgba(255, 255, 255, 0.05) 4px);
          backdrop-filter: blur(20px) saturate(150%);
@@ -209,10 +210,10 @@
          border-radius: 12px;
          border: 1px solid rgba(255, 255, 255, 0.25);
          box-shadow: 
-            0 8px 32px rgba(0, 0, 0, 0.15),
-            0 2px 8px rgba(0, 0, 0, 0.1),
+            0 8px 32px rgba(15, 23, 42, 0.15),
+            0 2px 8px rgba(15, 23, 42, 0.1),
             inset 0 1px 0 rgba(255, 255, 255, 0.2),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            inset 0 -1px 0 rgba(15, 23, 42, 0.1);
          position: relative;
          overflow: hidden;
       }
@@ -222,9 +223,9 @@
          position: absolute;
          top: 8px;
          left: 12px;
-         font-size: 10px;
-         color: rgba(148, 163, 184, 0.3);
-         font-family: 'Courier New', monospace;
+         font-size: 12px;
+         color: rgba(47, 93, 147, 0.3);
+         font-family: var(--font-mono);
          letter-spacing: 2px;
          pointer-events: none;
       }
@@ -237,8 +238,8 @@
          right: 0;
          bottom: 0;
          background: 
-            radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            radial-gradient(circle at 20% 30%, rgba(47, 93, 147, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(47, 93, 147, 0.1) 0%, transparent 50%);
          pointer-events: none;
       }
 
@@ -247,10 +248,10 @@
          font-weight: 500;
          margin-bottom: 10px;
          color: rgba(255, 255, 255, 0.95);
-         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+         text-shadow: 0 2px 4px rgba(15, 23, 42, 0.3);
          letter-spacing: 1px;
          text-transform: uppercase;
-         font-family: 'Courier New', monospace;
+         font-family: var(--font-mono);
          text-align: center;
          position: relative;
          z-index: 1;
@@ -273,9 +274,9 @@
          text-align: center;
          border: 1px solid rgba(255, 255, 255, 0.25);
          box-shadow: 
-            0 4px 16px rgba(0, 0, 0, 0.1),
+            0 4px 16px rgba(15, 23, 42, 0.1),
             inset 0 1px 0 rgba(255, 255, 255, 0.2),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            inset 0 -1px 0 rgba(15, 23, 42, 0.1);
          position: relative;
       }
 
@@ -286,19 +287,19 @@
          left: 0;
          right: 0;
          height: 1px;
-         background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+         background: linear-gradient(90deg, transparent, rgba(47, 93, 147, 0.5), transparent);
       }
 
       .countdown-value {
-         font-size: 24px;
+         font-size: 22px;
          font-weight: 600;
          color: #ffffff;
          text-shadow: 
-            0 2px 8px rgba(0, 0, 0, 0.4),
+            0 2px 8px rgba(15, 23, 42, 0.4),
             0 0 12px rgba(255, 255, 255, 0.3);
          line-height: 1;
          margin-bottom: 2px;
-         font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+         font-family: var(--font-mono);
          letter-spacing: 2px;
       }
 
@@ -310,24 +311,24 @@
          0%, 100% {
             opacity: 1;
             text-shadow: 
-               0 2px 8px rgba(0, 0, 0, 0.4),
+               0 2px 8px rgba(15, 23, 42, 0.4),
                0 0 12px rgba(255, 255, 255, 0.3);
          }
          50% {
             opacity: 0.9;
             text-shadow: 
-               0 2px 12px rgba(0, 0, 0, 0.5),
+               0 2px 12px rgba(15, 23, 42, 0.5),
                0 0 18px rgba(255, 255, 255, 0.5);
          }
       }
 
       .countdown-label {
-         font-size: 8px;
+         font-size: 12px;
          color: rgba(255, 255, 255, 0.85);
          text-transform: uppercase;
          letter-spacing: 1px;
          font-weight: 500;
-         font-family: 'Courier New', monospace;
+         font-family: var(--font-mono);
       }
 
       @media (max-width: 768px) {
@@ -338,7 +339,7 @@
          }
 
          .countdown-title {
-            font-size: 9px;
+            font-size: 12px;
             margin-bottom: 4px;
             line-height: 1.2;
          }
@@ -355,7 +356,7 @@
          }
 
          .countdown-label {
-            font-size: 6px;
+            font-size: 12px;
             letter-spacing: 0.5px;
          }
 
@@ -364,7 +365,7 @@
          }
 
          .countdown-container::before {
-            font-size: 8px;
+            font-size: 12px;
             top: 4px;
             left: 8px;
             letter-spacing: 1px;
@@ -382,11 +383,11 @@
       }
 
       .hero h1 {
-         font-size: 42px;
+         font-size: 40px;
          font-weight: 700;
          margin-bottom: 10px;
          line-height: 1.2;
-         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+         text-shadow: 0 1px 3px rgba(15, 23, 42, 0.3);
          letter-spacing: -0.5px;
       }
 
@@ -397,7 +398,7 @@
          max-width: 600px;
          margin-left: auto;
          margin-right: auto;
-         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+         text-shadow: 0 1px 2px rgba(15, 23, 42, 0.25);
          font-weight: 400;
          letter-spacing: 0.2px;
       }
@@ -422,7 +423,7 @@
          align-items: center;
          gap: 6px;
          font-size: 14px;
-         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+         text-shadow: 0 1px 2px rgba(15, 23, 42, 0.2);
          letter-spacing: 0.2px;
       }
 
@@ -437,7 +438,7 @@
          background: rgba(255, 255, 255, 0.35);
          border-color: rgba(255, 255, 255, 0.6);
          transform: translateY(-2px);
-         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+         box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
       }
 
       .btn-secondary {
@@ -451,18 +452,18 @@
          background: rgba(255, 255, 255, 0.2);
          border-color: rgba(255, 255, 255, 0.8);
          transform: translateY(-2px);
-         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+         box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
       }
 
       /* BelSO Section in Hero */
       .belso-section {
          width: 30%;
          padding: 12px 16px;
-         background: linear-gradient(135deg, rgba(14, 116, 144, 0.2) 0%, rgba(3, 105, 161, 0.15) 100%);
+         background: linear-gradient(135deg, rgba(31, 63, 102, 0.2) 0%, rgba(47, 93, 147, 0.15) 100%);
          backdrop-filter: blur(10px);
          -webkit-backdrop-filter: blur(10px);
          border-radius: 12px;
-         border: 1px solid rgba(14, 116, 144, 0.4);
+         border: 1px solid rgba(31, 63, 102, 0.4);
          display: flex;
          flex-direction: column;
          align-items: center;
@@ -470,7 +471,7 @@
          gap: 10px;
          position: relative;
          z-index: 2;
-         box-shadow: 0 4px 16px rgba(14, 116, 144, 0.15);
+         box-shadow: 0 4px 16px rgba(31, 63, 102, 0.15);
          min-height: auto;
       }
 
@@ -500,10 +501,10 @@
       }
 
       .belso-text {
-         font-size: 11px;
+         font-size: 12px;
          line-height: 1.4;
          color: rgba(255, 255, 255, 0.95);
-         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+         text-shadow: 0 1px 2px rgba(15, 23, 42, 0.25);
          font-weight: 400;
          text-align: center;
       }
@@ -534,7 +535,7 @@
          }
 
          .belso-text {
-            font-size: 9px;
+            font-size: 12px;
             line-height: 1.3;
             flex: 1;
             text-align: left;
@@ -579,12 +580,12 @@
          align-items: center;
          justify-content: center;
          margin: 0 auto 16px;
-         font-size: 24px;
+         font-size: 22px;
          color: white;
       }
 
       .feature-title {
-         font-size: 20px;
+         font-size: 22px;
          font-weight: 600;
          margin-bottom: 12px;
          color: var(--text-primary);
@@ -601,7 +602,7 @@
       }
 
       .section-title {
-         font-size: 36px;
+         font-size: 40px;
          font-weight: 700;
          text-align: center;
          margin-bottom: 12px;
@@ -683,7 +684,7 @@
       }
 
       .timeline-date {
-         font-size: 13px;
+         font-size: 14px;
          color: var(--text-secondary);
          margin-bottom: 8px;
          font-weight: 500;
@@ -723,7 +724,7 @@
       }
 
       .year-title {
-         font-size: 20px;
+         font-size: 22px;
          font-weight: 600;
          color: var(--primary-color);
          margin-bottom: 8px;
@@ -763,7 +764,7 @@
       }
 
       .info-card-title {
-         font-size: 15px;
+         font-size: 16px;
          font-weight: 600;
          margin-bottom: 6px;
          color: var(--text-primary);
@@ -779,7 +780,7 @@
       .mobile-nav {
          display: none;
          cursor: pointer;
-         font-size: 24px;
+         font-size: 22px;
          color: var(--text-primary);
          padding: 8px;
       }
@@ -868,14 +869,14 @@
          }
 
          .hero-actions .btn {
-            font-size: 11px;
+            font-size: 12px;
             padding: 6px 10px;
             flex: 0 1 auto;
             min-width: auto;
          }
 
          .hero-actions .btn i {
-            font-size: 11px;
+            font-size: 12px;
             margin-right: 4px;
          }
          
@@ -963,7 +964,7 @@
       }
 
       .featured-title {
-         font-size: 32px;
+         font-size: 28px;
          font-weight: 700;
          color: var(--text-primary);
          margin-bottom: 16px;
@@ -995,24 +996,24 @@
       .read-more[style*="background"]:hover {
          background: var(--primary-dark) !important;
          transform: translateY(-2px);
-         box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4) !important;
+         box-shadow: 0 4px 12px rgba(47, 93, 147, 0.4) !important;
          color: white !important;
       }
 
       /* PDF download buttons hover effects */
       a[href*=".pdf"][style*="background"]:hover {
          transform: translateY(-2px);
-         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+         box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2) !important;
       }
 
       a[href*=".pdf"][style*="var(--primary-color)"]:hover {
          background: var(--primary-dark) !important;
-         box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4) !important;
+         box-shadow: 0 4px 12px rgba(47, 93, 147, 0.4) !important;
       }
 
       a[href*=".pdf"][style*="var(--success-color)"]:hover {
-         background: #059669 !important;
-         box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4) !important;
+         background: #1f3f66 !important;
+         box-shadow: 0 4px 12px rgba(47, 93, 147, 0.4) !important;
       }
 
       @media (max-width: 768px) {
@@ -1073,10 +1074,10 @@
       .belso-section { width: auto; padding: 6px 16px; gap: 0; border-radius: 999px; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.35); box-shadow: none; }
       .belso-section a.belso-link { flex-direction: row; align-items: center; gap: 10px; width: auto; }
       .belso-logo { max-height: 28px; width: auto; }
-      .belso-text { font-size: 13px; text-align: left; padding-right: 0; flex: none; }
+      .belso-text { font-size: 14px; text-align: left; padding-right: 0; flex: none; }
       @media (max-width: 640px) {
          .belso-section { max-width: calc(100% - 24px); padding: 5px 12px; }
-         .belso-text { font-size: 11px; flex: 1 1 auto; }
+         .belso-text { font-size: 12px; flex: 1 1 auto; }
          .belso-logo { max-height: 22px; }
       }
       /* Banner buttons: dark glass so white labels stay readable over light shirts */
@@ -1088,7 +1089,7 @@
          so no face is ever cropped or covered by text. */
       @media (max-width: 640px) {
          .hero {
-            background-color: #3a3a3a !important;
+            background-color: #0f172a !important;
             background-size: 100% 100%, 100% auto !important;
             background-position: center, center top !important;
             padding-top: calc(66.667vw + 20px) !important;
@@ -1201,36 +1202,30 @@
   <!-- 2026 Final Materials Announcement -->
    <section class="section" style="background: white; padding: 20px 0;">
       <div class="container" style="padding:5px 0;">
-         <article class="featured-article" style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15), 0 4px 12px rgba(59, 130, 246, 0.1); margin-bottom: 16px; display: flex; flex-direction: column; border: 2px solid rgba(124, 58, 237, 0.1); position: relative;">
-            <div style="position: absolute; top: 0; right: 0; width: 200px; height: 200px; background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%); border-radius: 50%; transform: translate(30%, -30%); pointer-events: none;"></div>
+         <article class="featured-article" style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(47, 93, 147, 0.15), 0 4px 12px rgba(47, 93, 147, 0.1); margin-bottom: 16px; display: flex; flex-direction: column; border: 2px solid rgba(47, 93, 147, 0.1); position: relative;">
+            <div style="position: absolute; top: 0; right: 0; width: 200px; height: 200px; background: radial-gradient(circle, rgba(47, 93, 147, 0.08) 0%, transparent 70%); border-radius: 50%; transform: translate(30%, -30%); pointer-events: none;"></div>
             <div class="featured-content" style="padding: 24px; padding-bottom: 20px; display: flex; flex-direction: column; flex: 1; position: relative; z-index: 1;">
                <div class="featured-meta" style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;">
-                  <div class="featured-date" style="color: var(--text-secondary); font-size: 13px; display: flex; align-items: center; gap: 6px; font-weight: 500;">
-                     <i class="fas fa-calendar" style="color: #7c3aed;"></i>
+                  <div class="featured-date" style="color: var(--text-secondary); font-size: 14px; display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                     <i class="fas fa-calendar" style="color: #2f5d93;"></i>
                      25 марта 2026
-                  </div>
-                  <div class="featured-tags" style="display: flex; gap: 8px; flex-wrap: wrap;">
-                     <span class="tag" style="background: linear-gradient(135deg, #7c3aed, #6d28d9); color: white; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;">Финал</span>
-                     <span class="tag" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;">Брест</span>
-                     <span class="tag" style="background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;">Теория и Эксперимент 2026</span>
-                     <span class="tag" style="background: linear-gradient(135deg, #64748b, #334155); color: white; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;">Дополнительные материалы</span>
                   </div>
                </div>
                <div style="display: grid; grid-template-columns: 2.4fr 0.6fr; gap: 24px; align-items: start; flex: 1; margin: 8px 0; position: relative;">
                   <div style="display: flex; flex-direction: column; grid-column: 1; grid-row: 1;">
-                     <div style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 6px 12px; border-radius: 999px; background: linear-gradient(135deg, rgba(30, 58, 138, 0.12), rgba(124, 58, 237, 0.12)); border: 1px solid rgba(30, 58, 138, 0.25); color: #1e3a8a; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">
-                        <i class="fas fa-award" style="color: #7c3aed;"></i>
+                     <div style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 6px 12px; border-radius: 999px; background: linear-gradient(135deg, rgba(47, 93, 147, 0.12), rgba(47, 93, 147, 0.12)); border: 1px solid rgba(47, 93, 147, 0.25); color: #2f5d93; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">
+                        <i class="fas fa-award" style="color: #2f5d93;"></i>
                         Официальные материалы
                      </div>
-                     <h2 class="featured-title" style="font-size: 32px; font-weight: 900; color: #0f172a; margin-bottom: 12px; line-height: 1.2; letter-spacing: -0.7px; text-wrap: balance;">
+                     <h2 class="featured-title" style="font-size: 28px; font-weight: 900; color: #0f172a; margin-bottom: 12px; line-height: 1.2; letter-spacing: -0.7px; text-wrap: balance;">
                         Материалы теоретического тура финала Республиканской олимпиады по физике 2026
                      </h2>
-                     <p class="featured-excerpt" style="font-size: 16px; color: #334155; margin-bottom: 16px; line-height: 1.65; font-weight: 500; max-width: 840px;">
+                     <p class="featured-excerpt" style="font-size: 16px; color: #1f3f66; margin-bottom: 16px; line-height: 1.65; font-weight: 500; max-width: 840px;">
                         Официальная публикация материалов заключительного этапа (г. Брест) для 9-11 классов: теория, эксперимент и дополнительные материалы. Выберите класс и откройте задания и решения.
                      </p>
                      <div style="display: flex; flex-direction: column; gap: 16px; order: 2;">
                         <div style="width: 100%; display: flex; align-items: center; gap: 8px; font-weight: 900; font-size: 14px; color: #0f172a; margin-top: 8px;">
-                           <i class="fas fa-graduation-cap" style="color: #7c3aed;"></i>
+                           <i class="fas fa-graduation-cap" style="color: #2f5d93;"></i>
                            Теоретический тур
                         </div>
                         <div style="display: flex; gap: 8px; border-bottom: 2px solid var(--border-color); padding-bottom: 0;">
@@ -1240,27 +1235,27 @@
                         </div>
 
                         <div id="final-grade-9" class="final-grade-content" style="display: none; gap: 10px; flex-wrap: wrap;">
-                           <a href="problems/final/2026/Теория/9 класс/Презентация ТТ9.ppt" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #6b46c1; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(107, 70, 193, 0.35);" onmouseover="this.style.background='#553c9a'" onmouseout="this.style.background='#6b46c1'"><i class="fas fa-file-powerpoint"></i>Презентация</a>
-                           <a href="problems/final/2026/Теория/9 класс/РФО2026 Теория 9 класс условия Вариант 2.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #1e3a8a; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(30, 58, 138, 0.35);" onmouseover="this.style.background='#1e40af'" onmouseout="this.style.background='#1e3a8a'"><i class="fas fa-file-pdf"></i>Условия</a>
-                           <a href="problems/final/2026/Теория/9 класс/РФО2026 Теория 9 класс решения Вариант 2.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #065f46; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(6, 95, 70, 0.35);" onmouseover="this.style.background='#047857'" onmouseout="this.style.background='#065f46'"><i class="fas fa-lightbulb"></i>Решения (вариант 2)</a>
-                           <a href="problems/final/2026/Теория/9 класс/РФО2026 Теория 9 класс решения Вариант 2_1.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #7f1d1d; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(127, 29, 29, 0.35);" onmouseover="this.style.background='#991b1b'" onmouseout="this.style.background='#7f1d1d'"><i class="fas fa-lightbulb"></i>Решения (вариант 2_1)</a>
+                           <a href="problems/final/2026/Теория/9 класс/Презентация ТТ9.ppt" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline"><i class="fas fa-file-powerpoint"></i>Презентация</a>
+                           <a href="problems/final/2026/Теория/9 класс/РФО2026 Теория 9 класс условия Вариант 2.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--solid"><i class="fas fa-file-pdf"></i>Условия</a>
+                           <a href="problems/final/2026/Теория/9 класс/РФО2026 Теория 9 класс решения Вариант 2.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline"><i class="fas fa-lightbulb"></i>Решения (вариант 2)</a>
+                           <a href="problems/final/2026/Теория/9 класс/РФО2026 Теория 9 класс решения Вариант 2_1.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline"><i class="fas fa-lightbulb"></i>Решения (вариант 2_1)</a>
                         </div>
                         <div id="final-grade-10" class="final-grade-content" style="display: none; gap: 10px; flex-wrap: wrap;">
-                           <a href="problems/final/2026/Теория/10 класс/Презентация ТТ10.ppt" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #6b46c1; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(107, 70, 193, 0.35);" onmouseover="this.style.background='#553c9a'" onmouseout="this.style.background='#6b46c1'"><i class="fas fa-file-powerpoint"></i>Презентация</a>
-                           <a href="problems/final/2026/Теория/10 класс/РФО2026 Теория 10 класс условия Вариант 2.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #1e3a8a; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(30, 58, 138, 0.35);" onmouseover="this.style.background='#1e40af'" onmouseout="this.style.background='#1e3a8a'"><i class="fas fa-file-pdf"></i>Условия</a>
-                           <a href="problems/final/2026/Теория/10 класс/РФО2026 Теория 10 класс решения Вариант 2.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #065f46; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(6, 95, 70, 0.35);" onmouseover="this.style.background='#047857'" onmouseout="this.style.background='#065f46'"><i class="fas fa-lightbulb"></i>Решения (вариант 2)</a>
-                           <a href="problems/final/2026/Теория/10 класс/РФО2026 Теория 10 класс решения Вариант 2_1.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #7f1d1d; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(127, 29, 29, 0.35);" onmouseover="this.style.background='#991b1b'" onmouseout="this.style.background='#7f1d1d'"><i class="fas fa-lightbulb"></i>Решения (вариант 2_1)</a>
+                           <a href="problems/final/2026/Теория/10 класс/Презентация ТТ10.ppt" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline"><i class="fas fa-file-powerpoint"></i>Презентация</a>
+                           <a href="problems/final/2026/Теория/10 класс/РФО2026 Теория 10 класс условия Вариант 2.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--solid"><i class="fas fa-file-pdf"></i>Условия</a>
+                           <a href="problems/final/2026/Теория/10 класс/РФО2026 Теория 10 класс решения Вариант 2.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline"><i class="fas fa-lightbulb"></i>Решения (вариант 2)</a>
+                           <a href="problems/final/2026/Теория/10 класс/РФО2026 Теория 10 класс решения Вариант 2_1.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline"><i class="fas fa-lightbulb"></i>Решения (вариант 2_1)</a>
                         </div>
                         <div id="final-grade-11" class="final-grade-content" style="display: none; gap: 10px; flex-wrap: wrap;">
-                           <a href="problems/final/2026/Теория/11 класс/Презентация ТТ11.ppt" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #6b46c1; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(107, 70, 193, 0.35);" onmouseover="this.style.background='#553c9a'" onmouseout="this.style.background='#6b46c1'"><i class="fas fa-file-powerpoint"></i>Презентация</a>
-                           <a href="problems/final/2026/Теория/11 класс/РФО2026 Теория 11 класс условия Вариант 1.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #1e3a8a; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(30, 58, 138, 0.35);" onmouseover="this.style.background='#1e40af'" onmouseout="this.style.background='#1e3a8a'"><i class="fas fa-file-pdf"></i>Условия</a>
-                           <a href="problems/final/2026/Теория/11 класс/РФО2026 Теория 11 класс решения Вариант 1.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #065f46; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(6, 95, 70, 0.35);" onmouseover="this.style.background='#047857'" onmouseout="this.style.background='#065f46'"><i class="fas fa-lightbulb"></i>Решения (вариант 1)</a>
-                           <a href="problems/final/2026/Теория/11 класс/РФО2026 Теория 11 класс решения Вариант 1_1.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #7f1d1d; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(127, 29, 29, 0.35);" onmouseover="this.style.background='#991b1b'" onmouseout="this.style.background='#7f1d1d'"><i class="fas fa-lightbulb"></i>Решения (вариант 1_1)</a>
+                           <a href="problems/final/2026/Теория/11 класс/Презентация ТТ11.ppt" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline"><i class="fas fa-file-powerpoint"></i>Презентация</a>
+                           <a href="problems/final/2026/Теория/11 класс/РФО2026 Теория 11 класс условия Вариант 1.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--solid"><i class="fas fa-file-pdf"></i>Условия</a>
+                           <a href="problems/final/2026/Теория/11 класс/РФО2026 Теория 11 класс решения Вариант 1.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline"><i class="fas fa-lightbulb"></i>Решения (вариант 1)</a>
+                           <a href="problems/final/2026/Теория/11 класс/РФО2026 Теория 11 класс решения Вариант 1_1.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline"><i class="fas fa-lightbulb"></i>Решения (вариант 1_1)</a>
                         </div>
                      </div>
                      <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 0px; order: 1;">
                         <div style="width: 100%; display: flex; align-items: center; gap: 8px; font-weight: 900; font-size: 14px; color: #0f172a;">
-                           <i class="fas fa-flask" style="color: #2563eb;"></i>
+                           <i class="fas fa-flask" style="color: #2f5d93;"></i>
                            Экспериментальный тур
                         </div>
                         <div style="display: flex; gap: 8px; border-bottom: 2px solid var(--border-color); padding-bottom: 0;">
@@ -1275,35 +1270,35 @@
                            </button>
                         </div>
                         <div id="final-exp-grade-9" class="final-exp-grade-content" style="display: none; gap: 10px; flex-wrap: wrap;">
-                           <a href="problems/final/2026/Эксперимент/9 класс/РФО2026 ЭкспТур 9 класс условия.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #1e3a8a; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(30, 58, 138, 0.35);" onmouseover="this.style.background='#1e40af'" onmouseout="this.style.background='#1e3a8a'">
+                           <a href="problems/final/2026/Эксперимент/9 класс/РФО2026 ЭкспТур 9 класс условия.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--solid">
                               <i class="fas fa-file-pdf"></i>
                               Условия
                            </a>
-                           <a href="problems/final/2026/Эксперимент/9 класс/РФО2026 ЭкспТур 9 класс решение.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #065f46; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(6, 95, 70, 0.35);" onmouseover="this.style.background='#047857'" onmouseout="this.style.background='#065f46'">
+                           <a href="problems/final/2026/Эксперимент/9 класс/РФО2026 ЭкспТур 9 класс решение.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-lightbulb"></i>
                               Решение
                            </a>
                         </div>
                         <div id="final-exp-grade-10" class="final-exp-grade-content" style="display: none; gap: 10px; flex-wrap: wrap;">
-                           <a href="problems/final/2026/Эксперимент/10 класс/РФО2026 ЭкспТур 10 класс условия.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #1e3a8a; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(30, 58, 138, 0.35);" onmouseover="this.style.background='#1e40af'" onmouseout="this.style.background='#1e3a8a'">
+                           <a href="problems/final/2026/Эксперимент/10 класс/РФО2026 ЭкспТур 10 класс условия.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--solid">
                               <i class="fas fa-file-pdf"></i>
                               Условия
                            </a>
-                           <a href="problems/final/2026/Эксперимент/10 класс/РФО2026 ЭкспТур 10 класс решение.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #065f46; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(6, 95, 70, 0.35);" onmouseover="this.style.background='#047857'" onmouseout="this.style.background='#065f46'">
+                           <a href="problems/final/2026/Эксперимент/10 класс/РФО2026 ЭкспТур 10 класс решение.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-lightbulb"></i>
                               Решение
                            </a>
                         </div>
                         <div id="final-exp-grade-11" class="final-exp-grade-content" style="display: none; gap: 10px; flex-wrap: wrap;">
-                           <a href="problems/final/2026/Эксперимент/11 класс/РФО2026 ЭкспТур 11 класс условия.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #1e3a8a; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(30, 58, 138, 0.35);" onmouseover="this.style.background='#1e40af'" onmouseout="this.style.background='#1e3a8a'">
+                           <a href="problems/final/2026/Эксперимент/11 класс/РФО2026 ЭкспТур 11 класс условия.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--solid">
                               <i class="fas fa-file-pdf"></i>
                               Условия
                            </a>
-                           <a href="problems/final/2026/Эксперимент/11 класс/РФО2026 ЭкспТур 11 класс решения.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #065f46; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(6, 95, 70, 0.35);" onmouseover="this.style.background='#047857'" onmouseout="this.style.background='#065f46'">
+                           <a href="problems/final/2026/Эксперимент/11 класс/РФО2026 ЭкспТур 11 класс решения.pdf" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-lightbulb"></i>
                               Решения
                            </a>
-                           <a href="problems/final/2026/Эксперимент/Схемы оценивания ЭТ 11-2.doc" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #f59e0b; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 3px 10px rgba(245, 158, 11, 0.25); border: 1px solid rgba(245, 158, 11, 0.35);" onmouseover="this.style.background='#d97706'; this.style.boxShadow='0 6px 18px rgba(245, 158, 11, 0.35)'" onmouseout="this.style.background='#f59e0b'; this.style.boxShadow='0 3px 10px rgba(245, 158, 11, 0.25)'">
+                           <a href="problems/final/2026/Эксперимент/Схемы оценивания ЭТ 11-2.doc" target="_blank" style="flex: 1; min-width: 180px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 800; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-clipboard-check"></i>
                               Схемы оценивания
                            </a>
@@ -1313,15 +1308,15 @@
 
                         <div style="order: 3; display: flex; flex-direction: column; gap: 10px;">
                            <div style="width: 100%; display: flex; align-items: center; gap: 8px; font-weight: 900; font-size: 14px; color: #0f172a; margin-top: 6px;">
-                              <i class="fas fa-book-open" style="color:#7c3aed;"></i>
+                              <i class="fas fa-book-open" style="color:#2f5d93;"></i>
                               Дополнительные материалы
                            </div>
                            <a href="problems/final/2026/Дополнительные материалы/Классики науки.pdf" target="_blank" class="year-link">
                            Классики науки.pdf
                            </a>
 
-                        <details class="final-extra-group" data-extra-grade="9" style="background: rgba(15,23,42,0.03); border: 1px solid rgba(15,23,42,0.08); border-radius: 12px; padding: 10px 12px;">
-                           <summary style="cursor: pointer; font-weight: 900; color: #0f172a; font-size: 13px;">9-1 бинокулярное зрение</summary>
+                        <details class="final-extra-group" data-extra-grade="9" style="background: rgba(15, 23, 42, 0.03); border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 12px; padding: 10px 12px;">
+                           <summary style="cursor: pointer; font-weight: 900; color: #0f172a; font-size: 14px;">9-1 бинокулярное зрение</summary>
                            <div style="display:flex; flex-direction:column; gap: 6px; margin-top: 10px;">
                               <a href="problems/final/2026/Дополнительные материалы/9-1 бинокулярное зрение/Рисунки/камера обскура 1.jpg" target="_blank" class="year-link">камера обскура 1.jpg</a>
                               <a href="problems/final/2026/Дополнительные материалы/9-1 бинокулярное зрение/Рисунки/камера обскура 2.png" target="_blank" class="year-link">камера обскура 2.png</a>
@@ -1337,8 +1332,8 @@
                            </div>
                         </details>
 
-                        <details class="final-extra-group" data-extra-grade="9" style="background: rgba(15,23,42,0.03); border: 1px solid rgba(15,23,42,0.08); border-radius: 12px; padding: 10px 12px;">
-                           <summary style="cursor: pointer; font-weight: 900; color: #0f172a; font-size: 13px;">9-2 охлаждение реактора</summary>
+                        <details class="final-extra-group" data-extra-grade="9" style="background: rgba(15, 23, 42, 0.03); border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 12px; padding: 10px 12px;">
+                           <summary style="cursor: pointer; font-weight: 900; color: #0f172a; font-size: 14px;">9-2 охлаждение реактора</summary>
                            <div style="display:flex; flex-direction:column; gap: 6px; margin-top: 10px;">
                               <a href="problems/final/2026/Дополнительные материалы/9-2 охлаждение реактора/ВВЭР1200.pdf" target="_blank" class="year-link">ВВЭР1200.pdf</a>
                               <a href="problems/final/2026/Дополнительные материалы/9-2 охлаждение реактора/Рисунки реактор/монтаж реактора.jpg" target="_blank" class="year-link">монтаж реактора.jpg</a>
@@ -1347,8 +1342,8 @@
                            </div>
                         </details>
 
-                        <details class="final-extra-group" data-extra-grade="9" style="background: rgba(15,23,42,0.03); border: 1px solid rgba(15,23,42,0.08); border-radius: 12px; padding: 10px 12px;">
-                           <summary style="cursor: pointer; font-weight: 900; color: #0f172a; font-size: 13px;">9-3 автомобиль</summary>
+                        <details class="final-extra-group" data-extra-grade="9" style="background: rgba(15, 23, 42, 0.03); border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 12px; padding: 10px 12px;">
+                           <summary style="cursor: pointer; font-weight: 900; color: #0f172a; font-size: 14px;">9-3 автомобиль</summary>
                            <div style="display:flex; flex-direction:column; gap: 6px; margin-top: 10px;">
                               <a href="problems/final/2026/Дополнительные материалы/9-3 автомобиль/расчеты авто.xls" target="_blank" class="year-link">расчеты авто.xls</a>
                               <a href="problems/final/2026/Дополнительные материалы/9-3 автомобиль/Литература/Кравец Теория автомобиля.pdf" target="_blank" class="year-link">Кравец Теория автомобиля.pdf</a>
@@ -1359,8 +1354,8 @@
                            </div>
                         </details>
 
-                        <details class="final-extra-group" data-extra-grade="10" style="background: rgba(15,23,42,0.03); border: 1px solid rgba(15,23,42,0.08); border-radius: 12px; padding: 10px 12px;">
-                           <summary style="cursor: pointer; font-weight: 900; color: #0f172a; font-size: 13px;">10-1 электрический коллаж</summary>
+                        <details class="final-extra-group" data-extra-grade="10" style="background: rgba(15, 23, 42, 0.03); border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 12px; padding: 10px 12px;">
+                           <summary style="cursor: pointer; font-weight: 900; color: #0f172a; font-size: 14px;">10-1 электрический коллаж</summary>
                            <div style="display:flex; flex-direction:column; gap: 6px; margin-top: 10px;">
                               <a href="problems/final/2026/Дополнительные материалы/10-1 Электрический коллаж/Сила Лоренца 3В.pdf" target="_blank" class="year-link">Сила Лоренца 3В.pdf</a>
                               <a href="problems/final/2026/Дополнительные материалы/10-1 Электрический коллаж/Электрические весы.pdf" target="_blank" class="year-link">Электрические весы.pdf</a>
@@ -1374,8 +1369,8 @@
                            </div>
                         </details>
 
-                        <details class="final-extra-group" data-extra-grade="10" style="background: rgba(15,23,42,0.03); border: 1px solid rgba(15,23,42,0.08); border-radius: 12px; padding: 10px 12px;">
-                           <summary style="cursor: pointer; font-weight: 900; color: #0f172a; font-size: 13px;">10-2 Земля - Луна</summary>
+                        <details class="final-extra-group" data-extra-grade="10" style="background: rgba(15, 23, 42, 0.03); border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 12px; padding: 10px 12px;">
+                           <summary style="cursor: pointer; font-weight: 900; color: #0f172a; font-size: 14px;">10-2 Земля - Луна</summary>
                            <div style="display:flex; flex-direction:column; gap: 6px; margin-top: 10px;">
                               <a href="problems/final/2026/Дополнительные материалы/10-2 Земля - Луна/Астрономические данные.xls" target="_blank" class="year-link">Астрономические данные.xls</a>
                               <a href="problems/final/2026/Дополнительные материалы/10-2 Земля - Луна/Гравитация рисунки/11-1.png" target="_blank" class="year-link">11-1.png</a>
@@ -1390,8 +1385,8 @@
                            </div>
                         </details>
 
-                        <details class="final-extra-group" data-extra-grade="11" style="background: rgba(15,23,42,0.03); border: 1px solid rgba(15,23,42,0.08); border-radius: 12px; padding: 10px 12px;">
-                           <summary style="cursor: pointer; font-weight: 900; color: #0f172a; font-size: 13px;">11-1 опыт Каведиша</summary>
+                        <details class="final-extra-group" data-extra-grade="11" style="background: rgba(15, 23, 42, 0.03); border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 12px; padding: 10px 12px;">
+                           <summary style="cursor: pointer; font-weight: 900; color: #0f172a; font-size: 14px;">11-1 опыт Каведиша</summary>
                            <div style="display:flex; flex-direction:column; gap: 6px; margin-top: 10px;">
                               <a href="problems/final/2026/Дополнительные материалы/11-1 опыт Каведиша/1003337_EN.pdf" target="_blank" class="year-link">1003337_EN.pdf</a>
                               <a href="problems/final/2026/Дополнительные материалы/11-1 опыт Каведиша/UE1010300_RU.pdf" target="_blank" class="year-link">UE1010300_RU.pdf</a>
@@ -1400,22 +1395,22 @@
                            </div>
                         </details>
 
-                        <details class="final-extra-group" data-extra-grade="11" style="background: rgba(15,23,42,0.03); border: 1px solid rgba(15,23,42,0.08); border-radius: 12px; padding: 10px 12px;">
-                           <summary style="cursor: pointer; font-weight: 900; color: #0f172a; font-size: 13px;">11-2 Камера Вильсона</summary>
+                        <details class="final-extra-group" data-extra-grade="11" style="background: rgba(15, 23, 42, 0.03); border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 12px; padding: 10px 12px;">
+                           <summary style="cursor: pointer; font-weight: 900; color: #0f172a; font-size: 14px;">11-2 Камера Вильсона</summary>
                            <div style="display:flex; flex-direction:column; gap: 6px; margin-top: 10px;">
                               <a href="problems/final/2026/Дополнительные материалы/11-2 Камера Вильсона/УФН камера Вильсона.pdf" target="_blank" class="year-link">УФН камера Вильсона.pdf</a>
                               <a href="problems/final/2026/Дополнительные материалы/11-2 Камера Вильсона/Физика облаков.pdf" target="_blank" class="year-link">Физика облаков.pdf</a>
                            </div>
                         </details>
-                        <p style="font-size: 11px; color: #64748b; margin-top: 10px; margin-bottom: 2px; line-height: 1.45; letter-spacing: 0.2px;">
-                           Контакт по вопросам работы сайта: <a href="https://t.me/belso_org" target="_blank" rel="noopener noreferrer" style="color: #334155; font-weight: 700; text-decoration: none;">@belso_org</a>
+                        <p style="font-size: 12px; color: #475569; margin-top: 10px; margin-bottom: 2px; line-height: 1.45; letter-spacing: 0.2px;">
+                           Контакт по вопросам работы сайта: <a href="https://t.me/belso_org" target="_blank" rel="noopener noreferrer" style="color: #1f3f66; font-weight: 700; text-decoration: none;">@belso_org</a>
                         </p>
                         </div>
                      </div>
                   </div>
                   <div id="final-materials-logo" style="text-align: center; display: flex; align-items: center; justify-content: center; position: absolute; right: 6%; top: 50%; transform: translateY(-50%); height: fit-content; z-index: 2;">
-                     <div class="logo-background-circle" style="position: absolute; width: 150px; height: 150px; background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(30, 58, 138, 0.12)); border-radius: 50%; animation: gentlePulse 4s ease-in-out infinite;"></div>
-                     <img src="img/logo.svg" alt="BelPhO Logo" style="width: 100%; max-width: 150px; border-radius: 8px; height: auto; object-fit: contain; position: relative; z-index: 1; filter: drop-shadow(0 6px 16px rgba(124, 58, 237, 0.3));">
+                     <div class="logo-background-circle" style="position: absolute; width: 150px; height: 150px; background: linear-gradient(135deg, rgba(47, 93, 147, 0.15), rgba(47, 93, 147, 0.12)); border-radius: 50%; animation: gentlePulse 4s ease-in-out infinite;"></div>
+                     <img src="img/logo.svg" alt="BelPhO Logo" style="width: 100%; max-width: 150px; border-radius: 8px; height: auto; object-fit: contain; position: relative; z-index: 1; filter: drop-shadow(0 6px 16px rgba(47, 93, 147, 0.3));">
                   </div>
                </div>
             </div>
@@ -1432,7 +1427,7 @@
                      if (parseInt(tab.dataset.finalGrade) === grade) {
                         tab.style.color = 'var(--primary-color)';
                         tab.style.borderBottomColor = 'var(--primary-color)';
-                        tab.style.background = 'linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(124, 58, 237, 0.05))';
+                        tab.style.background = 'linear-gradient(135deg, rgba(47, 93, 147, 0.12), rgba(47, 93, 147, 0.05))';
                         tab.style.opacity = '1';
                         tab.style.fontWeight = '700';
                      } else {
@@ -1479,7 +1474,7 @@
                      if (parseInt(tab.dataset.finalExpGrade) === grade) {
                         tab.style.color = 'var(--primary-color)';
                         tab.style.borderBottomColor = 'var(--primary-color)';
-                        tab.style.background = 'linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.05))';
+                        tab.style.background = 'linear-gradient(135deg, rgba(47, 93, 147, 0.1), rgba(47, 93, 147, 0.05))';
                         tab.style.opacity = '1';
                         tab.style.fontWeight = '700';
                      } else {
@@ -1517,23 +1512,23 @@
    <!-- 2026 Theoretical Round Announcement -->
    <section class="section" style="background: white; padding: 20px 0;">
       <div class="container" style="padding:5px 0;">
-         <article class="featured-article" style="background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15), 0 4px 12px rgba(16, 185, 129, 0.1); margin-bottom: 16px; display: flex; flex-direction: column; border: 2px solid rgba(37, 99, 235, 0.1); position: relative;">
-            <div style="position: absolute; top: 0; right: 0; width: 200px; height: 200px; background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%); border-radius: 50%; transform: translate(30%, -30%); pointer-events: none;"></div>
-            <div style="position: absolute; bottom: 0; left: 0; width: 150px; height: 150px; background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%); border-radius: 50%; transform: translate(-30%, 30%); pointer-events: none;"></div>
+         <article class="featured-article" style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(47, 93, 147, 0.15), 0 4px 12px rgba(47, 93, 147, 0.1); margin-bottom: 16px; display: flex; flex-direction: column; border: 2px solid rgba(47, 93, 147, 0.1); position: relative;">
+            <div style="position: absolute; top: 0; right: 0; width: 200px; height: 200px; background: radial-gradient(circle, rgba(47, 93, 147, 0.08) 0%, transparent 70%); border-radius: 50%; transform: translate(30%, -30%); pointer-events: none;"></div>
+            <div style="position: absolute; bottom: 0; left: 0; width: 150px; height: 150px; background: radial-gradient(circle, rgba(47, 93, 147, 0.08) 0%, transparent 70%); border-radius: 50%; transform: translate(-30%, 30%); pointer-events: none;"></div>
             <div class="featured-content" style="padding: 24px; padding-bottom: 20px; display: flex; flex-direction: column; flex: 1; position: relative; z-index: 1;">
                <div class="featured-meta" style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;">
-                  <div class="featured-date" style="color: var(--text-secondary); font-size: 13px; display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                  <div class="featured-date" style="color: var(--text-secondary); font-size: 14px; display: flex; align-items: center; gap: 6px; font-weight: 500;">
                      <i class="fas fa-calendar" style="color: var(--primary-color);"></i>
                      14 января 2026
                   </div>
                   <div class="featured-tags" style="display: flex; gap: 8px; flex-wrap: wrap;">
-                     <span class="tag" style="background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3); animation: pulse 2s ease-in-out infinite;">
+                     <span class="tag ui-tag" style="padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; animation: pulse 2s ease-in-out infinite;">
                       Новое
                      </span>
-                     <span class="tag" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);">
+                     <span class="tag ui-tag" style="padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;">
                         III этап
                      </span>
-                     <span class="tag" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);">
+                     <span class="tag ui-tag" style="padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;">
                         2026
                      </span>
                   </div>
@@ -1541,15 +1536,15 @@
                
                <div style="display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center; flex: 1; margin: 8px 0;">
                   <div>
-                     <h2 class="featured-title" style="font-size: 24px; font-weight: 800; background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 50%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 12px; line-height: 1.3; letter-spacing: -0.5px;">
+                     <h2 class="featured-title" style="font-size: 22px; font-weight: 800; background: #2f5d93; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 12px; line-height: 1.3; letter-spacing: -0.5px;">
                         Задания III этапа Республиканской олимпиады по физике 2026
                      </h2>
-                     <p class="featured-excerpt" style="font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.6; font-weight: 500;">
+                     <p class="featured-excerpt" style="font-size: 16px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.6; font-weight: 500;">
                         Опубликованы официальные задания и решения теоретического и экспериментального туров III этапа Республиканской олимпиады по физике 2026 года. Материалы доступны для всех классов.
                      </p>
-                     <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5; font-style: italic; opacity: 0.8; border-left: 2px solid rgba(124, 58, 237, 0.3); padding-left: 12px;">
+                     <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5; font-style: italic; opacity: 0.8; border-left: 2px solid rgba(47, 93, 147, 0.3); padding-left: 12px;">
                         «Первый принцип в том, чтобы не обманывать себя, а себя обмануть легче всего.»<br>
-                        <span style="font-size: 11px; opacity: 0.7;">Ричард Фейнман</span>
+                        <span style="font-size: 12px; opacity: 0.7;">Ричард Фейнман</span>
                      </p>
                      <div style="display: flex; flex-direction: column; gap: 16px;">
                         <!-- Grade Selector Tabs -->
@@ -1568,32 +1563,32 @@
                         <!-- Grade 9 Content -->
                         <div id="grade-9" class="grade-content" style="display: none; gap: 10px; flex-wrap: wrap;">
                            <div style="width: 100%; margin-bottom: 8px; font-weight: 600; color: var(--text-primary); font-size: 14px;">Теоретический тур:</div>
-                           <a href="problems/third/2026/МГО 2026 ТТ  9  Усл 1.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #3b82f6; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3); border: 1px solid rgba(59, 130, 246, 0.3);" onmouseover="this.style.background='#2563eb'; this.style.boxShadow='0 4px 12px rgba(59, 130, 246, 0.4)'" onmouseout="this.style.background='#3b82f6'; this.style.boxShadow='0 2px 8px rgba(59, 130, 246, 0.3)'">
+                           <a href="problems/third/2026/МГО 2026 ТТ  9  Усл 1.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--solid">
                               <i class="fas fa-file-pdf"></i>
                               Задания
                            </a>
-                           <a href="problems/third/2026/МГО 2026 ТТ  9 Реш 1.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #10b981; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3); border: 1px solid rgba(16, 185, 129, 0.3);" onmouseover="this.style.background='#059669'; this.style.boxShadow='0 4px 12px rgba(16, 185, 129, 0.4)'" onmouseout="this.style.background='#10b981'; this.style.boxShadow='0 2px 8px rgba(16, 185, 129, 0.3)'">
+                           <a href="problems/third/2026/МГО 2026 ТТ  9 Реш 1.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-lightbulb"></i>
                               Решения
                            </a>
-                           <a href="problems/third/2026/Разбалловка   (ТТ9-МГО-2026).docx.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #f59e0b; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3); border: 1px solid rgba(245, 158, 11, 0.3);" onmouseover="this.style.background='#d97706'; this.style.boxShadow='0 4px 12px rgba(245, 158, 11, 0.4)'" onmouseout="this.style.background='#f59e0b'; this.style.boxShadow='0 2px 8px rgba(245, 158, 11, 0.3)'">
+                           <a href="problems/third/2026/Разбалловка   (ТТ9-МГО-2026).docx.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-clipboard-check"></i>
                               Разбалловка
                            </a>
                            <div style="width: 100%; margin-top: 12px; margin-bottom: 8px; font-weight: 600; color: var(--text-primary); font-size: 14px;">Экспериментальный тур:</div>
-                           <a href="problems/third/2026/МГО 2026 ЭТ9_условия_для учащихся.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #3b82f6; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3); border: 1px solid rgba(59, 130, 246, 0.3);" onmouseover="this.style.background='#2563eb'; this.style.boxShadow='0 4px 12px rgba(59, 130, 246, 0.4)'" onmouseout="this.style.background='#3b82f6'; this.style.boxShadow='0 2px 8px rgba(59, 130, 246, 0.3)'">
+                           <a href="problems/third/2026/МГО 2026 ЭТ9_условия_для учащихся.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--solid">
                               <i class="fas fa-file-pdf"></i>
                               Задания
                            </a>
-                           <a href="problems/third/2026/МГО_2026_ЭТ9_условия_и_решения_для_жюри.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #10b981; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3); border: 1px solid rgba(16, 185, 129, 0.3);" onmouseover="this.style.background='#059669'; this.style.boxShadow='0 4px 12px rgba(16, 185, 129, 0.4)'" onmouseout="this.style.background='#10b981'; this.style.boxShadow='0 2px 8px rgba(16, 185, 129, 0.3)'">
+                           <a href="problems/third/2026/МГО_2026_ЭТ9_условия_и_решения_для_жюри.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-lightbulb"></i>
                               Решения
                            </a>
-                           <a href="problems/third/2026/9_1 Охлажд порциями_сх оц.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #f59e0b; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3); border: 1px solid rgba(245, 158, 11, 0.3);" onmouseover="this.style.background='#d97706'; this.style.boxShadow='0 4px 12px rgba(245, 158, 11, 0.4)'" onmouseout="this.style.background='#f59e0b'; this.style.boxShadow='0 2px 8px rgba(245, 158, 11, 0.3)'">
+                           <a href="problems/third/2026/9_1 Охлажд порциями_сх оц.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-clipboard-check"></i>
                               Разбалловка 1
                            </a>
-                           <a href="problems/third/2026/9_2 Прозрачный цилиндр_сх оц.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #f59e0b; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3); border: 1px solid rgba(245, 158, 11, 0.3);" onmouseover="this.style.background='#d97706'; this.style.boxShadow='0 4px 12px rgba(245, 158, 11, 0.4)'" onmouseout="this.style.background='#f59e0b'; this.style.boxShadow='0 2px 8px rgba(245, 158, 11, 0.3)'">
+                           <a href="problems/third/2026/9_2 Прозрачный цилиндр_сх оц.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-clipboard-check"></i>
                               Разбалловка 2
                            </a>
@@ -1602,32 +1597,32 @@
                         <!-- Grade 10 Content -->
                         <div id="grade-10" class="grade-content" style="display: none; gap: 10px; flex-wrap: wrap;">
                            <div style="width: 100%; margin-bottom: 8px; font-weight: 600; color: var(--text-primary); font-size: 14px;">Теоретический тур:</div>
-                           <a href="problems/third/2026/МГО 2026 ТТ 10 Усл 2.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #3b82f6; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3); border: 1px solid rgba(59, 130, 246, 0.3);" onmouseover="this.style.background='#2563eb'; this.style.boxShadow='0 4px 12px rgba(59, 130, 246, 0.4)'" onmouseout="this.style.background='#3b82f6'; this.style.boxShadow='0 2px 8px rgba(59, 130, 246, 0.3)'">
+                           <a href="problems/third/2026/МГО 2026 ТТ 10 Усл 2.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--solid">
                               <i class="fas fa-file-pdf"></i>
                               Задания
                            </a>
-                           <a href="problems/third/2026/МГО 2026 ТТ 10 Реш 2.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #10b981; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3); border: 1px solid rgba(16, 185, 129, 0.3);" onmouseover="this.style.background='#059669'; this.style.boxShadow='0 4px 12px rgba(16, 185, 129, 0.4)'" onmouseout="this.style.background='#10b981'; this.style.boxShadow='0 2px 8px rgba(16, 185, 129, 0.3)'">
+                           <a href="problems/third/2026/МГО 2026 ТТ 10 Реш 2.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-lightbulb"></i>
                               Решения
                            </a>
-                           <a href="problems/third/2026/Разбалловка (ТТ10-МГО-2026).docx.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #f59e0b; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3); border: 1px solid rgba(245, 158, 11, 0.3);" onmouseover="this.style.background='#d97706'; this.style.boxShadow='0 4px 12px rgba(245, 158, 11, 0.4)'" onmouseout="this.style.background='#f59e0b'; this.style.boxShadow='0 2px 8px rgba(245, 158, 11, 0.3)'">
+                           <a href="problems/third/2026/Разбалловка (ТТ10-МГО-2026).docx.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-clipboard-check"></i>
                               Разбалловка
                            </a>
                            <div style="width: 100%; margin-top: 12px; margin-bottom: 8px; font-weight: 600; color: var(--text-primary); font-size: 14px;">Экспериментальный тур:</div>
-                           <a href="problems/third/2026/МГО 2026 ЭТ10_условия_для учащихся.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #3b82f6; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3); border: 1px solid rgba(59, 130, 246, 0.3);" onmouseover="this.style.background='#2563eb'; this.style.boxShadow='0 4px 12px rgba(59, 130, 246, 0.4)'" onmouseout="this.style.background='#3b82f6'; this.style.boxShadow='0 2px 8px rgba(59, 130, 246, 0.3)'">
+                           <a href="problems/third/2026/МГО 2026 ЭТ10_условия_для учащихся.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--solid">
                               <i class="fas fa-file-pdf"></i>
                               Задания
                            </a>
-                           <a href="problems/third/2026/МГО_2026_ЭТ10_условия_и_решения_для_жюри.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #10b981; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3); border: 1px solid rgba(16, 185, 129, 0.3);" onmouseover="this.style.background='#059669'; this.style.boxShadow='0 4px 12px rgba(16, 185, 129, 0.4)'" onmouseout="this.style.background='#10b981'; this.style.boxShadow='0 2px 8px rgba(16, 185, 129, 0.3)'">
+                           <a href="problems/third/2026/МГО_2026_ЭТ10_условия_и_решения_для_жюри.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-lightbulb"></i>
                               Решения
                            </a>
-                           <a href="problems/third/2026/10_1 Конич маятник_сх оц.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #f59e0b; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3); border: 1px solid rgba(245, 158, 11, 0.3);" onmouseover="this.style.background='#d97706'; this.style.boxShadow='0 4px 12px rgba(245, 158, 11, 0.4)'" onmouseout="this.style.background='#f59e0b'; this.style.boxShadow='0 2px 8px rgba(245, 158, 11, 0.3)'">
+                           <a href="problems/third/2026/10_1 Конич маятник_сх оц.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-clipboard-check"></i>
                               Разбалловка 1
                            </a>
-                           <a href="problems/third/2026/10_2 Утечка воздуха_сх оц.docx.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #f59e0b; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3); border: 1px solid rgba(245, 158, 11, 0.3);" onmouseover="this.style.background='#d97706'; this.style.boxShadow='0 4px 12px rgba(245, 158, 11, 0.4)'" onmouseout="this.style.background='#f59e0b'; this.style.boxShadow='0 2px 8px rgba(245, 158, 11, 0.3)'">
+                           <a href="problems/third/2026/10_2 Утечка воздуха_сх оц.docx.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-clipboard-check"></i>
                               Разбалловка 2
                            </a>
@@ -1636,32 +1631,32 @@
                         <!-- Grade 11 Content -->
                         <div id="grade-11" class="grade-content" style="display: none; gap: 10px; flex-wrap: wrap;">
                            <div style="width: 100%; margin-bottom: 8px; font-weight: 600; color: var(--text-primary); font-size: 14px;">Теоретический тур:</div>
-                           <a href="problems/third/2026/МГО 2026 ТТ 11 Усл 1.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #3b82f6; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3); border: 1px solid rgba(59, 130, 246, 0.3);" onmouseover="this.style.background='#2563eb'; this.style.boxShadow='0 4px 12px rgba(59, 130, 246, 0.4)'" onmouseout="this.style.background='#3b82f6'; this.style.boxShadow='0 2px 8px rgba(59, 130, 246, 0.3)'">
+                           <a href="problems/third/2026/МГО 2026 ТТ 11 Усл 1.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--solid">
                               <i class="fas fa-file-pdf"></i>
                               Задания
                            </a>
-                           <a href="problems/third/2026/МГО 2026 ТТ 11 Реш 1.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #10b981; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3); border: 1px solid rgba(16, 185, 129, 0.3);" onmouseover="this.style.background='#059669'; this.style.boxShadow='0 4px 12px rgba(16, 185, 129, 0.4)'" onmouseout="this.style.background='#10b981'; this.style.boxShadow='0 2px 8px rgba(16, 185, 129, 0.3)'">
+                           <a href="problems/third/2026/МГО 2026 ТТ 11 Реш 1.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-lightbulb"></i>
                               Решения
                            </a>
-                           <a href="problems/third/2026/Разбалловка (ТТ11-МГО-2026).docx.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #f59e0b; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3); border: 1px solid rgba(245, 158, 11, 0.3);" onmouseover="this.style.background='#d97706'; this.style.boxShadow='0 4px 12px rgba(245, 158, 11, 0.4)'" onmouseout="this.style.background='#f59e0b'; this.style.boxShadow='0 2px 8px rgba(245, 158, 11, 0.3)'">
+                           <a href="problems/third/2026/Разбалловка (ТТ11-МГО-2026).docx.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-clipboard-check"></i>
                               Разбалловка
                            </a>
                            <div style="width: 100%; margin-top: 12px; margin-bottom: 8px; font-weight: 600; color: var(--text-primary); font-size: 14px;">Экспериментальный тур:</div>
-                           <a href="problems/third/2026/МГО 2026 ЭТ11_условия_для учащихся.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #3b82f6; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3); border: 1px solid rgba(59, 130, 246, 0.3);" onmouseover="this.style.background='#2563eb'; this.style.boxShadow='0 4px 12px rgba(59, 130, 246, 0.4)'" onmouseout="this.style.background='#3b82f6'; this.style.boxShadow='0 2px 8px rgba(59, 130, 246, 0.3)'">
+                           <a href="problems/third/2026/МГО 2026 ЭТ11_условия_для учащихся.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--solid">
                               <i class="fas fa-file-pdf"></i>
                               Задания
                            </a>
-                           <a href="problems/third/2026/МГО_2026_ЭТ11_условия_и_решения_для_жюри.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #10b981; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3); border: 1px solid rgba(16, 185, 129, 0.3);" onmouseover="this.style.background='#059669'; this.style.boxShadow='0 4px 12px rgba(16, 185, 129, 0.4)'" onmouseout="this.style.background='#10b981'; this.style.boxShadow='0 2px 8px rgba(16, 185, 129, 0.3)'">
+                           <a href="problems/third/2026/МГО_2026_ЭТ11_условия_и_решения_для_жюри.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-lightbulb"></i>
                               Решения
                            </a>
-                           <a href="problems/third/2026/11_1 ЭДС гальванич эл-та_сх оц.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #f59e0b; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3); border: 1px solid rgba(245, 158, 11, 0.3);" onmouseover="this.style.background='#d97706'; this.style.boxShadow='0 4px 12px rgba(245, 158, 11, 0.4)'" onmouseout="this.style.background='#f59e0b'; this.style.boxShadow='0 2px 8px rgba(245, 158, 11, 0.3)'">
+                           <a href="problems/third/2026/11_1 ЭДС гальванич эл-та_сх оц.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-clipboard-check"></i>
                               Разбалловка 1
                            </a>
-                           <a href="problems/third/2026/11_2 Крутильные колебан_сх оц.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #f59e0b; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3); border: 1px solid rgba(245, 158, 11, 0.3);" onmouseover="this.style.background='#d97706'; this.style.boxShadow='0 4px 12px rgba(245, 158, 11, 0.4)'" onmouseout="this.style.background='#f59e0b'; this.style.boxShadow='0 2px 8px rgba(245, 158, 11, 0.3)'">
+                           <a href="problems/third/2026/11_2 Крутильные колебан_сх оц.pdf" target="_blank" style="flex: 1; min-width: 140px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                               <i class="fas fa-clipboard-check"></i>
                               Разбалловка 2
                            </a>
@@ -1669,7 +1664,7 @@
                      </div>
                      <style>
                         .grade-tab:hover {
-                           background: rgba(37, 99, 235, 0.08) !important;
+                           background: rgba(47, 93, 147, 0.08) !important;
                            color: var(--primary-color) !important;
                            opacity: 1 !important;
                            transform: translateY(-2px);
@@ -1704,11 +1699,11 @@
                                  // Active tab
                                  tab.style.color = 'var(--primary-color)';
                                  tab.style.borderBottomColor = 'var(--primary-color)';
-                                 tab.style.background = 'linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.05))';
+                                 tab.style.background = 'linear-gradient(135deg, rgba(47, 93, 147, 0.1), rgba(47, 93, 147, 0.05))';
                                  tab.style.fontWeight = '700';
                                  tab.style.fontSize = '15px';
                                  tab.style.opacity = '1';
-                                 tab.style.boxShadow = '0 -2px 8px rgba(37, 99, 235, 0.2)';
+                                 tab.style.boxShadow = '0 -2px 8px rgba(47, 93, 147, 0.2)';
                               } else {
                                  // Inactive tab
                                  tab.style.color = 'var(--text-secondary)';
@@ -1790,20 +1785,20 @@
             <article class="featured-article" style="background: var(--surface-color); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-lg); margin-bottom: 0; display: flex; flex-direction: column;">
                <div class="featured-content" style="padding: 15px; padding-bottom: 0px; display: flex; flex-direction: column; flex: 1;">
                   <div class="featured-meta" style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
-                     <div class="featured-date" style="color: var(--text-secondary); font-size: 13px; display: flex; align-items: center; gap: 6px;">
+                     <div class="featured-date" style="color: var(--text-secondary); font-size: 14px; display: flex; align-items: center; gap: 6px;">
                         <i class="fas fa-calendar"></i>
                         11 января 2026
                      </div>
                      <div class="featured-tags" style="display: flex; gap: 6px;">
-                        <span class="tag" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 500;">Эксклюзив</span>
-                        <span class="tag" style="background: var(--accent-color); color: white; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 500;">IZhO 2026</span>
-                        <span class="tag" style="background: var(--primary-color); color: white; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 500;">Задания</span>
+                        <span class="tag ui-tag" style="padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 500;">Эксклюзив</span>
+                        <span class="tag ui-tag" style="padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 500;">IZhO 2026</span>
+                        <span class="tag ui-tag" style="padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 500;">Задания</span>
                      </div>
                   </div>
                   
                   <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 16px; align-items: center; flex: 1; margin: 6px 0;">
                      <div>
-                        <h2 class="featured-title" style="font-size: 20px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; line-height: 1.2;">
+                        <h2 class="featured-title" style="font-size: 22px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; line-height: 1.2;">
                            ❗ Эксклюзивные задания IZhO 2026
                         </h2>
                         <p class="featured-excerpt" style="font-size: 14px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5;">
@@ -1812,22 +1807,22 @@
                         <div style="display: flex; flex-direction: column; gap: 10px;">
                            <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
                               <span style="font-weight: 600; font-size: 12px; color: var(--text-secondary); white-space: nowrap;">Теор. тур:</span>
-                              <a href="problems/izho/IZhO 2026_Phys_Theory_rus.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: var(--primary-color); color: white; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; font-size: 14px; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(37, 99, 235, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(37, 99, 235, 0.4)'">
+                              <a href="problems/izho/IZhO 2026_Phys_Theory_rus.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; font-size: 14px;" class="ui-btn ui-btn--solid">
                                  <i class="fas fa-file-pdf"></i>
                                  Задания
                               </a>
-                              <a href="problems/izho/IZhO 2026_Phys_Theory_rus_sol.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: var(--success-color); color: white; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; font-size: 14px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(16, 185, 129, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(16, 185, 129, 0.4)'">
+                              <a href="problems/izho/IZhO 2026_Phys_Theory_rus_sol.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                                  <i class="fas fa-lightbulb"></i>
                                  Решения
                               </a>
                            </div>
                            <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
                               <span style="font-weight: 600; font-size: 12px; color: var(--text-secondary); white-space: nowrap;">Эксп. тур:</span>
-                              <a href="problems/izho/IZhO 2026 Exp_rus.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: var(--primary-color); color: white; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; font-size: 14px; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(37, 99, 235, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(37, 99, 235, 0.4)'">
+                              <a href="problems/izho/IZhO 2026 Exp_rus.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; font-size: 14px;" class="ui-btn ui-btn--solid">
                                  <i class="fas fa-file-pdf"></i>
                                  Задания
                               </a>
-                              <a href="problems/izho/IZhO 2026 Exp_rus_sol.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: var(--success-color); color: white; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; font-size: 14px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(16, 185, 129, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(16, 185, 129, 0.4)'">
+                              <a href="problems/izho/IZhO 2026 Exp_rus_sol.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; font-size: 14px;" class="ui-btn ui-btn--outline">
                                  <i class="fas fa-lightbulb"></i>
                                  Решения
                               </a>
@@ -1845,26 +1840,26 @@
             <article class="featured-article" style="background: var(--surface-color); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-lg); margin-bottom: 0; display: flex; flex-direction: column;">
                <div class="featured-content" style="padding: 15px; padding-bottom: 0px; display: flex; flex-direction: column; flex: 1;">
                   <div class="featured-meta" style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
-                     <div class="featured-date" style="color: var(--text-secondary); font-size: 13px; display: flex; align-items: center; gap: 6px;">
+                     <div class="featured-date" style="color: var(--text-secondary); font-size: 14px; display: flex; align-items: center; gap: 6px;">
                         <i class="fas fa-calendar"></i>
                         8 января 2026
                      </div>
                      <div class="featured-tags" style="display: flex; gap: 6px;">
-                        <span class="tag" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 500;">Интервью</span>
-                        <span class="tag" style="background: var(--accent-color); color: white; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 500;">Princeton</span>
-                        <span class="tag" style="background: var(--primary-color); color: white; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 500;">Эксклюзив</span>
+                        <span class="tag ui-tag" style="padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 500;">Интервью</span>
+                        <span class="tag ui-tag" style="padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 500;">Princeton</span>
+                        <span class="tag ui-tag" style="padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 500;">Эксклюзив</span>
                      </div>
                   </div>
                   
                   <div style="display: grid; grid-template-columns: 2.05fr 1fr; gap: 16px; align-items: center; flex: 1; margin: 6px 0;">
                      <div>
-                        <h2 class="featured-title" style="font-size: 20px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; line-height: 1.2;">
+                        <h2 class="featured-title" style="font-size: 22px; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; line-height: 1.2;">
                            От BelPhO в Принстонский университет <img src="img/Princeton_seal.svg" alt="Princeton" style="display: inline-block; width: 24px; height: 24px; vertical-align: middle; padding-bottom: 0px; opacity: 0.8;"> 
                         </h2>
                         <p class="featured-excerpt" style="font-size: 14px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5;">
                            Интервью с Андреем Коцевичем о пути в науке, подготовке к олимпиадам и поступлении в лучшие университеты США.
                         </p>
-                        <a href="news/andrei-katsevich-interview/" class="read-more" style="display: inline-flex; align-items: center; gap: 6px; background: var(--primary-color); color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; font-size: 13px; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);">
+                        <a href="news/andrei-katsevich-interview/" class="read-more ui-btn ui-btn--solid" style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; font-size: 14px;">
                            Читать интервью
                            <i class="fas fa-arrow-right"></i>
                         </a>
@@ -2218,7 +2213,7 @@
             }
             
             .year-number {
-               font-size: 24px;
+               font-size: 22px;
                font-weight: 700;
                color: var(--primary-color);
                position: relative;
@@ -2231,7 +2226,7 @@
                padding: 4px 10px;
                background: var(--bg-color);
                border-radius: 6px;
-               font-size: 13px;
+               font-size: 14px;
                color: var(--text-secondary);
                font-weight: 500;
                display: inline-block;
@@ -2244,7 +2239,7 @@
             }
             
             .year-section-title {
-               font-size: 15px;
+               font-size: 16px;
                font-weight: 600;
                color: var(--text-primary);
                margin-bottom: 6px;
@@ -2262,7 +2257,7 @@
                text-decoration: none;
                color: var(--text-primary);
                transition: background-color 0.2s ease, color 0.2s ease;
-               font-size: 13px;
+               font-size: 14px;
             }
             
             .year-link:hover {
@@ -2272,11 +2267,11 @@
             }
             
             .new-badge {
-               background: #ff4757;
+               background: #2f5d93;
                color: white;
                padding: 2px 6px;
                border-radius: 4px;
-               font-size: 10px;
+               font-size: 12px;
                font-weight: 600;
                margin-left: auto;
             }
@@ -2470,7 +2465,7 @@
                            </p>
                         </div>
                   </div>
-                  <i class="fas fa-history" style="color: var(--accent-color); font-size: 20px;"></i>
+                  <i class="fas fa-history" style="color: var(--accent-color); font-size: 22px;"></i>
                   
                </div>
                <div class="year-city">Гродно</div>
@@ -2598,7 +2593,7 @@
                            </p>
                         </div>
                      </div>
-                     2020 <i class="fas fa-history" style="color: var(--accent-color); font-size: 20px;"></i>
+                     2020 <i class="fas fa-history" style="color: var(--accent-color); font-size: 22px;"></i>
                      
                   </div>
                   <div class="year-city">Гомель</div>
@@ -3624,15 +3619,15 @@
 
          <div id="y2025" class="row odd" style="display: none;">
             <div class="col col-lg-12">
-               <hr style="background:#ff9500" class="pc-vis">
+               <hr style="background:#2f5d93" class="pc-vis">
                
-               <h3 style="font-family: 'Roboto', sans-serif; font-size: 24px; color: #333;">
+               <h3 style="font-family: var(--font); font-size: 22px; color: #0f172a;">
                   Республиканская олимпиада 2025 года
                </h3>
 
-               <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden;">
+               <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; padding: 20px; background-color: #f8fafc; border-radius: 8px; box-shadow: 0 4px 8px rgba(15, 23, 42, 0.1); overflow: hidden;">
 
-            <div class="col col-lg-12" style="font-family: 'PT Sans', Helvetica, Arial, sans-serif;">
+            <div class="col col-lg-12" style="font-family: var(--font);">
                <h4 style="text-align:center; padding: 0; margin-bottom: 10;">Заключительный этап</h4>
 
                <ul style="list-style-type: none; padding: 0; margin: 0; text-align: center;">
@@ -3655,7 +3650,7 @@
                      </a>
                    </li>
                    
-                  <hr style="all: unset; display: block; width: 20%; border-top: 1px solid #ccc; opacity: 0.5; margin: 0.8rem auto;">
+                  <hr style="all: unset; display: block; width: 20%; border-top: 1px solid #e2e8f0; opacity: 0.5; margin: 0.8rem auto;">
                   <li style="margin: 0; padding: 2; font-size: 16;">
                      <a href="problems/final/2025_theoretical_problems.pdf" target="_blank">
                         Условия Теоретического Тура
@@ -3714,11 +3709,11 @@
                </ul>
             </div>
 
-  <!--                 <h4 style="font-size: 20px; color: #555;">
+  <!--                 <h4 style="font-size: 22px; color: #475569;">
                      До начала экспериментального тура: 
                   </h4> -->
      
-                  <!-- <h4 style="font-size: 18px; font-style: oblique; color: #777;" id="countdown">Загрузка..</h4> -->
+                  <!-- <h4 style="font-size: 18px; font-style: oblique; color: #475569;" id="countdown">Загрузка..</h4> -->
                   <!-- Insert the loading animation here -->
                    
 <!--                   <div id="container">
@@ -3791,7 +3786,7 @@
             }
             
             .news-title {
-               font-size: 24px;
+               font-size: 22px;
                font-weight: 700;
                color: var(--text-primary);
                margin-bottom: 16px;
@@ -4072,7 +4067,7 @@
          </div>
       </div>
 
-      <p style="font-size:12px;color:var(--text-tertiary); opacity: 0.85;margin-top:16px;text-align: center;">
+      <p style="font-size: 12px;color:var(--text-tertiary); opacity: 0.85;margin-top:16px;text-align: center;">
          Создано командой выпускников. Координатор проекта Aliaksandr Melnichenka.
        </p>
    </footer>

@@ -1,0 +1,58 @@
+/* BelPhO design tokens: one brand color, a slate neutral scale, one font, one type scale.
+   Every page loads this file (problem pages through platform.css). */
+:root {
+  --c-brand: #2f5d93;        /* steel blue, same hue as the team photo banner */
+  --c-brand-dark: #1f3f66;   /* hover and pressed states */
+  --c-brand-tint: #eaf0f7;   /* tags, active tabs, soft highlights */
+  --c-ink: #0f172a;          /* headings and body text */
+  --c-ink-2: #475569;        /* secondary text */
+  --c-muted: #94a3b8;        /* icons, placeholders */
+  --c-line: #e2e8f0;         /* borders and dividers */
+  --c-surface-2: #f8fafc;    /* page and card backgrounds */
+  --c-surface: #ffffff;
+
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Consolas', 'Courier New', monospace;
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-md: 16px;
+  --fs-lg: 18px;
+  --fs-xl: 22px;
+  --fs-2xl: 28px;
+  --fs-3xl: 40px;
+}
+
+body { font-family: var(--font); color: var(--c-ink); }
+
+/* Buttons: two styles only */
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1.5px solid var(--c-brand);
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.ui-btn--solid { background: var(--c-brand); color: #fff; }
+.ui-btn--solid:hover, .ui-btn--solid:focus-visible { background: var(--c-brand-dark); border-color: var(--c-brand-dark); color: #fff; }
+.ui-btn--outline { background: var(--c-surface); color: var(--c-brand); }
+.ui-btn--outline:hover, .ui-btn--outline:focus-visible { background: var(--c-brand-tint); color: var(--c-brand-dark); }
+
+/* Tags and badges: one style */
+.ui-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  line-height: 1;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--c-brand-tint);
+  color: var(--c-brand);
+}
