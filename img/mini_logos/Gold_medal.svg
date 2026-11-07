@@ -9,8 +9,14 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs6" />
+  <defs id="golddefs">
+    <radialGradient id="goldSheen" cx="35%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#fff7cc"/>
+      <stop offset="0.35" stop-color="#ffe066"/>
+      <stop offset="0.75" stop-color="#f2b705"/>
+      <stop offset="1" stop-color="#b8860b"/>
+    </radialGradient>
+  </defs>
   <sodipodi:namedview
      id="namedview6"
      pagecolor="#ffffff"
@@ -33,8 +39,8 @@
      cx="150"
      cy="150"
      r="145.99001"
-     fill="#ffcd00"
-     stroke="#ffb72a"
+     fill="url(#goldSheen)"
+     stroke="#9a6f00"
      stroke-width="8"
      id="circle1" />
   <rect

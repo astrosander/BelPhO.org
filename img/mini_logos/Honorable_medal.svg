@@ -35,28 +35,28 @@
   <circle
      cx="149.99001"
      cy="149.99001"
-     r="142.99001"
+     r="145.99001"
      fill="#cd7f32"
      stroke="#a05a2c"
      stroke-width="8"
      id="circle1"
-     style="fill:#ffffff;fill-opacity:1;stroke:#2f5d93;stroke-width:14;stroke-opacity:1" />
+     style="fill:#f8fafc;fill-opacity:1;stroke:#a7b3c2;stroke-width:7;stroke-dasharray:18 10;stroke-opacity:1" />
   <rect
-     style="fill:#ff9090;fill-opacity:0.5;stroke:#ff5858;stroke-width:1.13506;stroke-dasharray:none;stroke-opacity:0.5"
+     style="fill:#ff9090;fill-opacity:0.28;stroke:#ff5858;stroke-width:1.13506;stroke-dasharray:none;stroke-opacity:0.5"
      id="rect1-5-1"
      width="115.33946"
      height="113.38824"
      x="132.31389"
      y="94.993866" />
   <rect
-     style="fill:#9090ff;fill-opacity:0.5;stroke:#5252ff;stroke-width:1.13506;stroke-dasharray:none;stroke-opacity:0.5"
+     style="fill:#9090ff;fill-opacity:0.28;stroke:#5252ff;stroke-width:1.13506;stroke-dasharray:none;stroke-opacity:0.5"
      id="rect1-5"
      width="115.33946"
      height="113.38824"
      x="92.776451"
      y="136.54897" />
   <rect
-     style="fill:#ffff90;fill-opacity:0.5;stroke:#ffff3d;stroke-width:1.13506;stroke-dasharray:none;stroke-opacity:0.5"
+     style="fill:#ffff90;fill-opacity:0.28;stroke:#ffff3d;stroke-width:1.13506;stroke-dasharray:none;stroke-opacity:0.5"
      id="rect1"
      width="115.33946"
      height="113.38824"
