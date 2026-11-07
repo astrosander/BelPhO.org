@@ -35,7 +35,6 @@ body { font-family: var(--font); color: var(--c-ink); }
   text-decoration: none;
   border-radius: 8px;
   border: 1.5px solid var(--c-brand);
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 .ui-btn--solid { background: var(--c-brand); color: #fff; }
 .ui-btn--solid:hover, .ui-btn--solid:focus-visible { background: var(--c-brand-dark); border-color: var(--c-brand-dark); color: #fff; }
@@ -55,4 +54,10 @@ body { font-family: var(--font); color: var(--c-ink); }
   border-radius: 999px;
   background: var(--c-brand-tint);
   color: var(--c-brand);
+}
+
+/* No hover animations: hover states change instantly and nothing moves or grows */
+a, button, summary, .btn, .ui-btn, .ui-tag, .tag, .nav-links a,
+[class*="card"], [class*="card"] *, .belso-link, .belso-logo, .slider-arrow {
+  transition: none !important;
 }

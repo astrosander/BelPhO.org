@@ -194,7 +194,10 @@
 
         /* Stats row: five medal counters plus the stayed/left pie */
         .stats-layout { display: grid; grid-template-columns: 1fr; gap: 12px; align-items: center; }
-        .stats-layout .stats-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+        /* Two rows: three counters on top, two below */
+        .stats-layout .stats-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+        .stats-layout .stats-grid .stat-card { grid-column: span 2; }
+        .stats-layout .stats-grid .stat-card:nth-child(n+4) { grid-column: span 3; }
         .stats-layout .stat-card { padding: 14px 6px; }
         .stats-layout .stat-number { font-size: 28px; }
         .stats-layout .stat-label { font-size: 14px; }
@@ -219,7 +222,6 @@
             .where-panel { max-width: none; }
         }
         @media (max-width: 700px) {
-            .stats-layout .stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
             .stats-layout .stat-number { font-size: 22px; }
             .where-body { flex-direction: column; gap: 12px; }
             .where-pct { font-size: 40px; }
@@ -314,10 +316,6 @@
             .alumni-card {
                 padding: 12px;
             }
-        }
-
-        .alumni-card:hover {
-            box-shadow: var(--shadow-lg);
         }
 
         .alumni-card.gold {
@@ -740,7 +738,6 @@
 
         .social-link.savchenko:hover {
             background: #2f5d93;
-            box-shadow: 0 8px 25px rgba(47, 93, 147, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
         }
 
         .social-link.savchenko:active {
@@ -790,10 +787,6 @@
             font-weight: 700;
             transform: rotate(45deg);
             box-shadow: 0 2px 5px rgba(15, 23, 42, 0.2);
-        }
-
-        .forbes-candidate:hover {
-            box-shadow: 0 12px 35px rgba(47, 93, 147, 0.4);
         }
 
         /* Research highlight */
@@ -924,8 +917,6 @@
             background: rgba(47, 93, 147, 0.95);
             color: white;
             border-color: rgba(47, 93, 147, 0.95);
-            box-shadow: 0 6px 20px rgba(47, 93, 147, 0.3), 0 2px 8px rgba(15, 23, 42, 0.15);
-            transform: translateY(-50%) scale(1.1);
         }
 
         .slider-arrow:active {
@@ -1237,21 +1228,6 @@
         </div>
     </section>
 
-    <!-- Filter -->
-    <section class="filter-section">
-        <div class="container">
-            <div class="filter-controls">
-                <button class="filter-btn active" data-filter="all">Все участники</button>
-                <button class="filter-btn" data-filter="gold">Золотые медали</button>
-                <button class="filter-btn" data-filter="silver">Серебряные медали</button>
-                <button class="filter-btn" data-filter="bronze">Бронзовые медали</button>
-                <button class="filter-btn" data-filter="mention">Похвальные отзывы</button>
-                <button class="filter-btn" data-filter="bsu-lyceum">Лицей БГУ</button>
-                <button class="filter-btn" data-filter="gymnasium-29">Гимназия №29</button>
-            </div>
-        </div>
-    </section>
-
     <!-- Team Photos -->
     <section class="team-photos-section">
         <div class="container">
@@ -1433,6 +1409,21 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">Все участники</button>
+                <button class="filter-btn" data-filter="gold">Золотые медали</button>
+                <button class="filter-btn" data-filter="silver">Серебряные медали</button>
+                <button class="filter-btn" data-filter="bronze">Бронзовые медали</button>
+                <button class="filter-btn" data-filter="mention">Похвальные отзывы</button>
+                <button class="filter-btn" data-filter="bsu-lyceum">Лицей БГУ</button>
+                <button class="filter-btn" data-filter="gymnasium-29">Гимназия №29</button>
             </div>
         </div>
     </section>

@@ -1393,8 +1393,6 @@ mjx-container[display="true"]::-webkit-scrollbar-track { background: transparent
 }
 .st-chip:hover {
   border-color: var(--accent);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
 }
 
 /* Borrowed from the year's own first problem (lib/thumbCard.js / lib/thumbs.js
@@ -1453,7 +1451,7 @@ mjx-container[display="true"]::-webkit-scrollbar-track { background: transparent
   text-decoration: none;
   color: inherit;
 }
-.st-other:hover { border-color: var(--accent); box-shadow: var(--shadow-sm); }
+.st-other:hover { border-color: var(--accent); }
 .st-other-title { display: block; font-weight: 700; font-size: 16px; margin-bottom: 3px; }
 .st-other-desc { display: block; font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
 
@@ -1582,7 +1580,7 @@ mjx-container[display="true"]::-webkit-scrollbar-track { background: transparent
   color: inherit;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
-.pr:hover { border-color: #eaf0f7; box-shadow: var(--shadow-sm); }
+.pr:hover { border-color: #eaf0f7; }
 .pr:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 2px; }
 
 .pr-badge {

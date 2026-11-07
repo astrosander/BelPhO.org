@@ -437,8 +437,6 @@
       .btn-primary:hover {
          background: rgba(255, 255, 255, 0.35);
          border-color: rgba(255, 255, 255, 0.6);
-         transform: translateY(-2px);
-         box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
       }
 
       .btn-secondary {
@@ -451,8 +449,6 @@
       .btn-secondary:hover {
          background: rgba(255, 255, 255, 0.2);
          border-color: rgba(255, 255, 255, 0.8);
-         transform: translateY(-2px);
-         box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
       }
 
       /* BelSO Section in Hero */
@@ -489,7 +485,6 @@
 
       .belso-section a.belso-link:hover {
          opacity: 0.9;
-         transform: translateY(-2px);
       }
 
       .belso-logo {
@@ -566,8 +561,6 @@
       }
 
       .feature-card:hover {
-         transform: translateY(-4px);
-         box-shadow: var(--shadow-lg);
          border-color: var(--primary-color);
       }
 
@@ -716,8 +709,6 @@
       }
 
       .year-card:hover {
-         transform: translateY(-2px);
-         box-shadow: var(--shadow-md);
          border-color: var(--primary-color);
          text-decoration: none;
          color: inherit;
@@ -917,17 +908,9 @@
          transition: transform 0.3s ease;
       }
 
-      .featured-article:hover {
-         transform: translateY(-4px);
-      }
-
       /* Disable animations for announcement sections */
       .section .featured-article[style*="margin-bottom: 0"] {
          transition: none !important;
-      }
-
-      .section .featured-article[style*="margin-bottom: 0"]:hover {
-         transform: none !important;
       }
 
       .featured-content {
@@ -995,25 +978,15 @@
       /* Button-style read-more link */
       .read-more[style*="background"]:hover {
          background: var(--primary-dark) !important;
-         transform: translateY(-2px);
-         box-shadow: 0 4px 12px rgba(47, 93, 147, 0.4) !important;
          color: white !important;
-      }
-
-      /* PDF download buttons hover effects */
-      a[href*=".pdf"][style*="background"]:hover {
-         transform: translateY(-2px);
-         box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2) !important;
       }
 
       a[href*=".pdf"][style*="var(--primary-color)"]:hover {
          background: var(--primary-dark) !important;
-         box-shadow: 0 4px 12px rgba(47, 93, 147, 0.4) !important;
       }
 
       a[href*=".pdf"][style*="var(--success-color)"]:hover {
          background: #1f3f66 !important;
-         box-shadow: 0 4px 12px rgba(47, 93, 147, 0.4) !important;
       }
 
       @media (max-width: 768px) {
@@ -1667,7 +1640,6 @@
                            background: rgba(47, 93, 147, 0.08) !important;
                            color: var(--primary-color) !important;
                            opacity: 1 !important;
-                           transform: translateY(-2px);
                         }
                         .grade-content {
                            display: flex;
@@ -2081,10 +2053,6 @@
                border-left: 4px solid var(--primary-color);
                transition: box-shadow 0.3s ease;
             }
-            
-            .modern-year-card:hover {
-               box-shadow: var(--shadow-lg);
-            }
 
             /* History Button Tooltip */
             .history-button {
@@ -2150,7 +2118,6 @@
             .year-number.active .history-tooltip {
                opacity: 1;
                visibility: visible;
-               transform: translateX(0);
             }
 
             @media (max-width: 768px) {
@@ -3768,11 +3735,6 @@
                box-shadow: var(--shadow-md);
                border-left: 4px solid var(--accent-color);
                transition: all 0.3s ease;
-            }
-            
-            .news-card:hover {
-               transform: translateY(-4px);
-               box-shadow: var(--shadow-xl);
             }
             
             .news-date {
